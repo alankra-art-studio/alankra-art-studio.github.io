@@ -7,59 +7,62 @@
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #071220;
-      --navy-card: #0d1e34;
-      --navy-light: #162c4b;
+      --navy-bg: #060e18;
+      --navy-card: #0c1c30;
+      --navy-card-hover: #10243c;
       --gold: #D4AF37;
       --gold-bright: #F7D070;
+      --gold-glow: rgba(212, 175, 55, 0.25);
       --pink: #E05697;
       --teal: #10B981;
       --white: #FFFFFF;
-      --gray: #A0AEC0;
-      --whatsapp-green: #25D366;
+      --gray-text: #94A3B8;
+      --input-bg: #071322;
+      --border-color: rgba(212, 175, 55, 0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--navy);
+      background-color: var(--navy-bg);
       color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Ambient Decorative Mandala Backgrounds */
+    /* Ambient Background Mandalas */
     .bg-mandala {
       position: absolute;
-      width: 550px;
-      height: 550px;
-      opacity: 0.08;
+      width: 600px;
+      height: 600px;
+      opacity: 0.05;
       pointer-events: none;
       z-index: 0;
-      animation: slowRotate 120s linear infinite;
+      animation: slowSpin 140s linear infinite;
     }
-    .bg-mandala-1 { top: -80px; right: -120px; }
-    .bg-mandala-2 { bottom: 10%; left: -150px; width: 600px; height: 600px; animation-direction: reverse; }
+    .bg-mandala-top { top: -120px; right: -150px; }
+    .bg-mandala-mid { top: 40%; left: -180px; animation-direction: reverse; }
+    .bg-mandala-bottom { bottom: -100px; right: -100px; }
 
-    @keyframes slowRotate {
+    @keyframes slowSpin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
 
-    /* Header & Navigation */
+    /* Header Navigation */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 8%;
-      background: rgba(7, 18, 32, 0.92);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 1.1rem 8%;
+      background: rgba(6, 14, 24, 0.95);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -73,18 +76,41 @@
       text-decoration: none;
     }
     .brand-logo svg {
-      width: 36px;
-      height: 36px;
-      fill: none;
+      width: 34px;
+      height: 34px;
       stroke: var(--gold);
-      stroke-width: 1.5;
     }
     .brand-title {
       font-family: 'Cinzel', serif;
       font-size: 1.6rem;
-      color: var(--gold);
+      color: var(--gold-bright);
       letter-spacing: 3px;
       font-weight: 700;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .nav-auth-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-auth-btn:hover {
+      background: var(--gold);
+      color: var(--navy-bg);
     }
 
     .insta-nav-btn {
@@ -93,9 +119,9 @@
       gap: 0.5rem;
       color: #fff;
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      padding: 0.5rem 1.2rem;
+      padding: 0.48rem 1.2rem;
       border-radius: 50px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       text-decoration: none;
       box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
@@ -106,41 +132,41 @@
       box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
     }
 
-    /* Hero Section */
-    .hero {
+    /* Main Hero & Order Section */
+    .hero-container {
       position: relative;
       z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
       gap: 3.5rem;
-      padding: 4rem 8%;
+      padding: 3.5rem 8%;
+      align-items: start;
       min-height: 85vh;
     }
-    .hero-text { flex: 1 1 500px; }
+    @media (max-width: 950px) {
+      .hero-container { grid-template-columns: 1fr; }
+    }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.4rem 1.2rem;
+      padding: 0.35rem 1.1rem;
       background: rgba(212, 175, 55, 0.12);
       color: var(--gold-bright);
       border: 1px solid rgba(212, 175, 55, 0.4);
       border-radius: 50px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       margin-bottom: 1.2rem;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .hero-text h1 {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       line-height: 1.2;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       font-weight: 700;
     }
     .hero-text h1 span {
@@ -151,244 +177,415 @@
 
     .hero-text p {
       color: #CBD5E1;
-      font-size: 1.1rem;
-      margin-bottom: 1.8rem;
-      max-width: 540px;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
 
-    /* Price Section */
-    .price-box {
+    .price-strip {
       display: flex;
       align-items: baseline;
       gap: 1.2rem;
       margin-bottom: 2rem;
     }
-    .price-box .price {
-      font-size: 2.5rem;
+    .price-strip .price {
+      font-size: 2.6rem;
       font-weight: 800;
       color: var(--gold-bright);
     }
-    .price-box .mrp {
+    .price-strip .mrp {
       font-size: 1.3rem;
-      color: var(--gray);
+      color: var(--gray-text);
       text-decoration: line-through;
     }
-    .price-box .discount-tag {
+    .price-strip .discount-pill {
       background: rgba(16, 185, 129, 0.2);
       color: #34D399;
       border: 1px solid #10B981;
       padding: 0.25rem 0.8rem;
       border-radius: 6px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
     }
 
-    /* Hero Book Visual Showcase */
-    .hero-visual {
-      flex: 1 1 400px;
-      display: center;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    
-    .book-mockup-frame {
-      position: relative;
-      width: 320px;
-      height: 380px;
-      background: linear-gradient(145deg, #10243e, #091729);
+    /* Product Cover Showcase Tab Cards */
+    .showcase-wrapper {
+      background: var(--navy-card);
+      border: 1px solid var(--border-color);
       border-radius: 16px;
-      border: 2px solid rgba(212, 175, 55, 0.4);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
+      padding: 1.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      margin-bottom: 2rem;
+    }
+    .showcase-tabs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      padding-bottom: 0.8rem;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--gray-text);
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .tab-btn.active {
+      background: var(--gold);
+      color: var(--navy-bg);
+      border-color: var(--gold);
+    }
+    .cover-display {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      min-height: 380px;
+    }
+    .cover-view {
+      display: none;
+      width: 100%;
       text-align: center;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .cover-view.active { display: block; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    .interactive-mandala {
-      width: 170px;
-      height: 170px;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-      animation: pulseGlow 4s ease-in-out infinite alternate;
+    /* Embedded Real Artwork Previews */
+    .mockup-img-frame {
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 12px;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 25px var(--gold-glow);
+      overflow: hidden;
+      background: #000;
+    }
+    .mockup-img-frame svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cover-caption {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--gold-bright);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
     }
 
-    @keyframes pulseGlow {
-      0% { transform: scale(0.98); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2)); }
-      100% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(224, 86, 151, 0.4)); }
+    /* Checkout & Address Form Container */
+    .checkout-form-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.2rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      position: relative;
     }
-
-    .book-mockup-frame h3 {
+    .checkout-form-card h3 {
       font-family: 'Cinzel', serif;
       color: var(--gold-bright);
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.3rem;
-    }
-    .book-mockup-frame p {
-      font-size: 0.85rem;
-      color: #94A3B8;
-    }
-
-    /* Checkout & WhatsApp Order Box */
-    .checkout-card {
-      background: var(--navy-card);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      padding: 2rem;
-      border-radius: 16px;
-      margin-bottom: 2rem;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-      max-width: 500px;
-    }
-    
-    .checkout-card h4 {
-      font-size: 1.1rem;
-      color: #fff;
-      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+    .checkout-form-card .subtitle {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-bottom: 1.6rem;
+    }
 
-    .order-btn-whatsapp {
+    /* User Profile Bar (When Logged In) */
+    .user-profile-badge {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .user-profile-badge.show { display: flex; }
+    .user-profile-badge span { font-size: 0.88rem; color: var(--gold-bright); }
+    .logout-btn {
+      background: none;
+      border: none;
+      color: #EF4444;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* Address Form Controls */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #CBD5E1;
+      margin-bottom: 0.4rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: var(--input-bg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .place-order-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #D4AF37, #B89628);
+      color: #060e18;
+      border: none;
+      padding: 1.1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      text-decoration: none;
-      padding: 1rem 1.8rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+      gap: 0.6rem;
     }
-    .order-btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
-    }
-    .order-btn-whatsapp svg {
-      width: 26px;
-      height: 26px;
-      fill: #fff;
+    .place-order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+      background: linear-gradient(135deg, #F7D070, #D4AF37);
     }
 
-    .qr-info-box {
-      margin-top: 1.2rem;
+    .payment-notice {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      border: 1px dashed rgba(212, 175, 55, 0.3);
-    }
-    .qr-info-box span {
-      font-size: 0.85rem;
-      color: #CBD5E1;
-    }
-
-    .security-badge {
-      display: flex;
-      align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: #34D399;
       margin-top: 1rem;
+      text-align: center;
     }
 
-    /* Product Features Grid */
-    .features {
+    /* Modal Styling for Login/Sign-up/Forgot */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 9, 16, 0.85);
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.show { display: flex; }
+
+    .modal-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 440px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--gold-glow);
+      position: relative;
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlide {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      color: var(--gray-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .modal-close-btn:hover { color: var(--gold-bright); }
+
+    .modal-card h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-bright);
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+    .modal-card p.auth-sub {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin-bottom: 1.8rem;
+    }
+
+    .auth-view { display: none; }
+    .auth-view.active { display: block; }
+
+    .auth-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy-bg);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+    }
+    .auth-btn:hover {
+      background: var(--gold-bright);
+      box-shadow: 0 6px 20px var(--gold-glow);
+    }
+
+    .auth-switch {
+      margin-top: 1.4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray-text);
+    }
+    .auth-switch a {
+      color: var(--gold-bright);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .auth-switch a:hover { text-decoration: underline; }
+
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: 0.4rem;
+      cursor: pointer;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    /* Features Section */
+    .features-section {
       position: relative;
       z-index: 1;
       padding: 5rem 8%;
-      background: #050d17;
+      background: #040a12;
       text-align: center;
+      border-top: 1px solid var(--border-color);
     }
-    .features h2 {
+    .features-section h2 {
       font-family: 'Cinzel', serif;
       font-size: 2.3rem;
       color: var(--gold-bright);
       margin-bottom: 0.5rem;
     }
     .features-subtitle {
-      color: #94A3B8;
+      color: var(--gray-text);
       margin-bottom: 3.5rem;
       font-size: 1.05rem;
     }
-    
-    .grid {
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
-    .card {
+    .feature-card {
       background: var(--navy-card);
-      padding: 2.5rem 1.8rem;
+      padding: 2.2rem 1.8rem;
       border-radius: 14px;
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--border-color);
       transition: all 0.3s ease;
       text-align: left;
-      position: relative;
-      overflow: hidden;
     }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--pink));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .card:hover {
+    .feature-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(212, 175, 55, 0.5);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      border-color: var(--gold);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
     }
-    .card:hover::before {
-      opacity: 1;
-    }
-    .card .card-icon {
+    .feature-card .icon {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      display: inline-block;
+      margin-bottom: 0.8rem;
     }
-    .card h3 { color: var(--gold-bright); margin-bottom: 0.6rem; font-size: 1.2rem; }
-    .card p { color: #94A3B8; font-size: 0.95rem; }
+    .feature-card h3 {
+      color: var(--gold-bright);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+    .feature-card p {
+      color: var(--gray-text);
+      font-size: 0.92rem;
+    }
 
-    /* Instagram Banner Section */
-    .insta-showcase {
+    /* Instagram Community Strip */
+    .insta-strip {
       padding: 4rem 8%;
-      background: linear-gradient(180deg, #050d17, #071220);
+      background: var(--navy-bg);
       text-align: center;
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      border-top: 1px solid var(--border-color);
     }
-    .insta-card {
-      max-width: 600px;
+    .insta-strip-box {
+      max-width: 650px;
       margin: 0 auto;
       background: var(--navy-card);
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border: 1px solid var(--border-color);
       padding: 2.5rem;
       border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 15px 45px rgba(0,0,0,0.4);
     }
-    .insta-card h3 {
+    .insta-strip-box h3 {
       font-family: 'Cinzel', serif;
       color: var(--gold-bright);
       font-size: 1.6rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
     }
-    .insta-card p {
-      color: #94A3B8;
+    .insta-strip-box p {
+      color: var(--gray-text);
       margin-bottom: 1.5rem;
       font-size: 0.95rem;
     }
@@ -397,21 +594,20 @@
     footer {
       padding: 3rem 8%;
       text-align: center;
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
-      color: #94A3B8;
+      border-top: 1px solid var(--border-color);
+      color: var(--gray-text);
       font-size: 0.9rem;
-      background: #040910;
+      background: #03070d;
     }
     footer a { color: var(--gold); text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Background Mandala -->
-  <svg class="bg-mandala bg-mandala-1" viewBox="0 0 100 100">
+  <!-- Ambient Rotating Background Mandalas -->
+  <svg class="bg-mandala bg-mandala-top" viewBox="0 0 100 100">
     <circle cx="50" cy="50" r="45" stroke="#D4AF37" stroke-width="0.5" fill="none"/>
     <circle cx="50" cy="50" r="35" stroke="#D4AF37" stroke-width="0.5" fill="none"/>
-    <circle cx="50" cy="50" r="25" stroke="#D4AF37" stroke-width="0.5" fill="none"/>
     <path d="M50 5 Q60 25 50 45 Q40 25 50 5 Z" stroke="#E05697" stroke-width="0.5" fill="none" transform="rotate(0 50 50)"/>
     <path d="M50 5 Q60 25 50 45 Q40 25 50 5 Z" stroke="#E05697" stroke-width="0.5" fill="none" transform="rotate(45 50 50)"/>
     <path d="M50 5 Q60 25 50 45 Q40 25 50 5 Z" stroke="#E05697" stroke-width="0.5" fill="none" transform="rotate(90 50 50)"/>
@@ -422,132 +618,486 @@
     <path d="M50 5 Q60 25 50 45 Q40 25 50 5 Z" stroke="#E05697" stroke-width="0.5" fill="none" transform="rotate(315 50 50)"/>
   </svg>
 
+  <!-- Navigation Header -->
   <header>
     <a href="#" class="brand-logo">
       <svg viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" stroke="#D4AF37" stroke-width="2"/>
-        <polygon points="50,15 62,38 85,50 62,62 50,85 38,62 15,50 38,38" stroke="#D4AF37" stroke-width="1.5"/>
-        <circle cx="50" cy="50" r="10" stroke="#E05697" stroke-width="2"/>
+        <circle cx="50" cy="50" r="40" stroke="#D4AF37" stroke-width="2" fill="none"/>
+        <polygon points="50,15 62,38 85,50 62,62 50,85 38,62 15,50 38,38" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <circle cx="50" cy="50" r="10" stroke="#E05697" stroke-width="2" fill="none"/>
       </svg>
       <span class="brand-title">ALANKRA</span>
     </a>
-    
-    <!-- Direct Instagram Link -->
-    <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-      Follow @alankra.art_official
-    </a>
+
+    <div class="nav-actions">
+      <!-- Sign In / My Account Trigger -->
+      <button class="nav-auth-btn" id="navAuthTrigger" onclick="openAuthModal('login')">
+        👤 <span>Sign In</span>
+      </button>
+
+      <!-- Instagram Direct Link -->
+      <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        @alankra.art_official
+      </a>
+    </div>
   </header>
 
-  <main class="hero">
+  <!-- Hero Content & Order Section -->
+  <main class="hero-container">
+    
+    <!-- Left Column: Product Info & Interactive Front/Back Visualizer -->
     <div class="hero-text">
       <div class="hero-badge">✨ Mindfulness & Stress Relief Edition</div>
       <h1>Mandala Colouring Book <span>For Grown-Ups</span></h1>
       <p>
-        Unwind with 30 intricately handcrafted sacred geometry and botanical mandalas. Printed single-sided on ultra-thick 160 GSM artist-grade cartridge paper for zero marker bleed.
+        Experience meditative peace with 30 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.
       </p>
 
-      <div class="price-box">
+      <div class="price-strip">
         <span class="price">₹299.00</span>
         <span class="mrp">₹499.00</span>
-        <span class="discount-tag">40% OFF Special Launch</span>
+        <span class="discount-pill">40% OFF Launch Deal</span>
       </div>
 
-      <div class="checkout-card">
-        <h4>📦 Direct Studio Order:</h4>
+      <!-- Product Looks (Front and Back Cover Page Interactive Showcase) -->
+      <div class="showcase-wrapper">
+        <div class="showcase-tabs">
+          <button class="tab-btn active" onclick="switchCover('front', this)">📖 Front Cover View</button>
+          <button class="tab-btn" onclick="switchCover('back', this)">🔄 Back Cover View</button>
+        </div>
+
+        <div class="cover-display">
+          
+          <!-- FRONT COVER VECTOR PREVIEW -->
+          <div id="frontCoverView" class="cover-view active">
+            <div class="mockup-img-frame">
+              <svg viewBox="0 0 400 400" style="background: #F8F9FA;">
+                <!-- Front Cover Typography -->
+                <text x="200" y="55" font-family="'Cinzel', serif" font-size="28" font-weight="700" fill="#D4AF37" text-anchor="middle" letter-spacing="4">ALANKRA</text>
+                <text x="200" y="80" font-family="'Cinzel', serif" font-size="16" font-weight="600" fill="#8E6A23" text-anchor="middle">Mandala Colouring Book</text>
+                <text x="200" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#333" text-anchor="middle">Premium Mindfulness Edition: Botanical & Sacred Geometry</text>
+                
+                <!-- Center Half-Line / Half-Colored Mandala Artwork -->
+                <g transform="translate(200, 245)">
+                  <!-- Left Half (Line Art) -->
+                  <clipPath id="leftHalf"><rect x="-180" y="-180" width="180" height="360"/></clipPath>
+                  <g clip-path="url(#leftHalf)" stroke="#111" stroke-width="1.8" fill="none">
+                    <circle cx="0" cy="0" r="115"/>
+                    <circle cx="0" cy="0" r="85"/>
+                    <circle cx="0" cy="0" r="55"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(30)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(60)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(90)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(120)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(150)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(180)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(210)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(240)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(270)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(300)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(330)"/>
+                  </g>
+
+                  <!-- Right Half (Rich Colored Vibrant Mandala Art) -->
+                  <clipPath id="rightHalf"><rect x="0" y="-180" width="180" height="360"/></clipPath>
+                  <g clip-path="url(#rightHalf)">
+                    <circle cx="0" cy="0" r="115" fill="#0c4a6e" stroke="#D4AF37" stroke-width="1.5"/>
+                    <circle cx="0" cy="0" r="85" fill="#be185d" stroke="#D4AF37" stroke-width="1.5"/>
+                    <circle cx="0" cy="0" r="55" fill="#047857" stroke="#D4AF37" stroke-width="1.5"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#38bdf8" stroke="#fff" stroke-width="0.8" transform="rotate(30)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#fbbf24" stroke="#fff" stroke-width="0.8" transform="rotate(60)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8" transform="rotate(90)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#38bdf8" stroke="#fff" stroke-width="0.8" transform="rotate(120)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#fbbf24" stroke="#fff" stroke-width="0.8" transform="rotate(150)"/>
+                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8" transform="rotate(180)"/>
+                    <circle cx="0" cy="0" r="16" fill="#fbbf24" stroke="#D4AF37" stroke-width="2"/>
+                  </g>
+                  <!-- Divider Line -->
+                  <line x1="0" y1="-125" x2="0" y2="125" stroke="#D4AF37" stroke-width="2"/>
+                </g>
+
+                <!-- Spec Badge on Bottom Right -->
+                <rect x="230" y="340" width="155" height="48" rx="6" fill="#854d0e"/>
+                <text x="307" y="360" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#fef08a" text-anchor="middle">30 DESIGNS</text>
+                <text x="307" y="378" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" fill="#fff" text-anchor="middle">Thick 160 GSM Cartridge Paper</text>
+              </svg>
+            </div>
+            <div class="cover-caption">Front Cover • Half Line-Art & Half Colored Concept</div>
+          </div>
+
+          <!-- BACK COVER VECTOR PREVIEW -->
+          <div id="backCoverView" class="cover-view">
+            <div class="mockup-img-frame">
+              <svg viewBox="0 0 400 400" style="background: #F8F9FA;">
+                <!-- Full Colored Vibrant Mandala Masterpiece -->
+                <g transform="translate(200, 160)">
+                  <circle cx="0" cy="0" r="130" fill="#042f2e" stroke="#D4AF37" stroke-width="1.5"/>
+                  <circle cx="0" cy="0" r="100" fill="#831843" stroke="#D4AF37" stroke-width="1.5"/>
+                  <circle cx="0" cy="0" r="70" fill="#1e3a8a" stroke="#D4AF37" stroke-width="1.5"/>
+                  <circle cx="0" cy="0" r="40" fill="#047857" stroke="#D4AF37" stroke-width="1.5"/>
+                  <g fill="#ec4899" stroke="#fff" stroke-width="0.8">
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(30)" fill="#38bdf8"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(60)" fill="#fbbf24"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(90)" fill="#a855f7"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(120)" fill="#ec4899"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(150)" fill="#38bdf8"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(180)" fill="#fbbf24"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(210)" fill="#a855f7"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(240)" fill="#ec4899"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(270)" fill="#38bdf8"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(300)" fill="#fbbf24"/>
+                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(330)" fill="#a855f7"/>
+                  </g>
+                  <circle cx="0" cy="0" r="18" fill="#fbbf24" stroke="#D4AF37" stroke-width="2"/>
+                </g>
+
+                <!-- Back Cover Spec Info Table & QR -->
+                <rect x="25" y="315" width="55" height="55" rx="6" fill="#fff" stroke="#111" stroke-width="1.5"/>
+                <!-- Mini QR Representation -->
+                <rect x="33" y="323" width="12" height="12" fill="#111"/>
+                <rect x="60" y="323" width="12" height="12" fill="#111"/>
+                <rect x="33" y="350" width="12" height="12" fill="#111"/>
+                <rect x="52" y="342" width="6" height="6" fill="#111"/>
+                <text x="52" y="385" font-size="6.5" font-family="'Plus Jakarta Sans', sans-serif" fill="#111" text-anchor="middle" font-weight="700">@alankra.art_official</text>
+
+                <!-- Product Specifications Grid -->
+                <rect x="90" y="315" width="285" height="68" fill="#fff" stroke="#111" stroke-width="1.2"/>
+                <text x="100" y="332" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#000">PRODUCT: Mandala Colouring Book</text>
+                <text x="100" y="346" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">NET QTY: 1 N | PAGES: 32 (30 Artwork)</text>
+                <text x="100" y="360" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">MARKETED BY: Alankra Art Studio</text>
+                <text x="100" y="374" font-size="7.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">CUSTOMER CARE: alankra.art@gmail.com</text>
+                <text x="270" y="332" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#000">MRP: ₹299.00</text>
+                <text x="270" y="346" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">SIZE: 21 x 29.7 cm</text>
+                <text x="270" y="360" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#047857">MADE IN INDIA</text>
+              </svg>
+            </div>
+            <div class="cover-caption">Back Cover • Full Mandala Art & Studio Spec Details</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Direct Delivery Address & Order Checkout -->
+    <div class="checkout-form-card">
+      
+      <!-- User Profile Badge (Displays after login) -->
+      <div id="userProfileBadge" class="user-profile-badge">
+        <span id="userGreeting">👤 Welcome, Guest</span>
+        <button class="logout-btn" onclick="logoutUser()">Log Out</button>
+      </div>
+
+      <h3>🛍️ Direct Studio Checkout</h3>
+      <p class="subtitle">Enter your delivery address below for swift dispatch across India.</p>
+
+      <form id="orderForm" onsubmit="processOrder(event)">
         
-        <!-- WhatsApp Direct Link with Updated Number: 8320300049 -->
-        <a href="https://wa.me/918320300049?text=Hi%20Alankra%20Art%20Studio,%20I%20want%20to%20order%20the%20Mandala%20Colouring%20Book!" class="order-btn-whatsapp" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
-          Order on WhatsApp (+91 8320300049)
-        </a>
-
-        <div class="qr-info-box">
-          <span>📲 <strong>Quick Checkout:</strong> Tap the WhatsApp button to message us your delivery address and pay securely via UPI / Cash on Delivery.</span>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="custName" class="form-control" placeholder="e.g. Nidhi Tomar" required>
         </div>
 
-        <div class="security-badge">
-          🔒 Verified Studio Checkout | Fast India-wide Shipping
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp / Phone Number *</label>
+            <input type="tel" id="custPhone" class="form-control" placeholder="10-digit Mobile No." required>
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <select id="bookQty" class="form-control" onchange="updateTotalBill()">
+              <option value="1">1 Book (₹299)</option>
+              <option value="2">2 Books (₹549 - Save ₹50)</option>
+              <option value="3">3 Books (₹799 - Save ₹100)</option>
+            </select>
+          </div>
         </div>
-      </div>
+
+        <div class="form-group">
+          <label>Complete Delivery Address (House/Flat No, Street, Landmark) *</label>
+          <textarea id="custAddress" class="form-control" placeholder="Enter complete door address for courier delivery" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>City / Town *</label>
+            <input type="text" id="custCity" class="form-control" placeholder="e.g. Godhra / Vadodara" required>
+          </div>
+          <div class="form-group">
+            <label>Pincode *</label>
+            <input type="text" id="custPincode" class="form-control" placeholder="6-digit Pincode" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Preference</label>
+          <select id="paymentPref" class="form-control">
+            <option value="UPI (GPay/PhonePe/Paytm)">Instant UPI (GPay / PhonePe / Paytm)</option>
+            <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+          </select>
+        </div>
+
+        <!-- Total Bill Summary -->
+        <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid var(--border-color); padding: 0.9rem; border-radius: 8px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 600; color: #CBD5E1;">Total Payable:</span>
+          <span id="totalBillAmount" style="font-size: 1.3rem; font-weight: 800; color: var(--gold-bright);">₹299.00</span>
+        </div>
+
+        <button type="submit" class="place-order-btn">
+          ✨ Place Order & Confirm Delivery
+        </button>
+
+        <div class="payment-notice">
+          🔒 100% Verified Studio Order • Free & Safe Shipping
+        </div>
+      </form>
     </div>
 
-    <!-- Right Side Art Visual Feature Card -->
-    <div class="hero-visual">
-      <div class="book-mockup-frame">
-        <svg class="interactive-mandala" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1" fill="none"/>
-          <circle cx="50" cy="50" r="40" stroke="#E05697" stroke-width="0.8" fill="none"/>
-          <circle cx="50" cy="50" r="30" stroke="#10B981" stroke-width="0.8" fill="none"/>
-          <circle cx="50" cy="50" r="18" stroke="#D4AF37" stroke-width="1" fill="#0d1e34"/>
-          <!-- Mandala Petals -->
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(224, 86, 151, 0.4)" stroke="#E05697" stroke-width="0.8" transform="rotate(0 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(212, 175, 55, 0.4)" stroke="#D4AF37" stroke-width="0.8" transform="rotate(30 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="0.8" transform="rotate(60 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(224, 86, 151, 0.4)" stroke="#E05697" stroke-width="0.8" transform="rotate(90 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(212, 175, 55, 0.4)" stroke="#D4AF37" stroke-width="0.8" transform="rotate(120 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="0.8" transform="rotate(150 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(224, 86, 151, 0.4)" stroke="#E05697" stroke-width="0.8" transform="rotate(180 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(212, 175, 55, 0.4)" stroke="#D4AF37" stroke-width="0.8" transform="rotate(210 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="0.8" transform="rotate(240 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(224, 86, 151, 0.4)" stroke="#E05697" stroke-width="0.8" transform="rotate(270 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(212, 175, 55, 0.4)" stroke="#D4AF37" stroke-width="0.8" transform="rotate(300 50 50)"/>
-          <path d="M50 8 Q58 28 50 48 Q42 28 50 8 Z" fill="rgba(16, 185, 129, 0.4)" stroke="#10B981" stroke-width="0.8" transform="rotate(330 50 50)"/>
-          <circle cx="50" cy="50" r="6" fill="#D4AF37"/>
-        </svg>
-        <h3>ALANKRA</h3>
-        <p>Premium Mindfulness Edition: Botanical & Sacred Geometry</p>
-      </div>
-    </div>
   </main>
 
   <!-- Features Grid -->
-  <section class="features">
-    <h2>Artisan Quality Features</h2>
-    <p class="features-subtitle">Designed specifically for adult colorists, artists, and mindfulness seekers</p>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">🌺</div>
+  <section class="features-section">
+    <h2>Artisan Quality Guaranteed</h2>
+    <p class="features-subtitle">Designed specifically for adult colorists, artists, and mindfulness enthusiasts</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🌺</div>
         <h3>30 Handcrafted Mandalas</h3>
-        <p>Intricate sacred geometry and floral line art designed to reduce anxiety and inspire creativity.</p>
+        <p>Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">📄</div>
-        <h3>160 GSM Cartridge Paper</h3>
-        <p>Thick, artist-grade paper that prevents bleed-through from sketch pens, fineliners, and brush markers.</p>
+      <div class="feature-card">
+        <div class="icon">📄</div>
+        <h3>160 GSM Cartridge Sheets</h3>
+        <p>Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">🌀</div>
+      <div class="feature-card">
+        <div class="icon">🌀</div>
         <h3>Lay-Flat Wiro Binding</h3>
-        <p>Enjoy hassle-free 360-degree flat coloring without spine creases or bent corners.</p>
+        <p>Opens completely flat for maximum comfort while coloring near the margins.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">✂️</div>
-        <h3>Single-Sided Pages</h3>
-        <p>Every design is on its own page so you can tear it out, frame it, or display it without losing any artwork.</p>
+      <div class="feature-card">
+        <div class="icon">✂️</div>
+        <h3>Single-Sided Print</h3>
+        <p>Every design is on its own page—tear out, frame, or gift your finished mandala art.</p>
       </div>
     </div>
   </section>
 
-  <!-- Instagram Social Connect Banner -->
-  <section class="insta-showcase">
-    <div class="insta-card">
-      <h3>Join Our Art Community</h3>
-      <p>Follow our daily mandala artworks, tutorials, and behind-the-scenes creation on Instagram.</p>
-      <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2rem;">
+  <!-- Instagram Community Strip -->
+  <section class="insta-strip">
+    <div class="insta-strip-box">
+      <h3>Join The Alankra Art Community</h3>
+      <p>Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.</p>
+      <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2.2rem;">
         Follow on Instagram (@alankra.art_official)
       </a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2026 Alankra Art Studio. All rights reserved.</p>
-    <p>Contact / WhatsApp: <a href="https://wa.me/918320300049">+91 8320300049</a> | Email: <a href="mailto:alankra.art@gmail.com">alankra.art@gmail.com</a></p>
+    <p style="margin-top: 0.4rem;">Support: <a href="https://wa.me/918320300049">+91 8320300049</a> | Email: <a href="mailto:alankra.art@gmail.com">alankra.art@gmail.com</a></p>
   </footer>
 
+  <!-- USER AUTHENTICATION MODAL (SIGN IN, CREATE ACCOUNT, FORGOT PASSWORD) -->
+  <div id="authModal" class="modal-backdrop">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
+
+      <!-- 1. SIGN IN VIEW -->
+      <div id="loginView" class="auth-view active">
+        <h2>Welcome Back</h2>
+        <p class="auth-sub">Sign in to track orders and save your delivery addresses.</p>
+        
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+            <a class="forgot-link" onclick="openAuthModal('forgot')">Forgot Password?</a>
+          </div>
+          <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+
+        <div class="auth-switch">
+          Don't have an account? <a onclick="openAuthModal('signup')">Create New Account</a>
+        </div>
+      </div>
+
+      <!-- 2. CREATE ACCOUNT VIEW -->
+      <div id="signupView" class="auth-view">
+        <h2>Create Account</h2>
+        <p class="auth-sub">Join Alankra Art Studio for exclusive art drops & offers.</p>
+        
+        <form onsubmit="handleSignup(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="signupName" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Create Password</label>
+            <input type="password" id="signupPassword" class="form-control" placeholder="Minimum 6 characters" minlength="6" required>
+          </div>
+          <button type="submit" class="auth-btn">Create My Account</button>
+        </form>
+
+        <div class="auth-switch">
+          Already have an account? <a onclick="openAuthModal('login')">Sign In</a>
+        </div>
+      </div>
+
+      <!-- 3. FORGOT PASSWORD VIEW -->
+      <div id="forgotView" class="auth-view">
+        <h2>Reset Password</h2>
+        <p class="auth-sub">Enter your registered email to receive a password reset link.</p>
+        
+        <form onsubmit="handleForgotPassword(event)">
+          <div class="form-group">
+            <label>Registered Email</label>
+            <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <button type="submit" class="auth-btn">Send Reset Link</button>
+        </form>
+
+        <div class="auth-switch">
+          Remember your password? <a onclick="openAuthModal('login')">Back to Sign In</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR DYNAMIC FUNCTIONALITY -->
+  <script>
+    // Tab switching for Front / Back cover preview
+    function switchCover(view, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.cover-view').forEach(v => v.classList.remove('active'));
+      btn.classList.add('active');
+      if (view === 'front') {
+        document.getElementById('frontCoverView').classList.add('active');
+      } else {
+        document.getElementById('backCoverView').classList.add('active');
+      }
+    }
+
+    // Modal Control Functions
+    function openAuthModal(view) {
+      document.getElementById('authModal').classList.add('show');
+      document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
+      if (view === 'login') document.getElementById('loginView').classList.add('active');
+      if (view === 'signup') document.getElementById('signupView').classList.add('active');
+      if (view === 'forgot') document.getElementById('forgotView').classList.add('active');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.remove('show');
+    }
+
+    // Authentication Handlers (Local Simulation with Browser Storage)
+    function handleSignup(e) {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
+      updateUserUI(name);
+      closeAuthModal();
+      alert('✨ Account created successfully! Welcome, ' + name);
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const name = email.split('@')[0];
+      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
+      updateUserUI(name);
+      closeAuthModal();
+      alert('✨ Welcome back, ' + name + '!');
+    }
+
+    function handleForgotPassword(e) {
+      e.preventDefault();
+      const email = document.getElementById('forgotEmail').value;
+      alert('📩 Password reset instructions have been sent to ' + email);
+      openAuthModal('login');
+    }
+
+    function updateUserUI(name) {
+      document.getElementById('userGreeting').textContent = '👤 Logged in as: ' + name;
+      document.getElementById('userProfileBadge').classList.add('show');
+      document.getElementById('navAuthTrigger').innerHTML = '👤 <span>' + name + '</span>';
+      
+      // Auto-fill customer name if empty
+      const nameInput = document.getElementById('custName');
+      if (!nameInput.value) nameInput.value = name;
+    }
+
+    function logoutUser() {
+      localStorage.removeItem('alankra_user');
+      document.getElementById('userProfileBadge').classList.remove('show');
+      document.getElementById('navAuthTrigger').innerHTML = '👤 <span>Sign In</span>';
+      alert('Logged out successfully.');
+    }
+
+    // Auto-check existing session on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedUser = localStorage.getItem('alankra_user');
+      if (savedUser) {
+        try {
+          const user = JSON.parse(savedUser);
+          updateUserUI(user.name);
+        } catch (err) {}
+      }
+    });
+
+    // Total Bill Calculator
+    function updateTotalBill() {
+      const qty = parseInt(document.getElementById('bookQty').value);
+      let total = 299;
+      if (qty === 2) total = 549;
+      if (qty === 3) total = 799;
+      document.getElementById('totalBillAmount').textContent = '₹' + total + '.00';
+    }
+
+    // Process Order and Forward to Studio WhatsApp
+    function processOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const qty = document.getElementById('bookQty').value;
+      const address = document.getElementById('custAddress').value;
+      const city = document.getElementById('custCity').value;
+      const pincode = document.getElementById('custPincode').value;
+      const payment = document.getElementById('paymentPref').value;
+      const total = document.getElementById('totalBillAmount').textContent;
+
+      const orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
+        `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+        `*Phone:* ${encodeURIComponent(phone)}%0A` +
+        `*Product:* Mandala Colouring Book%0A` +
+        `*Quantity:* ${encodeURIComponent(qty)} Book(s)%0A` +
+        `*Total Amount:* ${encodeURIComponent(total)}%0A` +
+        `*Payment Mode:* ${encodeURIComponent(payment)}%0A%0A` +
+        `*Delivery Address:*%0A${encodeURIComponent(address)}%0A` +
+        `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A` +
+        `Please confirm my order and share dispatch details!`;
+
+      // Redirect to WhatsApp with order details
+      window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
+    }
+  </script>
 </body>
 </html>
