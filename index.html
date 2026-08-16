@@ -260,24 +260,27 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Embedded Real Artwork Previews */
-    .mockup-img-frame {
-      max-width: 320px;
+    .product-img-box {
+      max-width: 360px;
       margin: 0 auto;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 2px solid rgba(212, 175, 55, 0.4);
       box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 25px var(--gold-glow);
       overflow: hidden;
-      background: #000;
+      background: #fff;
     }
-    .mockup-img-frame svg {
+    .product-img-box img {
       width: 100%;
       height: auto;
       display: block;
+      transition: transform 0.3s ease;
+    }
+    .product-img-box:hover img {
+      transform: scale(1.02);
     }
     .cover-caption {
       margin-top: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--gold-bright);
       font-family: 'Cinzel', serif;
       letter-spacing: 1px;
@@ -648,7 +651,7 @@
   <!-- Hero Content & Order Section -->
   <main class="hero-container">
     
-    <!-- Left Column: Product Info & Interactive Front/Back Visualizer -->
+    <!-- Left Column: Product Info & Real Front/Back Cover Photos -->
     <div class="hero-text">
       <div class="hero-badge">✨ Mindfulness & Stress Relief Edition</div>
       <h1>Mandala Colouring Book <span>For Grown-Ups</span></h1>
@@ -662,7 +665,7 @@
         <span class="discount-pill">40% OFF Launch Deal</span>
       </div>
 
-      <!-- Product Looks (Front and Back Cover Page Interactive Showcase) -->
+      <!-- Real Product Cover Page Image Showcase -->
       <div class="showcase-wrapper">
         <div class="showcase-tabs">
           <button class="tab-btn active" onclick="switchCover('front', this)">📖 Front Cover View</button>
@@ -671,113 +674,20 @@
 
         <div class="cover-display">
           
-          <!-- FRONT COVER VECTOR PREVIEW -->
+          <!-- FRONT COVER REAL IMAGE -->
           <div id="frontCoverView" class="cover-view active">
-            <div class="mockup-img-frame">
-              <svg viewBox="0 0 400 400" style="background: #F8F9FA;">
-                <!-- Front Cover Typography -->
-                <text x="200" y="55" font-family="'Cinzel', serif" font-size="28" font-weight="700" fill="#D4AF37" text-anchor="middle" letter-spacing="4">ALANKRA</text>
-                <text x="200" y="80" font-family="'Cinzel', serif" font-size="16" font-weight="600" fill="#8E6A23" text-anchor="middle">Mandala Colouring Book</text>
-                <text x="200" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#333" text-anchor="middle">Premium Mindfulness Edition: Botanical & Sacred Geometry</text>
-                
-                <!-- Center Half-Line / Half-Colored Mandala Artwork -->
-                <g transform="translate(200, 245)">
-                  <!-- Left Half (Line Art) -->
-                  <clipPath id="leftHalf"><rect x="-180" y="-180" width="180" height="360"/></clipPath>
-                  <g clip-path="url(#leftHalf)" stroke="#111" stroke-width="1.8" fill="none">
-                    <circle cx="0" cy="0" r="115"/>
-                    <circle cx="0" cy="0" r="85"/>
-                    <circle cx="0" cy="0" r="55"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(30)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(60)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(90)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(120)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(150)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(180)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(210)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(240)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(270)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(300)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" transform="rotate(330)"/>
-                  </g>
-
-                  <!-- Right Half (Rich Colored Vibrant Mandala Art) -->
-                  <clipPath id="rightHalf"><rect x="0" y="-180" width="180" height="360"/></clipPath>
-                  <g clip-path="url(#rightHalf)">
-                    <circle cx="0" cy="0" r="115" fill="#0c4a6e" stroke="#D4AF37" stroke-width="1.5"/>
-                    <circle cx="0" cy="0" r="85" fill="#be185d" stroke="#D4AF37" stroke-width="1.5"/>
-                    <circle cx="0" cy="0" r="55" fill="#047857" stroke="#D4AF37" stroke-width="1.5"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#38bdf8" stroke="#fff" stroke-width="0.8" transform="rotate(30)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#fbbf24" stroke="#fff" stroke-width="0.8" transform="rotate(60)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8" transform="rotate(90)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#38bdf8" stroke="#fff" stroke-width="0.8" transform="rotate(120)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#fbbf24" stroke="#fff" stroke-width="0.8" transform="rotate(150)"/>
-                    <path d="M0 -115 Q25 -65 0 -15 Q-25 -65 0 -115 Z" fill="#ec4899" stroke="#fff" stroke-width="0.8" transform="rotate(180)"/>
-                    <circle cx="0" cy="0" r="16" fill="#fbbf24" stroke="#D4AF37" stroke-width="2"/>
-                  </g>
-                  <!-- Divider Line -->
-                  <line x1="0" y1="-125" x2="0" y2="125" stroke="#D4AF37" stroke-width="2"/>
-                </g>
-
-                <!-- Spec Badge on Bottom Right -->
-                <rect x="230" y="340" width="155" height="48" rx="6" fill="#854d0e"/>
-                <text x="307" y="360" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#fef08a" text-anchor="middle">30 DESIGNS</text>
-                <text x="307" y="378" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" fill="#fff" text-anchor="middle">Thick 160 GSM Cartridge Paper</text>
-              </svg>
+            <div class="product-img-box">
+              <img src="front-cover.png" alt="Alankra Mandala Colouring Book Front Cover">
             </div>
-            <div class="cover-caption">Front Cover • Half Line-Art & Half Colored Concept</div>
+            <div class="cover-caption">Front Cover • Half Line-Art & Half Colored Mandala</div>
           </div>
 
-          <!-- BACK COVER VECTOR PREVIEW -->
+          <!-- BACK COVER REAL IMAGE -->
           <div id="backCoverView" class="cover-view">
-            <div class="mockup-img-frame">
-              <svg viewBox="0 0 400 400" style="background: #F8F9FA;">
-                <!-- Full Colored Vibrant Mandala Masterpiece -->
-                <g transform="translate(200, 160)">
-                  <circle cx="0" cy="0" r="130" fill="#042f2e" stroke="#D4AF37" stroke-width="1.5"/>
-                  <circle cx="0" cy="0" r="100" fill="#831843" stroke="#D4AF37" stroke-width="1.5"/>
-                  <circle cx="0" cy="0" r="70" fill="#1e3a8a" stroke="#D4AF37" stroke-width="1.5"/>
-                  <circle cx="0" cy="0" r="40" fill="#047857" stroke="#D4AF37" stroke-width="1.5"/>
-                  <g fill="#ec4899" stroke="#fff" stroke-width="0.8">
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(30)" fill="#38bdf8"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(60)" fill="#fbbf24"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(90)" fill="#a855f7"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(120)" fill="#ec4899"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(150)" fill="#38bdf8"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(180)" fill="#fbbf24"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(210)" fill="#a855f7"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(240)" fill="#ec4899"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(270)" fill="#38bdf8"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(300)" fill="#fbbf24"/>
-                    <path d="M0 -125 Q28 -70 0 -15 Q-28 -70 0 -125 Z" transform="rotate(330)" fill="#a855f7"/>
-                  </g>
-                  <circle cx="0" cy="0" r="18" fill="#fbbf24" stroke="#D4AF37" stroke-width="2"/>
-                </g>
-
-                <!-- Back Cover Spec Info Table & QR -->
-                <rect x="25" y="315" width="55" height="55" rx="6" fill="#fff" stroke="#111" stroke-width="1.5"/>
-                <!-- Mini QR Representation -->
-                <rect x="33" y="323" width="12" height="12" fill="#111"/>
-                <rect x="60" y="323" width="12" height="12" fill="#111"/>
-                <rect x="33" y="350" width="12" height="12" fill="#111"/>
-                <rect x="52" y="342" width="6" height="6" fill="#111"/>
-                <text x="52" y="385" font-size="6.5" font-family="'Plus Jakarta Sans', sans-serif" fill="#111" text-anchor="middle" font-weight="700">@alankra.art_official</text>
-
-                <!-- Product Specifications Grid -->
-                <rect x="90" y="315" width="285" height="68" fill="#fff" stroke="#111" stroke-width="1.2"/>
-                <text x="100" y="332" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#000">PRODUCT: Mandala Colouring Book</text>
-                <text x="100" y="346" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">NET QTY: 1 N | PAGES: 32 (30 Artwork)</text>
-                <text x="100" y="360" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">MARKETED BY: Alankra Art Studio</text>
-                <text x="100" y="374" font-size="7.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">CUSTOMER CARE: alankra.art@gmail.com</text>
-                <text x="270" y="332" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#000">MRP: ₹299.00</text>
-                <text x="270" y="346" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" fill="#333">SIZE: 21 x 29.7 cm</text>
-                <text x="270" y="360" font-size="8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="#047857">MADE IN INDIA</text>
-              </svg>
+            <div class="product-img-box">
+              <img src="back-cover.png" alt="Alankra Mandala Colouring Book Back Cover">
             </div>
-            <div class="cover-caption">Back Cover • Full Mandala Art & Studio Spec Details</div>
+            <div class="cover-caption">Back Cover • Full Vibrant Art & Specifications Box</div>
           </div>
 
         </div>
@@ -982,7 +892,6 @@
 
   <!-- SCRIPT FOR DYNAMIC FUNCTIONALITY -->
   <script>
-    // Tab switching for Front / Back cover preview
     function switchCover(view, btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.cover-view').forEach(v => v.classList.remove('active'));
@@ -994,7 +903,6 @@
       }
     }
 
-    // Modal Control Functions
     function openAuthModal(view) {
       document.getElementById('authModal').classList.add('show');
       document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
@@ -1007,7 +915,6 @@
       document.getElementById('authModal').classList.remove('show');
     }
 
-    // Authentication Handlers (Local Simulation with Browser Storage)
     function handleSignup(e) {
       e.preventDefault();
       const name = document.getElementById('signupName').value;
@@ -1040,7 +947,6 @@
       document.getElementById('userProfileBadge').classList.add('show');
       document.getElementById('navAuthTrigger').innerHTML = '👤 <span>' + name + '</span>';
       
-      // Auto-fill customer name if empty
       const nameInput = document.getElementById('custName');
       if (!nameInput.value) nameInput.value = name;
     }
@@ -1052,7 +958,6 @@
       alert('Logged out successfully.');
     }
 
-    // Auto-check existing session on load
     window.addEventListener('DOMContentLoaded', () => {
       const savedUser = localStorage.getItem('alankra_user');
       if (savedUser) {
@@ -1063,7 +968,6 @@
       }
     });
 
-    // Total Bill Calculator
     function updateTotalBill() {
       const qty = parseInt(document.getElementById('bookQty').value);
       let total = 299;
@@ -1072,7 +976,6 @@
       document.getElementById('totalBillAmount').textContent = '₹' + total + '.00';
     }
 
-    // Process Order and Forward to Studio WhatsApp
     function processOrder(e) {
       e.preventDefault();
       const name = document.getElementById('custName').value;
@@ -1095,7 +998,6 @@
         `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A` +
         `Please confirm my order and share dispatch details!`;
 
-      // Redirect to WhatsApp with order details
       window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
     }
   </script>
