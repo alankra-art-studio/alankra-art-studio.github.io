@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALANKRA ART STUDIO | Mandala Colouring Book</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0B192C;
+      --navy-light: #1E3E62;
+      --gold: #D4AF37;
+      --gold-hover: #b89628;
+      --white: #FFFFFF;
+      --gray: #A0AEC0;
+      --card-bg: rgba(30, 62, 98, 0.4);
+      --btn-green: #25D366;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 8%;
+      background: rgba(11, 25, 44, 0.95);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      padding: 4rem 8%;
+      min-height: 80vh;
+    }
+    .hero-text { flex: 1 1 450px; }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .hero-text h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-text h1 span { color: var(--gold); }
+    .hero-text p { color: var(--gray); font-size: 1.05rem; margin-bottom: 1.5rem; }
+
+    /* Price Tag */
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .price-box .price { font-size: 2.2rem; font-weight: 700; color: var(--gold); }
+    .price-box .mrp { font-size: 1.2rem; color: var(--gray); text-decoration: line-through; }
+    .price-box .discount { color: #10B981; font-weight: 600; }
+
+    /* Checkout & Security Card */
+    .checkout-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 1.8rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .order-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--btn-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #10B981;
+      margin-top: 1rem;
+    }
+
+    /* Product Features Grid */
+    .features {
+      padding: 4rem 8%;
+      background: #08121f;
+      text-align: center;
+    }
+    .features h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 2rem 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      transition: border-color 0.3s;
+    }
+    .card:hover {
+      border-color: var(--gold);
+    }
+    .card h3 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .card p { color: var(--gray); font-size: 0.95rem; }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 8%;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand-title">ALANKRA</a>
+    <a href="https://instagram.com/alankra.art_official" target="_blank" style="color: var(--gold); text-decoration: none; font-size: 0.95rem;">@alankra.art_official</a>
+  </header>
+
+  <main class="hero">
+    <div class="hero-text">
+      <span class="hero-badge">✨ Mindfulness & Stress Relief Edition</span>
+      <h1>Mandala Colouring Book <span>For Grown-Ups</span></h1>
+      <p>
+        Experience creative peace with 30 botanical and sacred geometry mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper to ensure zero bleed-through.
+      </p>
+
+      <div class="price-box">
+        <span class="price">₹299.00</span>
+        <span class="mrp">₹499.00</span>
+        <span class="discount">40% OFF</span>
+      </div>
+
+      <div class="checkout-card">
+        <h4 style="margin-bottom: 0.8rem; color: #fff;">Order Direct:</h4>
+        <a href="https://wa.me/919429502786?text=Hi%20Alankra%20Art%20Studio,%20I%20want%20to%20order%20the%20Mandala%20Colouring%20Book!" class="order-btn" target="_blank">
+          💬 Order on WhatsApp / UPI
+        </a>
+        <div class="security-badge">
+          🔒 Direct Verified Studio Support | UPI & Cash on Delivery
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="features">
+    <h2>Crafted For Art Enthusiasts</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎨 30 Handcrafted Designs</h3>
+        <p>Mindfully curated sacred geometry & floral mandalas designed to relax the mind.</p>
+      </div>
+      <div class="card">
+        <h3>📄 160 GSM Heavy Paper</h3>
+        <p>Handles sketch pens, brush markers, and colored pencils with zero ink show-through.</p>
+      </div>
+      <div class="card">
+        <h3>📖 Lay-Flat Wiro Binding</h3>
+        <p>Comfortable coloring experience that opens completely flat on any surface.</p>
+      </div>
+      <div class="card">
+        <h3>🇮🇳 Made in India</h3>
+        <p>Printed on sustainably sourced, acid-free cartridge paper for lasting artwork.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alankra Art Studio. All rights reserved.</p>
+    <p>Customer Support: <a href="mailto:alankra.art@gmail.com">alankra.art@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
