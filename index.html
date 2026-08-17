@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========================================================
+       WEBSITE SECURITY HEADERS & DEFENSE SHIELD
+       ======================================================== -->
+  <!-- Anti-Clickjacking Protection -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- Content Security Policy: Only allow safe fonts, images & styles -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.qrserver.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>ALANKRA ART STUDIO | Mandala Colouring Book</title>
   
   <!-- Fonts -->
@@ -154,6 +165,22 @@
       flex-wrap: wrap;
     }
 
+    .nav-link-btn {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.45rem 0.85rem;
+      border-radius: 50px;
+      border: 1px solid var(--border-gold);
+      background: var(--input-bg);
+      transition: all 0.2s;
+    }
+    .nav-link-btn:hover { 
+      background: var(--gold); 
+      color: #FFFFFF; 
+    }
+
     .theme-toggle-btn {
       background: var(--input-bg);
       border: 1px solid var(--border-gold);
@@ -187,16 +214,6 @@
       background: var(--bg-card);
       color: var(--text-main);
     }
-
-    .nav-link-btn {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 0.45rem 0.8rem;
-      transition: color 0.2s;
-    }
-    .nav-link-btn:hover { color: var(--gold); }
 
     .nav-auth-btn {
       background: transparent;
@@ -515,6 +532,154 @@
       font-weight: 600;
     }
 
+    /* ========================================================
+       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
+       ======================================================== */
+    .reviews-section {
+      position: relative;
+      z-index: 1;
+      padding: 5.5rem 8%;
+      background: var(--bg-main);
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .rating-summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 2.2rem;
+      max-width: 850px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .rating-big {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .rating-score {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .rating-stars {
+      color: #F59E0B;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+    .rating-count {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .write-review-btn {
+      background: linear-gradient(135deg, var(--gold), #B8860B);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .write-review-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
+    }
+
+    .review-form-wrapper {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .review-form-wrapper.active { display: block; }
+
+    .star-select-box {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #CBD5E1;
+      margin-bottom: 1rem;
+    }
+    .star-select-box .star.selected {
+      color: #F59E0B;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+    .reviewer-loc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .review-stars {
+      color: #F59E0B;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    .review-comment {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
     /* ABOUT SECTION */
     .mandala-philosophy-section {
       position: relative;
@@ -658,155 +823,6 @@
       color: var(--gold);
       font-style: normal;
       letter-spacing: 0.5px;
-    }
-
-    /* ========================================================
-       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
-       ======================================================== */
-    .reviews-section {
-      position: relative;
-      z-index: 1;
-      padding: 5.5rem 8%;
-      background: var(--bg-main);
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .rating-summary-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: 16px;
-      padding: 2.2rem;
-      max-width: 850px;
-      margin: 0 auto 3rem auto;
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    
-    .rating-big {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .rating-score {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .rating-stars {
-      color: #F59E0B;
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-    }
-    .rating-count {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .write-review-btn {
-      background: linear-gradient(135deg, var(--gold), #B8860B);
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.6rem;
-      border-radius: 50px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .write-review-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-    }
-
-    /* Review submission form modal/toggle */
-    .review-form-wrapper {
-      display: none;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 650px;
-      margin: 0 auto 3rem auto;
-      box-shadow: var(--shadow-lg);
-    }
-    .review-form-wrapper.active { display: block; }
-
-    .star-select-box {
-      display: flex;
-      gap: 0.5rem;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: #CBD5E1;
-      margin-bottom: 1rem;
-    }
-    .star-select-box .star.selected {
-      color: #F59E0B;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .review-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 1.8rem;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    .review-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-gold);
-      box-shadow: var(--shadow-lg);
-    }
-    .review-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.8rem;
-    }
-    .reviewer-name {
-      font-weight: 700;
-      color: var(--text-main);
-      font-size: 1.05rem;
-    }
-    .reviewer-loc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .verified-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.72rem;
-      color: #059669;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-weight: 700;
-    }
-    .review-stars {
-      color: #F59E0B;
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
-    }
-    .review-comment {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
     }
 
     /* VIDEO SHOWCASE */
@@ -1062,6 +1078,7 @@
     </a>
 
     <div class="nav-actions">
+      <!-- Direct Navigation Shortcuts -->
       <a href="#reviews-section" class="nav-link-btn" data-i18n="nav_reviews">⭐ Reviews</a>
       <a href="#about-section" class="nav-link-btn" data-i18n="nav_about">📖 About</a>
 
@@ -1083,7 +1100,7 @@
       </button>
 
       <!-- Instagram Link -->
-      <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn">
+      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
         </svg>
@@ -1151,13 +1168,13 @@
         
         <div class="form-group">
           <label data-i18n="lbl_name">Full Name *</label>
-          <input type="text" id="custName" class="form-control" placeholder="e.g. Nidhi Tomar" required>
+          <input type="text" id="custName" class="form-control" placeholder="e.g. Nidhi Tomar" required maxlength="60">
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="lbl_phone">WhatsApp / Phone Number *</label>
-            <input type="tel" id="custPhone" class="form-control" placeholder="10-digit Mobile No." required>
+            <input type="tel" id="custPhone" class="form-control" placeholder="10-digit Mobile No." required pattern="[0-9]{10}" maxlength="10">
           </div>
           <div class="form-group">
             <label data-i18n="lbl_qty">Quantity</label>
@@ -1171,17 +1188,17 @@
 
         <div class="form-group">
           <label data-i18n="lbl_address">Complete Delivery Address (House/Flat No, Street, Landmark) *</label>
-          <textarea id="custAddress" class="form-control" placeholder="Enter complete door address for courier delivery" required></textarea>
+          <textarea id="custAddress" class="form-control" placeholder="Enter complete door address for courier delivery" required maxlength="300"></textarea>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="lbl_city">City / Town *</label>
-            <input type="text" id="custCity" class="form-control" placeholder="e.g. Godhra / Vadodara" required>
+            <input type="text" id="custCity" class="form-control" placeholder="e.g. Godhra / Vadodara" required maxlength="50">
           </div>
           <div class="form-group">
             <label data-i18n="lbl_pincode">Pincode *</label>
-            <input type="text" id="custPincode" class="form-control" placeholder="6-digit Pincode" required>
+            <input type="text" id="custPincode" class="form-control" placeholder="6-digit Pincode" required pattern="[0-9]{6}" maxlength="6">
           </div>
         </div>
 
@@ -1256,17 +1273,17 @@
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="lbl_name">Your Name *</label>
-            <input type="text" id="revName" class="form-control" placeholder="e.g. Sneha Patel" required>
+            <input type="text" id="revName" class="form-control" placeholder="e.g. Sneha Patel" required maxlength="50">
           </div>
           <div class="form-group">
             <label data-i18n="lbl_city">City / State *</label>
-            <input type="text" id="revCity" class="form-control" placeholder="e.g. Ahmedabad, Gujarat" required>
+            <input type="text" id="revCity" class="form-control" placeholder="e.g. Ahmedabad, Gujarat" required maxlength="50">
           </div>
         </div>
 
         <div class="form-group">
           <label data-i18n="lbl_comment">Your Review *</label>
-          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required></textarea>
+          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required maxlength="400"></textarea>
         </div>
 
         <button type="submit" class="auth-btn" style="width: 100%;" data-i18n="btn_submit_rev">Submit Review</button>
@@ -1481,7 +1498,7 @@
     <div class="insta-strip-box">
       <h3 data-i18n="insta_title">Join The Alankra Art Community</h3>
       <p data-i18n="insta_desc">Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.</p>
-      <a href="https://instagram.com/alankra.art_official" target="_blank" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2.2rem;" data-i18n="insta_btn">
+      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2.2rem;" data-i18n="insta_btn">
         Follow on Instagram (@alankra.art_official)
       </a>
     </div>
@@ -1508,7 +1525,7 @@
           <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Book</a></li>
           <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">⭐ Customer Reviews</a></li>
           <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
-          <li><a href="https://instagram.com/alankra.art_official" target="_blank" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
+          <li><a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
         </ul>
       </div>
 
@@ -1541,11 +1558,11 @@
         <form onsubmit="handleLogin(event)">
           <div class="form-group">
             <label data-i18n="auth_lbl_email">Email Address</label>
-            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
           </div>
           <div class="form-group">
             <label data-i18n="auth_lbl_pass">Password</label>
-            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required maxlength="50">
             <a class="forgot-link" onclick="openAuthModal('forgot')" data-i18n="auth_forgot_link">Forgot Password?</a>
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_signin">Sign In</button>
@@ -1564,15 +1581,15 @@
         <form onsubmit="handleSignup(event)">
           <div class="form-group">
             <label data-i18n="lbl_name">Full Name</label>
-            <input type="text" id="signupName" class="form-control" placeholder="Your Name" required>
+            <input type="text" id="signupName" class="form-control" placeholder="Your Name" required maxlength="60">
           </div>
           <div class="form-group">
             <label data-i18n="auth_lbl_email">Email Address</label>
-            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required>
+            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
           </div>
           <div class="form-group">
             <label data-i18n="auth_lbl_newpass">Create Password</label>
-            <input type="password" id="signupPassword" class="form-control" placeholder="Minimum 6 characters" minlength="6" required>
+            <input type="password" id="signupPassword" class="form-control" placeholder="Minimum 6 characters" minlength="6" maxlength="50" required>
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_create">Create My Account</button>
         </form>
@@ -1590,7 +1607,7 @@
         <form onsubmit="handleForgotPassword(event)">
           <div class="form-group">
             <label data-i18n="auth_lbl_reg_email">Registered Email</label>
-            <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required>
+            <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_send_reset">Send Reset Link</button>
         </form>
@@ -1603,8 +1620,14 @@
     </div>
   </div>
 
-  <!-- SCRIPT FOR TRANSLATIONS, THEMES & ORDERS -->
+  <!-- SCRIPT FOR TRANSLATIONS, SECURITY FILTERS, REVIEWS & ORDERS -->
   <script>
+    // Security Sanitizer: Strips malicious tags and script links
+    function sanitizeSafeText(str) {
+      if (!str) return '';
+      return String(str).replace(/[<>"`]/g, '').trim();
+    }
+
     const translations = {
       en: {
         nav_reviews: "⭐ Reviews",
@@ -1889,10 +1912,10 @@
 
     function handleReviewSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('revName').value;
-      const city = document.getElementById('revCity').value;
-      const comment = document.getElementById('revComment').value;
-      const rating = parseInt(document.getElementById('reviewRatingVal').value);
+      const name = sanitizeSafeText(document.getElementById('revName').value);
+      const city = sanitizeSafeText(document.getElementById('revCity').value);
+      const comment = sanitizeSafeText(document.getElementById('revComment').value);
+      const rating = parseInt(document.getElementById('reviewRatingVal').value) || 5;
       
       const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
 
@@ -1980,8 +2003,8 @@
 
     function handleSignup(e) {
       e.preventDefault();
-      const name = document.getElementById('signupName').value;
-      const email = document.getElementById('signupEmail').value;
+      const name = sanitizeSafeText(document.getElementById('signupName').value);
+      const email = sanitizeSafeText(document.getElementById('signupEmail').value);
       localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
       updateUserUI(name);
       closeAuthModal();
@@ -1990,7 +2013,7 @@
 
     function handleLogin(e) {
       e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
+      const email = sanitizeSafeText(document.getElementById('loginEmail').value);
       const name = email.split('@')[0];
       localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
       updateUserUI(name);
@@ -2000,7 +2023,7 @@
 
     function handleForgotPassword(e) {
       e.preventDefault();
-      const email = document.getElementById('forgotEmail').value;
+      const email = sanitizeSafeText(document.getElementById('forgotEmail').value);
       alert('📩 Password reset instructions sent to ' + email);
       openAuthModal('login');
     }
@@ -2053,16 +2076,17 @@
 
     function processOrder(e) {
       e.preventDefault();
-      const name = document.getElementById('custName').value;
-      const phone = document.getElementById('custPhone').value;
+      const name = sanitizeSafeText(document.getElementById('custName').value);
+      const phone = sanitizeSafeText(document.getElementById('custPhone').value);
       const qty = document.getElementById('bookQty').value;
-      const address = document.getElementById('custAddress').value;
-      const city = document.getElementById('custCity').value;
-      const pincode = document.getElementById('custPincode').value;
+      const address = sanitizeSafeText(document.getElementById('custAddress').value);
+      const city = sanitizeSafeText(document.getElementById('custCity').value);
+      const pincode = sanitizeSafeText(document.getElementById('custPincode').value);
       const payment = document.getElementById('paymentPref').value;
       const total = document.getElementById('totalBillAmount').textContent;
 
-      const orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
+      // Base Order Details
+      let orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
         `*Customer Name:* ${encodeURIComponent(name)}%0A` +
         `*Phone:* ${encodeURIComponent(phone)}%0A` +
         `*Product:* Mandala Colouring Book%0A` +
@@ -2070,8 +2094,15 @@
         `*Total Amount:* ${encodeURIComponent(total)}%0A` +
         `*Payment Mode:* ${encodeURIComponent(payment)}%0A%0A` +
         `*Delivery Address:*%0A${encodeURIComponent(address)}%0A` +
-        `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A` +
-        `Please confirm my order and share dispatch details!`;
+        `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A`;
+
+      // If online payment is selected, request QR code
+      if (payment.includes('UPI')) {
+        orderMessage += `*PAYMENT:*%0A` +
+          `_Please share your payment QR code so I can complete the payment and send the screenshot._%0A%0A`;
+      }
+
+      orderMessage += `Please confirm my order and share dispatch details! 📦✨`;
 
       window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
     }
