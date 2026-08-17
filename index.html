@@ -68,9 +68,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* ========================================================
-       ALIVE AMBIENT BACKGROUND LOTUS MANDALAS
-       ======================================================== */
+    /* Ambient Alive Background Lotus Mandalas */
     .alive-bg-mandala {
       position: absolute;
       width: 650px;
@@ -879,21 +877,18 @@
     }
     .forgot-link:hover { text-decoration: underline; }
 
-    /* Footer */
+    /* 3-Column Luxury Footer */
     footer {
-      padding: 3.5rem 8%;
-      text-align: center;
+      padding: 4rem 8% 2.5rem 8%;
+      background: var(--bg-card);
       border-top: 1px solid var(--border-color);
       color: var(--text-muted);
-      font-size: 0.9rem;
-      background: var(--bg-card);
+      font-size: 0.92rem;
     }
-    footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
-    .footer-logo {
-      max-width: 140px;
-      margin: 0 auto 1.2rem auto;
-      display: block;
-      mix-blend-mode: var(--logo-blend);
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -1175,11 +1170,44 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ========================================================
+       LUXURY 3-COLUMN STUDIO FOOTER
+       ======================================================== -->
   <footer>
-    <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" class="footer-logo">
-    <p data-i18n="footer_copy">© 2026 Alankra Art Studio. All rights reserved.</p>
-    <p style="margin-top: 0.4rem;">Support: <a href="https://wa.me/918320300049">+91 8320300049</a> | Email: <a href="mailto:alankra.art@gmail.com">alankra.art@gmail.com</a></p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
+      
+      <!-- Col 1: About Us / Studio Bio -->
+      <div>
+        <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" style="max-width: 160px; margin-bottom: 1.2rem; display: block; mix-blend-mode: var(--logo-blend);">
+        <p style="line-height: 1.7; font-size: 0.9rem;">
+          Dedicated to bringing peace and mindfulness through handcrafted sacred geometry, botanical mandala art, and premium artist-grade colouring books.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Navigation Links -->
+      <div>
+        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Explore</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
+          <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Book</a></li>
+          <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
+          <li><a href="https://instagram.com/alankra.art_official" target="_blank" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Studio Support & Direct Contact -->
+      <div>
+        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Studio Helpdesk</h4>
+        <p style="margin-bottom: 0.6rem;">📱 WhatsApp: <a href="https://wa.me/918320300049" style="color: var(--gold); text-decoration: none; font-weight: 600;">+91 8320300049</a></p>
+        <p style="margin-bottom: 0.6rem;">✉️ Email: <a href="mailto:alankra.art@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">alankra.art@gmail.com</a></p>
+        <p style="font-size: 0.85rem; color: #059669; font-weight: 600; margin-top: 0.8rem;">📦 Free & Safe Delivery Across India</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bottom Strip -->
+    <div style="border-top: 1px solid var(--border-color); padding-top: 1.8rem; text-align: center; font-size: 0.85rem;">
+      <p data-i18n="footer_copy">© 2026 Alankra Art Studio. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- USER AUTHENTICATION MODAL -->
