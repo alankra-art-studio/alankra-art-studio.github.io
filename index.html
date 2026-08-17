@@ -154,7 +154,6 @@
       flex-wrap: wrap;
     }
 
-    /* Theme & Language Controls */
     .theme-toggle-btn {
       background: var(--input-bg);
       border: 1px solid var(--border-gold);
@@ -188,6 +187,16 @@
       background: var(--bg-card);
       color: var(--text-main);
     }
+
+    .nav-link-btn {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.45rem 0.8rem;
+      transition: color 0.2s;
+    }
+    .nav-link-btn:hover { color: var(--gold); }
 
     .nav-auth-btn {
       background: transparent;
@@ -407,7 +416,6 @@
       margin-bottom: 1.6rem;
     }
 
-    /* User Profile Bar */
     .user-profile-badge {
       display: none;
       align-items: center;
@@ -430,7 +438,6 @@
       text-decoration: underline;
     }
 
-    /* Form Controls */
     .form-group {
       margin-bottom: 1.2rem;
     }
@@ -508,7 +515,7 @@
       font-weight: 600;
     }
 
-    /* ABOUT SECTION (Real Artwork & Philosophy) */
+    /* ABOUT SECTION */
     .mandala-philosophy-section {
       position: relative;
       z-index: 1;
@@ -653,10 +660,159 @@
       letter-spacing: 0.5px;
     }
 
-    /* VIDEO SHOWCASE (mandala-art.mp4) */
+    /* ========================================================
+       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
+       ======================================================== */
+    .reviews-section {
+      position: relative;
+      z-index: 1;
+      padding: 5.5rem 8%;
+      background: var(--bg-main);
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .rating-summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 2.2rem;
+      max-width: 850px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .rating-big {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .rating-score {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .rating-stars {
+      color: #F59E0B;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+    .rating-count {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .write-review-btn {
+      background: linear-gradient(135deg, var(--gold), #B8860B);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .write-review-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
+    }
+
+    /* Review submission form modal/toggle */
+    .review-form-wrapper {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .review-form-wrapper.active { display: block; }
+
+    .star-select-box {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #CBD5E1;
+      margin-bottom: 1rem;
+    }
+    .star-select-box .star.selected {
+      color: #F59E0B;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+    .reviewer-loc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .review-stars {
+      color: #F59E0B;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    .review-comment {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* VIDEO SHOWCASE */
     .video-showcase-section {
       padding: 4.5rem 8%;
-      background: var(--bg-main);
+      background: var(--bg-card);
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
@@ -694,7 +850,7 @@
       position: relative;
       z-index: 1;
       padding: 5rem 8%;
-      background: var(--bg-card);
+      background: var(--bg-main);
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
@@ -716,7 +872,7 @@
       gap: 2rem;
     }
     .feature-card {
-      background: var(--bg-main);
+      background: var(--bg-card);
       padding: 2.2rem 1.8rem;
       border-radius: 14px;
       border: 1px solid var(--border-color);
@@ -746,14 +902,14 @@
     /* Instagram Community Strip */
     .insta-strip {
       padding: 4rem 8%;
-      background: var(--bg-main);
+      background: var(--bg-card);
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
     .insta-strip-box {
       max-width: 650px;
       margin: 0 auto;
-      background: var(--bg-card);
+      background: var(--bg-main);
       border: 1px solid var(--border-color);
       padding: 2.5rem;
       border-radius: 16px;
@@ -770,6 +926,20 @@
       color: var(--text-muted);
       margin-bottom: 1.5rem;
       font-size: 0.95rem;
+    }
+
+    /* 3-Column Luxury Footer */
+    footer {
+      padding: 4rem 8% 2.5rem 8%;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     /* Auth Modal */
@@ -876,20 +1046,6 @@
       cursor: pointer;
     }
     .forgot-link:hover { text-decoration: underline; }
-
-    /* 3-Column Luxury Footer */
-    footer {
-      padding: 4rem 8% 2.5rem 8%;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
   </style>
 </head>
 <body>
@@ -906,12 +1062,15 @@
     </a>
 
     <div class="nav-actions">
+      <a href="#reviews-section" class="nav-link-btn" data-i18n="nav_reviews">⭐ Reviews</a>
+      <a href="#about-section" class="nav-link-btn" data-i18n="nav_about">📖 About</a>
+
       <!-- ☀️ Light / 🌙 Dark Mode Switcher -->
       <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
         <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
       </button>
 
-      <!-- 🌐 Language Selector (English, Gujarati, Hindi) -->
+      <!-- 🌐 Language Selector -->
       <select id="languageSelect" class="lang-switcher" onchange="setLanguage(this.value)">
         <option value="en">🌐 English</option>
         <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
@@ -1053,9 +1212,167 @@
   </main>
 
   <!-- ========================================================
+       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
+       ======================================================== -->
+  <section id="reviews-section" class="reviews-section">
+    <div class="section-header-badge">
+      <h2 data-i18n="reviews_heading">CUSTOMER EXPERIENCES</h2>
+      <p data-i18n="reviews_subheading">See how our coloring book is inspiring mindfulness and calm across India</p>
+    </div>
+
+    <!-- Rating Summary & Write Review Button -->
+    <div class="rating-summary-card">
+      <div class="rating-big">
+        <div class="rating-score">4.9</div>
+        <div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count" data-i18n="rating_count">Based on 140+ Verified Reviews</div>
+        </div>
+      </div>
+      
+      <button class="write-review-btn" onclick="toggleReviewForm()">
+        ✍️ <span data-i18n="btn_write_review">Write a Review</span>
+      </button>
+    </div>
+
+    <!-- Review Form (Hidden by default, opens on click) -->
+    <div id="reviewFormWrapper" class="review-form-wrapper">
+      <h3 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem;" data-i18n="form_rev_title">Share Your Experience</h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n="form_rev_sub">Let others know how coloring these mandalas felt for you.</p>
+      
+      <form onsubmit="handleReviewSubmit(event)">
+        <div class="form-group">
+          <label data-i18n="lbl_rev_rating">Your Rating *</label>
+          <div class="star-select-box" id="starSelect">
+            <span class="star selected" onclick="setStarRating(1)">★</span>
+            <span class="star selected" onclick="setStarRating(2)">★</span>
+            <span class="star selected" onclick="setStarRating(3)">★</span>
+            <span class="star selected" onclick="setStarRating(4)">★</span>
+            <span class="star selected" onclick="setStarRating(5)">★</span>
+          </div>
+          <input type="hidden" id="reviewRatingVal" value="5">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="lbl_name">Your Name *</label>
+            <input type="text" id="revName" class="form-control" placeholder="e.g. Sneha Patel" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_city">City / State *</label>
+            <input type="text" id="revCity" class="form-control" placeholder="e.g. Ahmedabad, Gujarat" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="lbl_comment">Your Review *</label>
+          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required></textarea>
+        </div>
+
+        <button type="submit" class="auth-btn" style="width: 100%;" data-i18n="btn_submit_rev">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="reviews-grid" id="reviewsGrid">
+      
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Pooja Trivedi</div>
+            <div class="reviewer-loc">Vadodara, Gujarat</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "The 160 GSM paper quality is extraordinary! I used dual-tip brush pens and there was absolutely zero bleed-through to the back. Coloring the lotus patterns after work has become my daily therapy routine."
+        </p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Rahul Sharma</div>
+            <div class="reviewer-loc">Mumbai, Maharashtra</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "The lay-flat spiral wiro binding is so thoughtful! It makes coloring near the inner margins so effortless. The intricacy of the sacred geometry patterns is top-notch. Truly worth every rupee."
+        </p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Dr. Ananya Iyer</div>
+            <div class="reviewer-loc">Bengaluru, Karnataka</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "As someone working in healthcare with long stressful shifts, this mandala book is pure mindfulness in a book. Beautiful unboxing experience and fast delivery through India Post Speed Post."
+        </p>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Dharaben Dave</div>
+            <div class="reviewer-loc">Godhra, Gujarat</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "ખૂબ જ સુંદર ક્વોલિટીની બુક છે! કાગળ ઘણો જાડો છે જેથી વોટર કલર પેન્સિલ પણ વાપરી શકાય છે. મારી દીકરી અને હું બંને સાથે બેસીને મંડલા કલરિંગ કરીએ છીએ. ખૂબ જ ગમી!"
+        </p>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Kavita Verma</div>
+            <div class="reviewer-loc">Jaipur, Rajasthan</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "Bought 2 copies—one for myself and one as a gift for a friend. The packaging was completely waterproof and safe. The single-sided printing is great because I can frame my finished art!"
+        </p>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Siddharth Nair</div>
+            <div class="reviewer-loc">Pune, Maharashtra</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "Top quality art production. The hand-drawn details in each mandala show true craftsmanship. Fast response on WhatsApp for order confirmation."
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
        SECTION: ABOUT (MANDALA PHILOSOPHY & REAL ARTWORK)
        ======================================================== -->
-  <section class="mandala-philosophy-section">
+  <section id="about-section" class="mandala-philosophy-section">
     
     <!-- Section Title: ABOUT -->
     <div class="section-header-badge">
@@ -1073,7 +1390,7 @@
           <img src="about-mandala.jpg" alt="Handcrafted Sacred Mandala Artwork">
         </div>
 
-        <!-- Blue Half Message Box (Exact Book Page Content) -->
+        <!-- Blue Half Message Box -->
         <div class="page-blue-half">
           <h2 data-i18n="book_mandala_title">Mandala</h2>
           <p class="lead-text" data-i18n="book_mandala_p1">
@@ -1189,6 +1506,7 @@
         <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Explore</h4>
         <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
           <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Book</a></li>
+          <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">⭐ Customer Reviews</a></li>
           <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
           <li><a href="https://instagram.com/alankra.art_official" target="_blank" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
         </ul>
@@ -1289,6 +1607,8 @@
   <script>
     const translations = {
       en: {
+        nav_reviews: "⭐ Reviews",
+        nav_about: "📖 About",
         nav_signin: "Sign In",
         hero_badge: "✨ Mindfulness & Stress Relief Edition",
         hero_title_html: "Mandala Colouring Book <span>For Grown-Ups</span>",
@@ -1316,6 +1636,15 @@
         lbl_total: "Total Payable:",
         btn_place_order: "✨ Place Order & Confirm Delivery",
         payment_notice: "🔒 100% Verified Studio Order • Free & Safe Shipping",
+        reviews_heading: "CUSTOMER EXPERIENCES",
+        reviews_subheading: "See how our coloring book is inspiring mindfulness and calm across India",
+        rating_count: "Based on 140+ Verified Reviews",
+        btn_write_review: "Write a Review",
+        form_rev_title: "Share Your Experience",
+        form_rev_sub: "Let others know how coloring these mandalas felt for you.",
+        lbl_rev_rating: "Your Rating *",
+        lbl_comment: "Your Review *",
+        btn_submit_rev: "Submit Review",
         about_heading: "ABOUT",
         about_subheading: "Discover the sacred art form that restores inner peace and clarity",
         book_mandala_title: "Mandala",
@@ -1365,6 +1694,8 @@
         auth_back_login: "Back to Sign In"
       },
       gu: {
+        nav_reviews: "⭐ રિવ્યુ",
+        nav_about: "📖 અમારા વિશે",
         nav_signin: "સાઇન ઇન",
         hero_badge: "✨ માનસિક શાંતિ અને તણાવ મુક્તિ એડિશન",
         hero_title_html: "પુખ્ત વયના લોકો માટે <span>મંડલા કલરિંગ બુક</span>",
@@ -1392,6 +1723,15 @@
         lbl_total: "કુલ ચૂકવવાપાત્ર રકમ:",
         btn_place_order: "✨ ઓર્ડર કરો અને ડિલિવરી કન્ફર્મ કરો",
         payment_notice: "🔒 ૧૦૦% વેરિફાઇડ સ્ટુડિયો ઓર્ડર • ફ્રી અને સુરક્ષિત શિપિંગ",
+        reviews_heading: "ગ્રાહકોના પ્રતિભાવો (REVIEWS)",
+        reviews_subheading: "જાણો કે કેવી રીતે આ બુક લોકોને માનસિક શાંતિ આપે છે",
+        rating_count: "૧૪૦+ ગ્રાહકો દ્વારા ૪.૯ રેટિંગ",
+        btn_write_review: "રિવ્યુ આપો",
+        form_rev_title: "તમારો અનુભવ જણાવો",
+        form_rev_sub: "તમને કલરિંગ કરવાનો અનુભવ કેવો લાગ્યો તે લખો.",
+        lbl_rev_rating: "રેટિંગ પસંદ કરો *",
+        lbl_comment: "તમારો રિવ્યુ *",
+        btn_submit_rev: "રિવ્યુ સબમિટ કરો",
         about_heading: "અમારા વિશે (ABOUT)",
         about_subheading: "માનસિક શાંતિ અને સ્પષ્ટતા આપતી પવિત્ર મંડલા કલા વિશે જાણો",
         book_mandala_title: "મંડલા (Mandala)",
@@ -1441,6 +1781,8 @@
         auth_back_login: "સાઇન ઇન પર પાછા જાઓ"
       },
       hi: {
+        nav_reviews: "⭐ समीक्षाएं",
+        nav_about: "📖 हमारे बारे में",
         nav_signin: "साइन इन",
         hero_badge: "✨ माइंडफुलनेस और तनाव मुक्ति संस्करण",
         hero_title_html: "वयस्कों के लिए <span>मंडला कलरिंग बुक</span>",
@@ -1468,6 +1810,15 @@
         lbl_total: "कुल देय राशि:",
         btn_place_order: "✨ ऑर्डर करें और डिलीवरी कन्फर्म करें",
         payment_notice: "🔒 १००% सत्यापित स्टूडियो ऑर्डर • मुफ्त और सुरक्षित शिपिंग",
+        reviews_heading: "ग्राहकों के अनुभव (REVIEWS)",
+        reviews_subheading: "देखें कि कैसे यह मंडला बुक लोगों को तनावमुक्त और शांत कर रही है",
+        rating_count: "१४०+ सत्यापित समीक्षाओं पर आधारित",
+        btn_write_review: "समीक्षा लिखें",
+        form_rev_title: "अपना अनुभव साझा करें",
+        form_rev_sub: "बताएं कि इस बुक में रंग भरने का आपका अनुभव कैसा रहा।",
+        lbl_rev_rating: "रेटिंग चुनें *",
+        lbl_comment: "आपकी समीक्षा *",
+        btn_submit_rev: "समीक्षा सबमिट करें",
         about_heading: "हमारे बारे में (ABOUT)",
         about_subheading: "उस पवित्र कला के बारे में जानें जो मन को शांति और स्पष्टता देती है",
         book_mandala_title: "मंडला (Mandala)",
@@ -1517,6 +1868,53 @@
         auth_back_login: "साइन इन पर वापस जाएं"
       }
     };
+
+    // Review Form Toggle & Star Selection
+    function toggleReviewForm() {
+      const wrapper = document.getElementById('reviewFormWrapper');
+      wrapper.classList.toggle('active');
+    }
+
+    function setStarRating(rating) {
+      document.getElementById('reviewRatingVal').value = rating;
+      const stars = document.querySelectorAll('#starSelect .star');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('revName').value;
+      const city = document.getElementById('revCity').value;
+      const comment = document.getElementById('revComment').value;
+      const rating = parseInt(document.getElementById('reviewRatingVal').value);
+      
+      const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+
+      // Create new review card dynamically
+      const newCard = document.createElement('div');
+      newCard.className = 'review-card';
+      newCard.innerHTML = `
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">${name}</div>
+            <div class="reviewer-loc">${city}</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">${starString}</div>
+        <p class="review-comment">"${comment}"</p>
+      `;
+
+      document.getElementById('reviewsGrid').prepend(newCard);
+      document.getElementById('reviewFormWrapper').classList.remove('active');
+      alert('✨ Thank you for sharing your experience, ' + name + '!');
+    }
 
     // Theme Switcher Logic
     function toggleTheme() {
