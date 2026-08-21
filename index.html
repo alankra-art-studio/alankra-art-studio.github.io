@@ -34,7 +34,6 @@
       --header-bg: rgba(241, 245, 249, 0.95);
       --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
       --shadow-lg: 0 15px 35px rgba(15, 23, 42, 0.08);
-      --logo-blend: multiply;
       --mandala-invert: 0;
       --mandala-opacity: 0.07;
     }
@@ -56,7 +55,6 @@
       --header-bg: rgba(6, 14, 24, 0.95);
       --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
       --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.6);
-      --logo-blend: normal;
       --mandala-invert: 1;
       --mandala-opacity: 0.08;
     }
@@ -118,6 +116,55 @@
       100% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
     }
 
+    /* Metallic Typography Brandmark */
+    .brand-text-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      text-decoration: none;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-text-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .brand-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 3.5px;
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+      display: inline-block;
+    }
+
+    .brand-sub-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      padding-left: 2px;
+      text-transform: uppercase;
+    }
+
+    [data-theme="dark"] .brand-main-title {
+      background: linear-gradient(135deg, #FFE082 0%, #FFF8E1 30%, #D4AF37 60%, #FFD54F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(247, 208, 112, 0.35);
+    }
+
+    [data-theme="dark"] .brand-sub-title {
+      color: #CBD5E1;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -130,24 +177,6 @@
       z-index: 100;
       backdrop-filter: blur(12px);
       transition: all 0.3s ease;
-    }
-    
-    .brand-logo-container {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .brand-logo-img {
-      height: 52px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-      mix-blend-mode: var(--logo-blend);
-      border-radius: 6px;
-      transition: transform 0.3s ease;
-    }
-    .brand-logo-img:hover {
-      transform: scale(1.03);
     }
 
     .nav-actions {
@@ -1254,8 +1283,9 @@
 
   <!-- Sticky Navigation Header -->
   <header>
-    <a href="#" class="brand-logo-container">
-      <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio Official Logo" class="brand-logo-img">
+    <a href="#" class="brand-text-logo">
+      <span class="brand-main-title">ALANKRA</span>
+      <span class="brand-sub-title">ART STUDIO</span>
     </a>
 
     <div class="nav-actions">
@@ -1646,7 +1676,10 @@
   <footer>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
       <div>
-        <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" style="max-width: 160px; margin-bottom: 1.2rem; display: block; mix-blend-mode: var(--logo-blend);">
+        <div class="brand-text-logo" style="margin-bottom: 1.2rem;">
+          <span class="brand-main-title" style="font-size: 1.6rem;">ALANKRA</span>
+          <span class="brand-sub-title">ART STUDIO</span>
+        </div>
         <p style="line-height: 1.7; font-size: 0.9rem;">
           Dedicated to bringing peace and mindfulness through handcrafted sacred geometry, botanical mandala art, and premium artist-grade colouring books.
         </p>
@@ -1776,7 +1809,7 @@
             captionFront_hi: "सामने का कवर • आधा लाइन-आर्ट और आधा रंगीन मंडला (४० डिज़ाइन)",
             captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
             captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
-            captionBack_hi: "પીછે કા કવર • ४० पृष्ठ विवरण बॉक्स"
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
           },
           mandala_v2: {
             id: "mandala_v2",
@@ -1796,13 +1829,13 @@
             title_hi: "ड्रीमकेचर मंडला कलरिंग बुक <span>Vol 2 (४० डिज़ाइन)</span>",
             desc_en: "Immerse yourself in 40 unique handcrafted dreamcatchers, boho feathers, and soothing floral mandalas. Printed single-sided on premium 160 GSM cartridge sheets for pure mindfulness.",
             desc_gu: "૪૦ અનોખા ડ્રીમકેચર અને ફ્લોરલ મંડલા ડિઝાઇન્સ સાથે શાંતિનો અનુભવ કરો. ૧૬૦ GSM જાડા પ્રીમિયમ પેપર પર સિંગલ-સાઇડ પ્રિન્ટેડ.",
-            desc_hi: "४० अनूठे ड्रीमकेचर और फ्लोरल मंडला डिज़ाइनों के साथ तनावमुक्त हों। १६० GSM मोटे प्रीमियम पेपर पर सिंगल-साइड प्रिंटेड।",
+            desc_hi: "४० अनूठे ड्रीमकेचर और फ्लोरल मंडला डिज़ाइनों के साथ तनावमुक्त हों। ब्रश पेन और पेंसिल के लिए १६० GSM मोटे प्रीमियम पेपर पर सिंगल-साइड प्रिंटेड।",
             captionFront_en: "Front Cover • Handcrafted Dreamcatcher & 40 Designs Badge",
             captionFront_gu: "આગળનું કવર • ડ્રીમકેચર મંડલા અને ૪૦ યુનિક ડિઝાઇન્સ",
             captionFront_hi: "सामने का कवर • ड्रीमकेचर मंडला और ४० डिज़ाइन",
             captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
             captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
-            captionBack_hi: "પીછે કા કવર • ४० पृष्ठ विवरण बॉक्स"
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
           }
         }
       },
@@ -1833,7 +1866,7 @@
             captionFront_hi: "सामने का कवर • भाग १ प्यारे जानवर",
             captionBack_en: "Back Cover • 40 Illustrated Animal Sheets",
             captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
-            captionBack_hi: "પીછે કા કવર • ४० पृष्ठ विवरण बॉक्स"
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
           },
           kids_part2: {
             id: "kids_part2",
@@ -1847,7 +1880,7 @@
             mrp: 399,
             badge_en: "🐬 Part 2: Birds, Sea Life & Pets",
             badge_gu: "🐬 ભાગ ૨: પક્ષીઓ, જળચર જીવો અને પાલતુ પ્રાણીઓ",
-            badge_hi: "🐬 भाग ૨: पक्षी, समुद्री जीव और पालतू जानवर",
+            badge_hi: "🐬 भाग २: पक्षी, समुद्री जीव और पालतू जानवर",
             title_en: "Kids Colouring Book <span>Part 2 (Birds & Ocean)</span>",
             title_gu: "બાળકો માટે કલરિંગ બુક <span>ભાગ ૨ (પક્ષીઓ અને જળચર)</span>",
             title_hi: "बच्चों की कलरिंग बुक <span>भाग २ (पक्षी और समुद्र)</span>",
@@ -1856,10 +1889,10 @@
             desc_hi: "रंग-बिरंगे पक्षी, डॉल्फिन, मछलियां और प्यारे कार्टून किरदारों के साथ बच्चों की रचनात्मकता बढ़ाने वाली बुक।",
             captionFront_en: "Front Cover • Part 2 Birds, Sea Life & Cute Pets",
             captionFront_gu: "આગળનું કવર • ભાગ ૨ પક્ષીઓ અને જળચર",
-            captionFront_hi: "सामने का कवर • भाग २ पक्षी और समुद्री जीव",
+            captionFront_hi: "सामने का कवर • भाग ૨ पक्षी और समुद्री जीव",
             captionBack_en: "Back Cover • 40 Illustrated Sheets & Details",
             captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
-            captionBack_hi: "પીછે કા કવર • ४० पृष्ठ विवरण बॉक्स"
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
           },
           kids_fruits: {
             id: "kids_fruits",
@@ -1885,262 +1918,9 @@
             captionFront_hi: "सामने का कवर • फल और मेवे संस्करण",
             captionBack_en: "Back Cover • 40 Illustrated Nutrition Sheets",
             captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
-            captionBack_hi: "પીછે કા કવર • ४० पृष्ठ विवरण बॉक्स"
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
           }
         }
-      }
-    };
-
-    let currentDepartment = "adults";
-    let currentSelectedBook = "mandala_v1";
-    let shoppingCart = {}; // { bookId: quantity }
-
-    const translations = {
-      en: {
-        nav_reviews: "⭐ Reviews",
-        nav_about: "📖 About",
-        nav_signin: "Sign In",
-        nav_cart: "Cart",
-        btn_add_to_cart: "Add This Book To Cart",
-        cart_selected_books: "Your Selected Books",
-        cart_clear: "Clear All",
-        discount_pill: "40% OFF Launch Deal",
-        tab_front: "📖 Front Cover View",
-        tab_back: "🔄 Back Cover View",
-        btn_logout: "Log Out",
-        checkout_title: "🛍️ Direct Studio Checkout",
-        checkout_subtitle: "Review your selected books and enter your delivery address below.",
-        lbl_name: "Full Name *",
-        lbl_phone: "WhatsApp / Phone Number *",
-        lbl_address: "Complete Delivery Address (House/Flat No, Street, Landmark) *",
-        lbl_city: "City / Town *",
-        lbl_pincode: "Pincode *",
-        lbl_payment: "Payment Preference",
-        opt_upi: "Instant UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "Cash on Delivery (COD)",
-        lbl_total: "Total Payable:",
-        btn_place_order: "✨ Place Order & Confirm Delivery",
-        payment_notice: "🔒 100% Verified Studio Order • Free & Safe Shipping",
-        reviews_heading: "CUSTOMER EXPERIENCES",
-        reviews_subheading: "See how our books are inspiring mindfulness and creativity across India",
-        rating_count: "Based on 140+ Verified Reviews",
-        btn_write_review: "Write a Review",
-        form_rev_title: "Share Your Experience",
-        form_rev_sub: "Let others know how coloring these pages felt for you.",
-        lbl_rev_rating: "Your Rating *",
-        lbl_comment: "Your Review *",
-        btn_submit_rev: "Submit Review",
-        about_heading: "ABOUT",
-        about_subheading: "Discover the sacred art form that restores inner peace and clarity",
-        book_mandala_title: "Mandala",
-        book_mandala_p1: "A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.",
-        book_mandala_p2: "Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.",
-        book_mandala_p3: "They all have circular designs with repeating shapes and patterns that radiate from the center.",
-        philo_heading_html: "The Healing Power of <span>Sacred Geometry</span>",
-        philo_desc: "When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.",
-        quote_jung: '"The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."',
-        cite_jung: "— Carl Gustav Jung (Pioneer of Mandala Art Therapy)",
-        quote_picasso: '"Art washes away from the soul the dust of everyday life."',
-        cite_picasso: "— Pablo Picasso",
-        video_heading: "Watch The Art In Creation",
-        video_sub: "Experience the meditative process of fine-line drafting & vibrant color blending",
-        feat_heading: "Artisan Quality Guaranteed",
-        feat_sub: "Designed specifically for colorists, artists, and young learners",
-        feat_1_t: "40 Handcrafted Mandalas",
-        feat_1_d: "Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.",
-        feat_2_t: "160 GSM Cartridge Sheets",
-        feat_2_d: "Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.",
-        feat_3_t: "Lay-Flat Wiro Binding",
-        feat_3_d: "Opens completely flat for maximum comfort while coloring near the margins.",
-        feat_4_t: "Single-Sided Print",
-        feat_4_d: "Every design is on its own page—tear out, frame, or gift your finished artwork.",
-        insta_title: "Join The Alankra Art Community",
-        insta_desc: "Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.",
-        insta_btn: "Follow on Instagram (@alankra.art_official)",
-        footer_copy: "© 2026 Alankra Art Studio. All rights reserved.",
-        auth_login_title: "Welcome Back",
-        auth_login_sub: "Sign in to track orders and save your delivery addresses.",
-        auth_lbl_email: "Email Address",
-        auth_lbl_pass: "Password",
-        auth_forgot_link: "Forgot Password?",
-        auth_btn_signin: "Sign In",
-        auth_no_acc: "Don't have an account?",
-        auth_create_link: "Create New Account",
-        auth_signup_title: "Create Account",
-        auth_signup_sub: "Join Alankra Art Studio for exclusive art drops & offers.",
-        auth_lbl_newpass: "Create Password",
-        auth_btn_create: "Create My Account",
-        auth_has_acc: "Already have an account?",
-        auth_reset_title: "Reset Password",
-        auth_reset_sub: "Enter your registered email to receive a password reset link.",
-        auth_lbl_reg_email: "Registered Email",
-        auth_btn_send_reset: "Send Reset Link",
-        auth_rem_pass: "Remember your password?",
-        auth_back_login: "Back to Sign In"
-      },
-      gu: {
-        nav_reviews: "⭐ રિવ્યુ",
-        nav_about: "📖 અમારા વિશે",
-        nav_signin: "સાઇન ઇન",
-        nav_cart: "કાર્ટ",
-        btn_add_to_cart: "આ બુક કાર્ટમાં ઉમેરો",
-        cart_selected_books: "પસંદ કરેલ પુસ્તકો",
-        cart_clear: "બધું કાઢી નાખો",
-        discount_pill: "૪૦% છૂટ - સ્પેશિયલ ઑફર",
-        tab_front: "📖 આગળનું કવર",
-        tab_back: "🔄 પાછળનું કવર",
-        btn_logout: "લૉગ આઉટ",
-        checkout_title: "🛍️ સ્ટુડિયો ડાયરેક્ટ ઓર્ડર",
-        checkout_subtitle: "તમારા પસંદ કરેલા પુસ્તકો તપાસો અને ડિલિવરી માટે સરનામું દાખલ કરો.",
-        lbl_name: "પૂરું નામ *",
-        lbl_phone: "વ્હોટ્સએપ / મોબાઈલ નંબર *",
-        lbl_address: "સંપૂર્ણ ડિલિવરી સરનામું (ઘર/ફ્લેટ નં., સોસાયટી, લેન્ડમાર્ક) *",
-        lbl_city: "શહેર / ગામ *",
-        lbl_pincode: "પીનકોડ *",
-        lbl_payment: "ચુકવણી પદ્ધતિ",
-        opt_upi: "ઇન્સ્ટન્ટ UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "કેશ ઓન ડિલિવરી (COD)",
-        lbl_total: "કુલ ચૂકવવાપાત્ર રકમ:",
-        btn_place_order: "✨ ઓર્ડર કરો અને ડિલિવરી કન્ફર્મ કરો",
-        payment_notice: "🔒 ૧૦૦% વેરિફાઇડ સ્ટુડિયો ઓર્ડર • ફ્રી અને સુરક્ષિત શિપિંગ",
-        reviews_heading: "ગ્રાહકોના પ્રતિભાવો (REVIEWS)",
-        reviews_subheading: "જાણો કે કેવી રીતે આ બુક લોકોને માનસિક શાંતિ આપે છે",
-        rating_count: "૧૪૦+ ગ્રાહકો દ્વારા ૪.૯ રેટિંગ",
-        btn_write_review: "રિવ્યુ આપો",
-        form_rev_title: "તમારો અનુભવ જણાવો",
-        form_rev_sub: "તમને કલરિંગ કરવાનો અનુભવ કેવો લાગ્યો તે લખો.",
-        lbl_rev_rating: "રેટિંગ પસંદ કરો *",
-        lbl_comment: "તમારો રિવ્યુ *",
-        btn_submit_rev: "રિવ્યુ સબમિટ કરો",
-        about_heading: "અમારા વિશે (ABOUT)",
-        about_subheading: "માનસિક શાંતિ અને સ્પષ્ટતા આપતી પવિત્ર મંડલા કલા વિશે જાણો",
-        book_mandala_title: "મંડલા (Mandala)",
-        book_mandala_p1: "મંડલા એ પ્રતીકોની ભૌમિતિક રચના છે જે આધ્યાત્મિક યાત્રાનું પ્રતિનિધિત્વ કરે છે.",
-        book_mandala_p2: "મંડલા સદીઓથી પવિત્ર પ્રતીક તરીકે સેવા આપે છે અને તે સંપૂર્ણતા અને સુમેળ દર્શાવે છે.",
-        book_mandala_p3: "તેમાં કેન્દ્રમાંથી બહાર તરફ ફેલાતી પુનરાવર્તિત આકારો સાથેની ગોળાકાર ડિઝાઇન્સ હોય છે.",
-        philo_heading_html: "પવિત્ર ભૂમિતિની <span>ઉપચાર શક્તિ</span>",
-        philo_desc: "જ્યારે તમે મંડલામાં રંગ પૂરો છો, ત્યારે મન સક્રિય સ્થિરતાની ધ્યાનાવસ્થામાં પ્રવેશે છે.",
-        quote_jung: '"મંડલા એ કેન્દ્ર છે. તે આંતરિક સંવાદિતા અને આત્મ-અનુભૂતિ તરફનો માર્ગ છે."',
-        cite_jung: "— કાર્લ ગુસ્તાવ જંગ (મંડલા આર્ટ થેરાપીના પ્રણેતા)",
-        quote_picasso: '"કલા રોજિંદા જીવનની ધૂળને આત્મામાંથી ધોઈ નાખે છે."',
-        cite_picasso: "— પાબ્લો પિકાસો",
-        video_heading: "કલા નિર્માણ વિડીયો જુઓ",
-        video_sub: "સુંદર લાઇન આર્ટ અને રંગોના સંગમની ધ્યાનપૂર્ણ પ્રક્રિયાનો અનુભવ કરો",
-        feat_heading: "ઉચ્ચ ગુણવત્તાની ખાતરી",
-        feat_sub: "ખાસ કરીને કલાપ્રેમીઓ, આર્ટિસ્ટ્સ અને બાળકો માટે નિર્મિત",
-        feat_1_t: "૪૦ હાથથી દોરેલા મંડલા",
-        feat_1_d: "દૈનિક તણાવ દૂર કરવા માટે રચાયેલ જટિલ બોટનિકલ અને પવિત્ર ભૂમિતિ ડ્રોઇંગ્સ.",
-        feat_2_t: "૧૬૦ GSM જાડા કાર્ટ્રિજ પેપર",
-        feat_2_d: "બ્રશ પેન, સ્કેચ પેન અને કલર પેન્સિલ માટે યોગ્ય, જેથી રંગ પાછળ ન ઊતરે.",
-        feat_3_t: "વાયરો બાઇન્ડિંગ (Lay-Flat)",
-        feat_3_d: "કલર કરતી વખતે સરળતા રહે તે માટે સંપૂર્ણ ૧૮૦ ડિગ્રી ફ્લેટ ખુલે છે.",
-        feat_4_t: "સિંગલ-સાઇડેડ પ્રિન્ટ",
-        feat_4_d: "દરેક ડિઝાઇન એક તરફ પ્રિન્ટ છે—તમે તેને ફ્રેમ કરી શકો છો અથવા ભેટ આપી શકો છો.",
-        insta_title: "અલંકરા આર્ટ કોમ્યુનિટીમાં જોડાઓ",
-        insta_desc: "કલરિંગ ટિપ્સ અને નવા આર્ટવર્ક જોવા માટે ઇન્સ્ટાગ્રામ પર ફોલો કરો.",
-        insta_btn: "ઇન્સ્ટાગ્રામ પર ફોલો કરો (@alankra.art_official)",
-        footer_copy: "© 2026 અલંકરા આર્ટ સ્ટુડિયો. સર્વાધિકાર સુરક્ષિત.",
-        auth_login_title: "સ્વાગત છે",
-        auth_login_sub: "ઓર્ડર ટ્રેક કરવા માટે સાઇન ઇન કરો.",
-        auth_lbl_email: "ઈમેલ એડ્રેસ",
-        auth_lbl_pass: "પાસવર્ડ",
-        auth_forgot_link: "પાસવર્ડ ભૂલી ગયા?",
-        auth_btn_signin: "સાઇન ઇન",
-        auth_no_acc: "ખાતું નથી?",
-        auth_create_link: "નવું ખાતું બનાવો",
-        auth_signup_title: "નવું ખાતું બનાવો",
-        auth_signup_sub: "અલંકરા આર્ટ સાથે જોડાઓ.",
-        auth_lbl_newpass: "નવો પાસવર્ડ બનાવો",
-        auth_btn_create: "ખાતું બનાવો",
-        auth_has_acc: "પહેલેથી ખાતું છે?",
-        auth_reset_title: "પાસવર્ડ રીસેટ કરો",
-        auth_reset_sub: "પાસવર્ડ લિંક મેળવવા તમારો ઈમેલ દાખલ કરો.",
-        auth_lbl_reg_email: "નોંધાયેલ ઈમેલ",
-        auth_btn_send_reset: "રીસેટ લિંક મોકલો",
-        auth_rem_pass: "પાસવર્ડ યાદ આવ્યો?",
-        auth_back_login: "સાઇન ઇન પર પાછા જાઓ"
-      },
-      hi: {
-        nav_reviews: "⭐ समीक्षाएं",
-        nav_about: "📖 हमारे बारे में",
-        nav_signin: "साइन इन",
-        nav_cart: "कार्ट",
-        btn_add_to_cart: "यह पुस्तक कार्ट में जोड़ें",
-        cart_selected_books: "आपकी चुनी हुई पुस्तकें",
-        cart_clear: "सभी हटाएं",
-        discount_pill: "४०% छूट - लॉन्च ऑफर",
-        tab_front: "📖 सामने का कवर",
-        tab_back: "🔄 पीछे का कवर",
-        btn_logout: "लॉग आउट",
-        checkout_title: "🛍️ स्टूडियो डायरेक्ट चेकआउट",
-        checkout_subtitle: "अपनी चुनी हुई पुस्तकें देखें और डिलीवरी के लिए पता दर्ज करें।",
-        lbl_name: "पूरा नाम *",
-        lbl_phone: "व्हाट्सएप / मोबाइल नंबर *",
-        lbl_address: "पूरा डिलीवरी पता (मकान/फ्लैट नं., गली, लैंडमार्क) *",
-        lbl_city: "शहर / कस्बा *",
-        lbl_pincode: "पिनकोड *",
-        lbl_payment: "भुगतान विकल्प",
-        opt_upi: "इंस्टेंट UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "कैश ऑन डिलीवरी (COD)",
-        lbl_total: "कुल देय राशि:",
-        btn_place_order: "✨ ऑर्डर करें और डिलीवरी कन्फर्म करें",
-        payment_notice: "🔒 १००% सत्यापित स्टूडियो ऑर्डर • मुफ्त और सुरक्षित शिपिंग",
-        reviews_heading: "ग्राहकों के अनुभव (REVIEWS)",
-        reviews_subheading: "देखें कि कैसे हमारी पुस्तकें रचनात्मकता और शांति प्रदान करती हैं",
-        rating_count: "१४०+ सत्यापित समीक्षाओं पर आधारित",
-        btn_write_review: "समीक्षा लिखें",
-        form_rev_title: "अपना अनुभव साझा करें",
-        form_rev_sub: "बताएं कि इस बुक में रंग भरने का आपका अनुभव कैसा रहा।",
-        lbl_rev_rating: "रेटिंग चुनें *",
-        lbl_comment: "आपकी समीक्षा *",
-        btn_submit_rev: "समीक्षा सबमिट करें",
-        about_heading: "हमारे बारे में (ABOUT)",
-        about_subheading: "उस पवित्र कला के बारे में जानें जो मन को शांति और स्पष्टता देती है",
-        book_mandala_title: "मंडला (Mandala)",
-        book_mandala_p1: "मंडला प्रतीकों का एक ज्यामितीय विन्यास है जो आध्यात्मिक यात्रा का प्रतिनिधित्व करता है।",
-        book_mandala_p2: "मंडला सदियों से एक पवित्र प्रतीक रहे हैं और संपूर्णता व सद्भाव का प्रतिनिधित्व करते हैं।",
-        book_mandala_p3: "इनमें केंद्र से निकलने वाले गोलाकार डिज़ाइन होते हैं।",
-        philo_heading_html: "पवित्र ज्यामिति की <span>उपचार शक्ति</span>",
-        philo_desc: "जब आप मंडला में रंग भरते हैं, तो मन सक्रिय शांति की ध्यान अवस्था में प्रवेश करता है।",
-        quote_jung: '"मंडला केंद्र है। यह आंतरिक सद्भाव और आत्मीयता का मार्ग है।"',
-        cite_jung: "— कार्ल गुस्ताव जुंग (मंडला कला चिकित्सा के प्रणेता)",
-        quote_picasso: '"कला आत्मा से दैनिक जीवन की धूल को धो देती है।"',
-        cite_picasso: "— पाब्लो पिकासो",
-        video_heading: "कला निर्माण वीडियो देखें",
-        video_sub: "बारीक रेखांकन और रंगों के सुंदर संयोजन की ध्यानपूर्ण प्रक्रिया का अनुभव करें",
-        feat_heading: "उत्कृष्ट कारीगरी और गुणवत्ता",
-        feat_sub: "विशेष रूप से कलाकारों और बच्चों के लिए तैयार",
-        feat_1_t: "४० हस्तनिर्मित मंडला",
-        feat_1_d: "दैनिक तनाव को दूर करने के लिए तैयार किए गए जटिल बॉटनिकल और ज्यामितीय चित्र।",
-        feat_2_t: "१६० GSM मोटा कार्ट्रिज पेपर",
-        feat_2_d: "ब्रश पेन, स्केच पेन और रंगीन पेंसिलों के लिए बिल्कुल सही, रंग पीछे नहीं छपता।",
-        feat_3_t: "ले-फ्लैट वायर बाइंडिंग",
-        feat_3_d: "रंग भरते समय अत्यधिक सुविधा के लिए पूरी तरह से १८० डिग्री सपाट खुलता है।",
-        feat_4_t: "सिंगल-साइडेड प्रिंट",
-        feat_4_d: "प्रत्येक डिज़ाइन एक अलग पृष्ठ पर है—ताकि आप अपनी कला को फ्रेम या उपहार में दे सकें।",
-        insta_title: "अलंकरा आर्ट समुदाय से जुड़ें",
-        insta_desc: "कलरिंग टिप्स और नए आर्टवर्क देखने के लिए इंस्टाग्राम पर फॉलो करें।",
-        insta_btn: "इंस्टाग्राम पर फॉलो करें (@alankra.art_official)",
-        footer_copy: "© 2026 अलंकरा आर्ट स्टूडियो। सर्वाधिकार सुरक्षित।",
-        auth_login_title: "वापसी पर स्वागत है",
-        auth_login_sub: "ऑर्डर ट्रैक करने के लिए साइन इन करें।",
-        auth_lbl_email: "ईमेल पता",
-        auth_lbl_pass: "पासवर्ड",
-        auth_forgot_link: "पासवर्ड भूल गए?",
-        auth_btn_signin: "साइन इन",
-        auth_no_acc: "खाता नहीं है?",
-        auth_create_link: "नया खाता बनाएं",
-        auth_signup_title: "नया खाता बनाएं",
-        auth_signup_sub: "विशेष कला और ऑफर्स के लिए अलंकरा से जुड़ें।",
-        auth_lbl_newpass: "नया पासवर्ड बनाएं",
-        auth_btn_create: "खाता बनाएं",
-        auth_has_acc: "पहले से खाता है?",
-        auth_reset_title: "पासवर्ड रीसेट करें",
-        auth_reset_sub: "पासवर्ड रीसेट लिंक पाने के लिए अपना ईमेल दर्ज करें।",
-        auth_lbl_reg_email: "पंजीकृत ईमेल",
-        auth_btn_send_reset: "रीसेट लिंक भेजें",
-        auth_rem_pass: "पासवर्ड याद आ गया?",
-        auth_back_login: "साइन इन पर वापस जाएं"
       }
     };
 
