@@ -1773,14 +1773,14 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT: MULTI-PRODUCT CART & CHECKOUT -->
+  <!-- JAVASCRIPT: AUTHENTICATION, CART & AUTO-TIMEOUT -->
   <script>
     function sanitizeSafeText(str) {
       if (!str) return '';
       return String(str).replace(/[<>"`]/g, '').trim();
     }
 
-    // MAIN CATALOG DATABASE (Matches GitHub Repository Exactly)
+    // MAIN CATALOG DATABASE
     const storeDepartments = {
       adults: {
         defaultBook: "mandala_v1",
@@ -1926,7 +1926,9 @@
 
     let currentDepartment = "adults";
     let currentSelectedBook = "mandala_v1";
-    let shoppingCart = {}; // { bookId: quantity }
+    let shoppingCart = {};
+    let inactivityTimer = null;
+    const INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 Minutes
 
     const translations = {
       en: {
@@ -2314,7 +2316,7 @@
 
       headerBadge.textContent = totalQty;
 
-      // Combo Discount Calculation (Applies to all mixed combos)
+      // Combo Discount Calculation
       let finalTotal = rawTotal;
       let discountText = '';
 
@@ -2426,6 +2428,7 @@
       }
     }
 
+    // AUTHENTICATION SYSTEM WITH VALIDATION
     function openAuthModal(view) {
       document.getElementById('authModal').classList.add('show');
       document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
@@ -2438,29 +2441,70 @@
       document.getElementById('authModal').classList.remove('show');
     }
 
+    function getRegisteredUsers() {
+      return JSON.parse(localStorage.getItem('alankra_users_db') || '{}');
+    }
+
     function handleSignup(e) {
       e.preventDefault();
       const name = sanitizeSafeText(document.getElementById('signupName').value);
-      const email = sanitizeSafeText(document.getElementById('signupEmail').value);
-      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
+      const email = sanitizeSafeText(document.getElementById('signupEmail').value).toLowerCase();
+      const password = document.getElementById('signupPassword').value;
+
+      const usersDb = getRegisteredUsers();
+      if (usersDb[email]) {
+        alert('⚠️ An account with this email already exists. Please Sign In.');
+        openAuthModal('login');
+        return;
+      }
+
+      usersDb[email] = { name, email, password };
+      localStorage.setItem('alankra_users_db', JSON.stringify(usersDb));
+
+      const currentUser = { name, email };
+      localStorage.setItem('alankra_user', JSON.stringify(currentUser));
       updateUserUI(name);
       closeAuthModal();
-      alert('✨ Account created! Welcome, ' + name);
+      resetInactivityTimer();
+      alert('✨ Account created successfully! Welcome, ' + name);
     }
 
     function handleLogin(e) {
       e.preventDefault();
-      const email = sanitizeSafeText(document.getElementById('loginEmail').value);
-      const name = email.split('@')[0];
-      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
-      updateUserUI(name);
+      const email = sanitizeSafeText(document.getElementById('loginEmail').value).toLowerCase();
+      const password = document.getElementById('loginPassword').value;
+
+      const usersDb = getRegisteredUsers();
+      if (!usersDb[email]) {
+        alert('⚠️ No account found with this email.\n\nPlease create an account first or sign in if you already have one.');
+        openAuthModal('signup');
+        return;
+      }
+
+      if (usersDb[email].password !== password) {
+        alert('⚠️ Incorrect password. Please try again.');
+        return;
+      }
+
+      const currentUser = { name: usersDb[email].name, email: usersDb[email].email };
+      localStorage.setItem('alankra_user', JSON.stringify(currentUser));
+      updateUserUI(currentUser.name);
       closeAuthModal();
-      alert('✨ Welcome back, ' + name + '!');
+      resetInactivityTimer();
+      alert('✨ Welcome back, ' + currentUser.name + '!');
     }
 
     function handleForgotPassword(e) {
       e.preventDefault();
-      const email = sanitizeSafeText(document.getElementById('forgotEmail').value);
+      const email = sanitizeSafeText(document.getElementById('forgotEmail').value).toLowerCase();
+      const usersDb = getRegisteredUsers();
+      
+      if (!usersDb[email]) {
+        alert('⚠️ No account registered with this email. Please create a new account.');
+        openAuthModal('signup');
+        return;
+      }
+
       alert('📩 Password reset instructions sent to ' + email);
       openAuthModal('login');
     }
@@ -2474,16 +2518,47 @@
       if (!nameInput.value) nameInput.value = name;
     }
 
-    function logoutUser() {
+    function logoutUser(isAuto = false) {
       localStorage.removeItem('alankra_user');
       document.getElementById('userProfileBadge').classList.remove('show');
       document.getElementById('navAuthTrigger').innerHTML = '👤 <span data-i18n="nav_signin">Sign In</span>';
-      alert('Logged out successfully.');
+      
+      if (inactivityTimer) clearTimeout(inactivityTimer);
+
+      if (isAuto) {
+        alert('🔒 Session expired due to 5 minutes of inactivity. Please sign in again.');
+      } else {
+        alert('Logged out successfully.');
+      }
     }
 
-    // PROCESS COMPLETE MULTI-ITEM ORDER
+    // 5-MINUTE AUTO LOGOUT INACTIVITY TIMER
+    function resetInactivityTimer() {
+      if (inactivityTimer) clearTimeout(inactivityTimer);
+      
+      const loggedIn = localStorage.getItem('alankra_user');
+      if (loggedIn) {
+        inactivityTimer = setTimeout(() => {
+          logoutUser(true);
+        }, INACTIVITY_LIMIT);
+      }
+    }
+
+    ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
+      window.addEventListener(evt, resetInactivityTimer, { passive: true });
+    });
+
+    // PROCESS MULTI-ITEM ORDER WITH SIGN-IN VERIFICATION
     function processOrder(e) {
       e.preventDefault();
+
+      // Check Authentication Gate
+      const currentUser = localStorage.getItem('alankra_user');
+      if (!currentUser) {
+        alert('⚠️ Please sign in to place an order, or create a new account if you do not have one yet.');
+        openAuthModal('login');
+        return;
+      }
       
       const cartKeys = Object.keys(shoppingCart);
       if (cartKeys.length === 0) {
@@ -2499,7 +2574,6 @@
       const payment = document.getElementById('paymentPref').value;
       const total = document.getElementById('totalBillAmount').textContent;
 
-      // Build Itemized WhatsApp Message
       let itemsListStr = '';
       cartKeys.forEach((bookId, i) => {
         const qty = shoppingCart[bookId];
@@ -2533,7 +2607,6 @@
 
       switchMainDepartment('adults', document.getElementById('catBtnAdults'));
 
-      // Pre-add 1 copy of Vol 1 by default so the cart isn't initially zero
       shoppingCart['mandala_v1'] = 1;
       updateCartUI();
 
@@ -2546,6 +2619,7 @@
         try {
           const user = JSON.parse(savedUser);
           updateUserUI(user.name);
+          resetInactivityTimer();
         } catch (err) {}
       }
     });
