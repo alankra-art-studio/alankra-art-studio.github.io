@@ -1,2219 +1,2111 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- ========================================================
-       WEBSITE SECURITY HEADERS & DEFENSE SHIELD
-       ======================================================== -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.qrserver.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========================================================
+       WEBSITE SECURITY HEADERS & DEFENSE SHIELD
+       ======================================================== -->
+  <!-- Anti-Clickjacking Protection -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- Content Security Policy: Only allow safe fonts, images & styles -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.qrserver.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>ALANKRA ART STUDIO | Mandala Colouring Books</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>ALANKRA ART STUDIO | Mandala Colouring Book</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* Softer Light Grey Theme (Default) */
-    :root {
-      --bg-main: #F1F5F9;
-      --bg-card: #FFFFFF;
-      --bg-card-hover: #F8FAFC;
-      --text-main: #0F172A;
-      --text-muted: #475569;
-      --border-color: #CBD5E1;
-      --border-gold: rgba(212, 175, 55, 0.4);
-      --gold: #B8860B;
-      --gold-bright: #D4AF37;
-      --gold-glow: rgba(212, 175, 55, 0.2);
-      --pink: #DB2777;
-      --teal: #0D9488;
-      --input-bg: #F8FAFC;
-      --header-bg: rgba(241, 245, 249, 0.95);
-      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 15px 35px rgba(15, 23, 42, 0.08);
-      --logo-blend: multiply;
-      --mandala-invert: 0;
-      --mandala-opacity: 0.07;
-    }
+  <style>
+    /* Softer Light Grey Theme (Default) */
+    :root {
+      --bg-main: #F1F5F9;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8FAFC;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border-color: #CBD5E1;
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --gold: #B8860B;
+      --gold-bright: #D4AF37;
+      --gold-glow: rgba(212, 175, 55, 0.2);
+      --pink: #DB2777;
+      --teal: #0D9488;
+      --input-bg: #F8FAFC;
+      --header-bg: rgba(241, 245, 249, 0.95);
+      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 15px 35px rgba(15, 23, 42, 0.08);
+      --logo-blend: multiply;
+      --mandala-invert: 0;
+      --mandala-opacity: 0.07;
+    }
 
-    /* Dark Mode Theme */
-    [data-theme="dark"] {
-      --bg-main: #060e18;
-      --bg-card: #0c1c30;
-      --bg-card-hover: #10243c;
-      --text-main: #FFFFFF;
-      --text-muted: #94A3B8;
-      --border-color: rgba(212, 175, 55, 0.25);
-      --border-gold: rgba(212, 175, 55, 0.4);
-      --gold: #D4AF37;
-      --gold-bright: #F7D070;
-      --gold-glow: rgba(212, 175, 55, 0.25);
-      --pink: #E05697;
-      --teal: #10B981;
-      --input-bg: #071322;
-      --header-bg: rgba(6, 14, 24, 0.95);
-      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.6);
-      --logo-blend: normal;
-      --mandala-invert: 1;
-      --mandala-opacity: 0.08;
-    }
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --bg-main: #060e18;
+      --bg-card: #0c1c30;
+      --bg-card-hover: #10243c;
+      --text-main: #FFFFFF;
+      --text-muted: #94A3B8;
+      --border-color: rgba(212, 175, 55, 0.25);
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --gold: #D4AF37;
+      --gold-bright: #F7D070;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --pink: #E05697;
+      --teal: #10B981;
+      --input-bg: #071322;
+      --header-bg: rgba(6, 14, 24, 0.95);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.6);
+      --logo-blend: normal;
+      --mandala-invert: 1;
+      --mandala-opacity: 0.08;
+    }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Plus Jakarta Sans', 'Noto Sans Gujarati', 'Noto Sans Devanagari', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Gujarati', 'Noto Sans Devanagari', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-    /* Ambient Alive Background Lotus Mandalas */
-    .alive-bg-mandala {
-      position: absolute;
-      width: 650px;
-      height: 650px;
-      pointer-events: none;
-      z-index: 0;
-      opacity: var(--mandala-opacity);
-      filter: invert(var(--mandala-invert));
-      transition: opacity 0.5s ease, filter 0.5s ease;
-    }
+    /* Ambient Alive Background Lotus Mandalas */
+    .alive-bg-mandala {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: var(--mandala-opacity);
+      filter: invert(var(--mandala-invert));
+      transition: opacity 0.5s ease, filter 0.5s ease;
+    }
 
-    .alive-bg-top {
-      top: -80px;
-      right: -120px;
-      animation: slowSpin 160s linear infinite, breathingPulse 9s ease-in-out infinite alternate;
-    }
+    .alive-bg-top {
+      top: -80px;
+      right: -120px;
+      animation: slowSpin 160s linear infinite, breathingPulse 9s ease-in-out infinite alternate;
+    }
 
-    .alive-bg-mid {
-      top: 45%;
-      left: -180px;
-      animation: slowSpinReverse 190s linear infinite, breathingPulse 11s ease-in-out infinite alternate;
-    }
+    .alive-bg-mid {
+      top: 45%;
+      left: -180px;
+      animation: slowSpinReverse 190s linear infinite, breathingPulse 11s ease-in-out infinite alternate;
+    }
 
-    .alive-bg-bottom {
-      bottom: -100px;
-      right: -100px;
-      animation: slowSpin 170s linear infinite, breathingPulse 10s ease-in-out infinite alternate;
-    }
+    .alive-bg-bottom {
+      bottom: -100px;
+      right: -100px;
+      animation: slowSpin 170s linear infinite, breathingPulse 10s ease-in-out infinite alternate;
+    }
 
-    @keyframes slowSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    @keyframes slowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
 
-    @keyframes slowSpinReverse {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
+    @keyframes slowSpinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
 
-    @keyframes breathingPulse {
-      0% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
-      50% { opacity: calc(var(--mandala-opacity) * 1.3); transform: scale(1.02); }
-      100% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
-    }
+    @keyframes breathingPulse {
+      0% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
+      50% { opacity: calc(var(--mandala-opacity) * 1.3); transform: scale(1.02); }
+      100% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
+    }
 
-    /* Sticky Navigation */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 8%;
-      background: var(--header-bg);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-    }
-    
-    .brand-logo-container {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .brand-logo-img {
-      height: 52px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-      mix-blend-mode: var(--logo-blend);
-      border-radius: 6px;
-      transition: transform 0.3s ease;
-    }
-    .brand-logo-img:hover {
-      transform: scale(1.03);
-    }
+    /* Sticky Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 8%;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+    
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .brand-logo-img {
+      height: 52px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      mix-blend-mode: var(--logo-blend);
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+    .brand-logo-img:hover {
+      transform: scale(1.03);
+    }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
 
-    .nav-link-btn {
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 700;
-      padding: 0.45rem 0.85rem;
-      border-radius: 50px;
-      border: 1px solid var(--border-gold);
-      background: var(--input-bg);
-      transition: all 0.2s;
-    }
-    .nav-link-btn:hover { 
-      background: var(--gold); 
-      color: #FFFFFF; 
-    }
+    .nav-link-btn {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.45rem 0.85rem;
+      border-radius: 50px;
+      border: 1px solid var(--border-gold);
+      background: var(--input-bg);
+      transition: all 0.2s;
+    }
+    .nav-link-btn:hover { 
+      background: var(--gold); 
+      color: #FFFFFF; 
+    }
 
-    .theme-toggle-btn {
-      background: var(--input-bg);
-      border: 1px solid var(--border-gold);
-      color: var(--text-main);
-      padding: 0.45rem 0.9rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: all 0.3s;
-    }
-    .theme-toggle-btn:hover {
-      border-color: var(--gold-bright);
-    }
+    .theme-toggle-btn {
+      background: var(--input-bg);
+      border: 1px solid var(--border-gold);
+      color: var(--text-main);
+      padding: 0.45rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.3s;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--gold-bright);
+    }
 
-    .lang-switcher {
-      background: var(--input-bg);
-      border: 1px solid var(--border-gold);
-      color: var(--text-main);
-      padding: 0.45rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-    }
-    .lang-switcher option {
-      background: var(--bg-card);
-      color: var(--text-main);
-    }
+    .lang-switcher {
+      background: var(--input-bg);
+      border: 1px solid var(--border-gold);
+      color: var(--text-main);
+      padding: 0.45rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+    .lang-switcher option {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
 
-    .nav-auth-btn {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--text-main);
-      padding: 0.45rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .nav-auth-btn:hover {
-      background: var(--gold);
-      color: #fff;
-    }
+    .nav-auth-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--text-main);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-auth-btn:hover {
+      background: var(--gold);
+      color: #fff;
+    }
 
-    .insta-nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #fff;
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      padding: 0.48rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.25);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .insta-nav-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220, 39, 67, 0.45);
-    }
+    .insta-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      padding: 0.48rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .insta-nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 39, 67, 0.45);
+    }
 
-    /* Main Hero & Order Layout */
-    .hero-container {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 3.5rem;
-      padding: 3.5rem 8% 4.5rem 8%;
-      align-items: start;
-      min-height: 80vh;
-    }
-    @media (max-width: 950px) {
-      .hero-container { grid-template-columns: 1fr; padding-top: 2rem; }
-    }
+    /* Main Hero & Order Layout */
+    .hero-container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3.5rem;
+      padding: 3.5rem 8% 4.5rem 8%;
+      align-items: start;
+      min-height: 80vh;
+    }
+    @media (max-width: 950px) {
+      .hero-container { grid-template-columns: 1fr; padding-top: 2rem; }
+    }
 
-    /* Book Catalog Selector Tabs */
-    .book-selection-tabs {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1.1rem;
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
 
-    .book-select-btn {
-      flex: 1;
-      min-width: 200px;
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-gold);
-      color: var(--text-main);
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
+    .hero-text h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .hero-text h1 span {
+      background: linear-gradient(135deg, var(--gold), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-    .book-select-btn:hover {
-      border-color: var(--gold-bright);
-      transform: translateY(-2px);
-    }
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
 
-    .book-select-btn.active {
-      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-      color: #060E18;
-      border-color: var(--gold-bright);
-      box-shadow: 0 4px 15px var(--gold-glow);
-    }
+    .price-strip {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .price-strip .price {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .price-strip .mrp {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .price-strip .discount-pill {
+      background: rgba(16, 185, 129, 0.15);
+      color: #059669;
+      border: 1px solid #10B981;
+      padding: 0.25rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 1.1rem;
-      background: rgba(212, 175, 55, 0.12);
-      color: var(--gold);
-      border: 1px solid var(--border-gold);
-      border-radius: 50px;
-      font-size: 0.85rem;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
+    /* Product Cover Showcase */
+    .showcase-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+    }
+    .showcase-tabs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.8rem;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .tab-btn.active {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+    .cover-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+    .cover-view {
+      display: none;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .cover-view.active { display: block; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-    .hero-text h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.8rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-    .hero-text h1 span {
-      background: linear-gradient(135deg, var(--gold), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .product-img-box {
+      max-width: 340px;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 2px solid var(--border-gold);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      background: #fff;
+    }
+    .product-img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .product-img-box:hover img {
+      transform: scale(1.02);
+    }
+    .cover-caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
 
-    .hero-text p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
+    /* Checkout & Address Form */
+    .checkout-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .checkout-form-card h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkout-form-card .subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
 
-    .price-strip {
-      display: flex;
-      align-items: baseline;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .price-strip .price {
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: var(--gold);
-    }
-    .price-strip .mrp {
-      font-size: 1.3rem;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-    .price-strip .discount-pill {
-      background: rgba(16, 185, 129, 0.15);
-      color: #059669;
-      border: 1px solid #10B981;
-      padding: 0.25rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
+    .user-profile-badge {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .user-profile-badge.show { display: flex; }
+    .user-profile-badge span { font-size: 0.88rem; color: var(--gold); font-weight: 600; }
+    .logout-btn {
+      background: none;
+      border: none;
+      color: #EF4444;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: underline;
+    }
 
-    /* Product Cover Showcase */
-    .showcase-wrapper {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow-lg);
-      margin-bottom: 2rem;
-    }
-    .showcase-tabs {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.8rem;
-    }
-    .tab-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.45rem 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .tab-btn.active {
-      background: var(--gold);
-      color: #fff;
-      border-color: var(--gold);
-    }
-    .cover-display {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 380px;
-    }
-    .cover-view {
-      display: none;
-      width: 100%;
-      text-align: center;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-    .cover-view.active { display: block; }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 80px;
+    }
 
-    .product-img-box {
-      max-width: 340px;
-      margin: 0 auto;
-      border-radius: 14px;
-      border: 2px solid var(--border-gold);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      background: #fff;
-    }
-    .product-img-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .product-img-box:hover img {
-      transform: scale(1.02);
-    }
-    .cover-caption {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      letter-spacing: 1px;
-      font-weight: 600;
-    }
+    .place-order-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #D4AF37, #B8860B);
+      color: #FFFFFF;
+      border: none;
+      padding: 1.1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+      box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .place-order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(184, 134, 11, 0.45);
+      background: linear-gradient(135deg, #F7D070, #D4AF37);
+      color: #060E18;
+    }
 
-    /* Checkout & Address Form */
-    .checkout-form-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2.2rem;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-    }
-    .checkout-form-card h3 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.5rem;
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .checkout-form-card .subtitle {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 1.6rem;
-    }
+    .payment-notice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: #059669;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
 
-    .user-profile-badge {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid var(--gold);
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-    }
-    .user-profile-badge.show { display: flex; }
-    .user-profile-badge span { font-size: 0.88rem; color: var(--gold); font-weight: 600; }
-    .logout-btn {
-      background: none;
-      border: none;
-      color: #EF4444;
-      font-size: 0.82rem;
-      cursor: pointer;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+    /* ========================================================
+       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
+       ======================================================== */
+    .reviews-section {
+      position: relative;
+      z-index: 1;
+      padding: 5.5rem 8%;
+      background: var(--bg-main);
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .rating-summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 2.2rem;
+      max-width: 850px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .rating-big {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .rating-score {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .rating-stars {
+      color: #F59E0B;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+    .rating-count {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
 
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 0.4rem;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    @media (max-width: 500px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      color: var(--text-main);
-      font-size: 0.95rem;
-      font-family: inherit;
-      transition: all 0.3s;
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 10px var(--gold-glow);
-    }
-    textarea.form-control {
-      resize: vertical;
-      min-height: 80px;
-    }
+    .write-review-btn {
+      background: linear-gradient(135deg, var(--gold), #B8860B);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .write-review-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
+    }
 
-    .place-order-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #D4AF37, #B8860B);
-      color: #FFFFFF;
-      border: none;
-      padding: 1.1rem;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 0.5rem;
-      box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-    }
-    .place-order-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(184, 134, 11, 0.45);
-      background: linear-gradient(135deg, #F7D070, #D4AF37);
-      color: #060E18;
-    }
+    .review-form-wrapper {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .review-form-wrapper.active { display: block; }
 
-    .payment-notice {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      color: #059669;
-      margin-top: 1rem;
-      text-align: center;
-      font-weight: 600;
-    }
+    .star-select-box {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #CBD5E1;
+      margin-bottom: 1rem;
+    }
+    .star-select-box .star.selected {
+      color: #F59E0B;
+    }
 
-    /* Reviews Section */
-    .reviews-section {
-      position: relative;
-      z-index: 1;
-      padding: 5.5rem 8%;
-      background: var(--bg-main);
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .rating-summary-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: 16px;
-      padding: 2.2rem;
-      max-width: 850px;
-      margin: 0 auto 3rem auto;
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    
-    .rating-big {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .rating-score {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .rating-stars {
-      color: #F59E0B;
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-    }
-    .rating-count {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
 
-    .write-review-btn {
-      background: linear-gradient(135deg, var(--gold), #B8860B);
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.6rem;
-      border-radius: 50px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .write-review-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+    .reviewer-loc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .review-stars {
+      color: #F59E0B;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    .review-comment {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
 
-    .review-form-wrapper {
-      display: none;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 650px;
-      margin: 0 auto 3rem auto;
-      box-shadow: var(--shadow-lg);
-    }
-    .review-form-wrapper.active { display: block; }
+    /* ABOUT SECTION */
+    .mandala-philosophy-section {
+      position: relative;
+      z-index: 1;
+      padding: 5.5rem 8%;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    
+    .section-header-badge {
+      text-align: center;
+      margin-bottom: 3.2rem;
+    }
+    .section-header-badge h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .section-header-badge p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
 
-    .star-select-box {
-      display: flex;
-      gap: 0.5rem;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: #CBD5E1;
-      margin-bottom: 1rem;
-    }
-    .star-select-box .star.selected {
-      color: #F59E0B;
-    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (max-width: 950px) {
+      .philosophy-grid { grid-template-columns: 1fr; }
+    }
 
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
+    .book-page-card {
+      background: #FFFFFF;
+      color: #1A202C;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--border-gold);
+      display: flex;
+      position: relative;
+      min-height: 450px;
+    }
+    @media (max-width: 580px) {
+      .book-page-card { flex-direction: column; }
+    }
+    
+    .page-art-half {
+      flex: 1;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-right: 1px solid #E2E8F0;
+      overflow: hidden;
+    }
+    .page-art-half img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-    .review-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 1.8rem;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    .review-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-gold);
-      box-shadow: var(--shadow-lg);
-    }
-    .review-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.8rem;
-    }
-    .reviewer-name {
-      font-weight: 700;
-      color: var(--text-main);
-      font-size: 1.05rem;
-    }
-    .reviewer-loc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .verified-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.72rem;
-      color: #059669;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-weight: 700;
-    }
-    .review-stars {
-      color: #F59E0B;
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
-    }
-    .review-comment {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
+    .page-blue-half {
+      flex: 1.25;
+      background: #0077B6;
+      color: #FFFFFF;
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .page-blue-half h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      color: #FFFFFF;
+    }
+    .page-blue-half p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      color: #E0F2FE;
+    }
+    .page-blue-half p.lead-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #FFFFFF;
+    }
 
-    /* About Section */
-    .mandala-philosophy-section {
-      position: relative;
-      z-index: 1;
-      padding: 5.5rem 8%;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-    }
-    
-    .section-header-badge {
-      text-align: center;
-      margin-bottom: 3.2rem;
-    }
-    .section-header-badge h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.6rem;
-      color: var(--gold);
-      letter-spacing: 2px;
-      margin-bottom: 0.4rem;
-      font-weight: 700;
-    }
-    .section-header-badge p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
+    .philosophy-text h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+    .philosophy-text h2 span {
+      background: linear-gradient(135deg, var(--gold), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .philosophy-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
 
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    @media (max-width: 950px) {
-      .philosophy-grid { grid-template-columns: 1fr; }
-    }
+    .artist-quote-box {
+      background: var(--bg-main);
+      border-left: 4px solid var(--gold);
+      border-top: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.6rem 1.8rem;
+      border-radius: 0 14px 14px 0;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .artist-quote-box blockquote {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .artist-quote-box cite {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-style: normal;
+      letter-spacing: 0.5px;
+    }
 
-    .book-page-card {
-      background: #FFFFFF;
-      color: #1A202C;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 2px solid var(--border-gold);
-      display: flex;
-      position: relative;
-      min-height: 450px;
-    }
-    @media (max-width: 580px) {
-      .book-page-card { flex-direction: column; }
-    }
-    
-    .page-art-half {
-      flex: 1;
-      background: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      border-right: 1px solid #E2E8F0;
-      overflow: hidden;
-    }
-    .page-art-half img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    /* VIDEO SHOWCASE */
+    .video-showcase-section {
+      padding: 4.5rem 8%;
+      background: var(--bg-card);
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+    .video-showcase-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.3rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .video-showcase-section p.video-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+    .video-card-frame {
+      max-width: 340px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--border-gold);
+      box-shadow: var(--shadow-lg);
+      background: #000;
+    }
+    .video-card-frame video {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+    }
 
-    .page-blue-half {
-      flex: 1.25;
-      background: #0077B6;
-      color: #FFFFFF;
-      padding: 2.2rem 1.8rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
-    .page-blue-half h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-      color: #FFFFFF;
-    }
-    .page-blue-half p {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-      color: #E0F2FE;
-    }
-    .page-blue-half p.lead-text {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #FFFFFF;
-    }
+    /* Features Grid */
+    .features-section {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 8%;
+      background: var(--bg-main);
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+    .features-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.3rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .features-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 3.5rem;
+      font-size: 1.05rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      padding: 2.2rem 1.8rem;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .feature-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .feature-card h3 {
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
 
-    .philosophy-text h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.4rem;
-      color: var(--text-main);
-      line-height: 1.25;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-    }
-    .philosophy-text h2 span {
-      background: linear-gradient(135deg, var(--gold), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .philosophy-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
+    /* Instagram Community Strip */
+    .insta-strip {
+      padding: 4rem 8%;
+      background: var(--bg-card);
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+    .insta-strip-box {
+      max-width: 650px;
+      margin: 0 auto;
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+    }
+    .insta-strip-box h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+    .insta-strip-box p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
 
-    .artist-quote-box {
-      background: var(--bg-main);
-      border-left: 4px solid var(--gold);
-      border-top: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 1.6rem 1.8rem;
-      border-radius: 0 14px 14px 0;
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-    .artist-quote-box blockquote {
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text-main);
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
-    }
-    .artist-quote-box cite {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--gold);
-      font-style: normal;
-      letter-spacing: 0.5px;
-    }
+    /* 3-Column Luxury Footer */
+    footer {
+      padding: 4rem 8% 2.5rem 8%;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-    /* Video Showcase */
-    .video-showcase-section {
-      padding: 4.5rem 8%;
-      background: var(--bg-card);
-      text-align: center;
-      border-top: 1px solid var(--border-color);
-    }
-    .video-showcase-section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.3rem;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-      font-weight: 700;
-    }
-    .video-showcase-section p.video-sub {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 2.5rem;
-    }
-    .video-card-frame {
-      max-width: 340px;
-      margin: 0 auto;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 2px solid var(--border-gold);
-      box-shadow: var(--shadow-lg);
-      background: #000;
-    }
-    .video-card-frame video {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 9/16;
-      object-fit: cover;
-    }
+    /* Auth Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.show { display: flex; }
 
-    /* Features Grid */
-    .features-section {
-      position: relative;
-      z-index: 1;
-      padding: 5rem 8%;
-      background: var(--bg-main);
-      text-align: center;
-      border-top: 1px solid var(--border-color);
-    }
-    .features-section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.3rem;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-    .features-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 3.5rem;
-      font-size: 1.05rem;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .feature-card {
-      background: var(--bg-card);
-      padding: 2.2rem 1.8rem;
-      border-radius: 14px;
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-      text-align: left;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-lg);
-    }
-    .feature-card .icon {
-      font-size: 2rem;
-      margin-bottom: 0.8rem;
-    }
-    .feature-card h3 {
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 440px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlide {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-    /* Instagram Community Strip */
-    .insta-strip {
-      padding: 4rem 8%;
-      background: var(--bg-card);
-      text-align: center;
-      border-top: 1px solid var(--border-color);
-    }
-    .insta-strip-box {
-      max-width: 650px;
-      margin: 0 auto;
-      background: var(--bg-main);
-      border: 1px solid var(--border-color);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow-lg);
-    }
-    .insta-strip-box h3 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.6rem;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-    }
-    .insta-strip-box p {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
+    .modal-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .modal-close-btn:hover { color: var(--gold); }
 
-    /* 3-Column Luxury Footer */
-    footer {
-      padding: 4rem 8% 2.5rem 8%;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
+    .modal-card h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    .modal-card p.auth-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
 
-    /* Auth Modal */
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      backdrop-filter: blur(8px);
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-    .modal-backdrop.show { display: flex; }
+    .auth-view { display: none; }
+    .auth-view.active { display: block; }
 
-    .modal-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-gold);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 440px;
-      padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes modalSlide {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    .auth-btn {
+      width: 100%;
+      background: var(--gold);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+    }
+    .auth-btn:hover {
+      background: var(--gold-bright);
+      color: #060E18;
+    }
 
-    .modal-close-btn {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .modal-close-btn:hover { color: var(--gold); }
+    .auth-switch {
+      margin-top: 1.4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .auth-switch a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .auth-switch a:hover { text-decoration: underline; }
 
-    .modal-card h2 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-    }
-    .modal-card p.auth-sub {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 1.8rem;
-    }
-
-    .auth-view { display: none; }
-    .auth-view.active { display: block; }
-
-    .auth-btn {
-      width: 100%;
-      background: var(--gold);
-      color: #FFFFFF;
-      border: none;
-      padding: 0.9rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 0.5rem;
-    }
-    .auth-btn:hover {
-      background: var(--gold-bright);
-      color: #060E18;
-    }
-
-    .auth-switch {
-      margin-top: 1.4rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .auth-switch a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .auth-switch a:hover { text-decoration: underline; }
-
-    .forgot-link {
-      display: block;
-      text-align: right;
-      font-size: 0.82rem;
-      color: var(--gold);
-      text-decoration: none;
-      margin-top: 0.4rem;
-      cursor: pointer;
-    }
-    .forgot-link:hover { text-decoration: underline; }
-  </style>
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: 0.4rem;
+      cursor: pointer;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
-  <!-- Ambient Alive Animated Background Lotus Mandalas -->
-  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-top" onerror="this.src='bg-lotus-mandala.jpg'">
-  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-mid" onerror="this.src='bg-lotus-mandala.jpg'">
-  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-bottom" onerror="this.src='bg-lotus-mandala.jpg'">
-
-  <!-- Sticky Navigation Header -->
-  <header>
-    <a href="#" class="brand-logo-container">
-      <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio Official Logo" class="brand-logo-img">
-    </a>
-
-    <div class="nav-actions">
-      <a href="#reviews-section" class="nav-link-btn" data-i18n="nav_reviews">⭐ Reviews</a>
-      <a href="#about-section" class="nav-link-btn" data-i18n="nav_about">📖 About</a>
-
-      <!-- ☀️ Light / 🌙 Dark Mode Switcher -->
-      <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
-        <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
-      </button>
-
-      <!-- 🌐 Language Selector -->
-      <select id="languageSelect" class="lang-switcher" onchange="setLanguage(this.value)">
-        <option value="en">🌐 English</option>
-        <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
-        <option value="hi">🌐 हिन्दी (Hindi)</option>
-      </select>
-
-      <!-- Sign In Trigger -->
-      <button class="nav-auth-btn" id="navAuthTrigger" onclick="openAuthModal('login')">
-        👤 <span data-i18n="nav_signin">Sign In</span>
-      </button>
-
-      <!-- Instagram Link -->
-      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-        @alankra.art_official
-      </a>
-    </div>
-  </header>
-
-  <!-- Main Hero & Direct Order Section -->
-  <main class="hero-container">
-    
-    <!-- Left Column: Product Selector, Info & Cover Photos -->
-    <div class="hero-text">
-      
-      <!-- Book Selector Switcher Tabs -->
-      <div class="book-selection-tabs">
-        <button class="book-select-btn active" id="btnBookVol1" onclick="switchBook('mandala_v1', this)">
-          📖 Vol 1: Sacred Geometry
-        </button>
-        <button class="book-select-btn" id="btnBookVol2" onclick="switchBook('mandala_v2', this)">
-          🌺 Vol 2: Dreamcatcher & Floral
-        </button>
-      </div>
-
-      <div class="hero-badge" id="heroBadge">✨ Mindfulness & Stress Relief Edition</div>
-      <h1 id="heroTitle">Mandala Colouring Book <span>For Grown-Ups</span></h1>
-      <p id="heroDesc">
-        Experience meditative peace with 30 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.
-      </p>
-
-      <div class="price-strip">
-        <span class="price" id="heroPrice">₹299.00</span>
-        <span class="mrp" id="heroMrp">₹499.00</span>
-        <span class="discount-pill" id="heroDiscount">40% OFF Launch Deal</span>
-      </div>
-
-      <!-- Real Product Cover Page Image Showcase -->
-      <div class="showcase-wrapper">
-        <div class="showcase-tabs">
-          <button class="tab-btn active" onclick="switchCover('front', this)" data-i18n="tab_front">📖 Front Cover View</button>
-          <button class="tab-btn" onclick="switchCover('back', this)" data-i18n="tab_back">🔄 Back Cover View</button>
-        </div>
-
-        <div class="cover-display">
-          <!-- FRONT COVER -->
-          <div id="frontCoverView" class="cover-view active">
-            <div class="product-img-box">
-              <img id="frontCoverImg" src="front-cover.png" alt="Alankra Mandala Colouring Book Front Cover" onerror="this.src='1.jpg'">
-            </div>
-            <div class="cover-caption" id="frontCoverCaption" data-i18n="caption_front">Front Cover • Half Line-Art & Half Colored Mandala</div>
-          </div>
-
-          <!-- BACK COVER -->
-          <div id="backCoverView" class="cover-view">
-            <div class="product-img-box">
-              <img id="backCoverImg" src="back-cover.png" alt="Alankra Mandala Colouring Book Back Cover" onerror="this.src='2.jpg'">
-            </div>
-            <div class="cover-caption" id="backCoverCaption" data-i18n="caption_back">Back Cover • Full Vibrant Art & Specifications Box</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Column: Direct Delivery Address & Order Checkout -->
-    <div class="checkout-form-card">
-      
-      <div id="userProfileBadge" class="user-profile-badge">
-        <span id="userGreeting">👤 Welcome, Guest</span>
-        <button class="logout-btn" onclick="logoutUser()" data-i18n="btn_logout">Log Out</button>
-      </div>
-
-      <h3 data-i18n="checkout_title">🛍️ Direct Studio Checkout</h3>
-      <p class="subtitle" data-i18n="checkout_subtitle">Enter your delivery address below for swift dispatch across India.</p>
-
-      <form id="orderForm" onsubmit="processOrder(event)">
-        
-        <div class="form-group">
-          <label data-i18n="lbl_name">Full Name *</label>
-          <input type="text" id="custName" class="form-control" placeholder="e.g. Nidhi Tomar" required maxlength="60">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="lbl_phone">WhatsApp / Phone Number *</label>
-            <input type="tel" id="custPhone" class="form-control" placeholder="10-digit Mobile No." required pattern="[0-9]{10}" maxlength="10">
-          </div>
-          <div class="form-group">
-            <label data-i18n="lbl_qty">Quantity</label>
-            <select id="bookQty" class="form-control" onchange="updateTotalBill()">
-              <option value="1" data-i18n="opt_qty_1">1 Book (₹299)</option>
-              <option value="2" data-i18n="opt_qty_2">2 Books (₹549 - Save ₹50)</option>
-              <option value="3" data-i18n="opt_qty_3">3 Books (₹799 - Save ₹100)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label data-i18n="lbl_address">Complete Delivery Address (House/Flat No, Street, Landmark) *</label>
-          <textarea id="custAddress" class="form-control" placeholder="Enter complete door address for courier delivery" required maxlength="300"></textarea>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="lbl_city">City / Town *</label>
-            <input type="text" id="custCity" class="form-control" placeholder="e.g. Vadodara / Ahmedabad" required maxlength="50">
-          </div>
-          <div class="form-group">
-            <label data-i18n="lbl_pincode">Pincode *</label>
-            <input type="text" id="custPincode" class="form-control" placeholder="6-digit Pincode" required pattern="[0-9]{6}" maxlength="6">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label data-i18n="lbl_payment">Payment Preference</label>
-          <select id="paymentPref" class="form-control">
-            <option value="UPI (GPay/PhonePe/Paytm)" data-i18n="opt_upi">Instant UPI (GPay / PhonePe / Paytm)</option>
-            <option value="Cash on Delivery" data-i18n="opt_cod">Cash on Delivery (COD)</option>
-          </select>
-        </div>
-
-        <!-- Total Bill Summary -->
-        <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); padding: 0.9rem; border-radius: 8px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-weight: 600; color: var(--text-muted);" data-i18n="lbl_total">Total Payable:</span>
-          <span id="totalBillAmount" style="font-size: 1.3rem; font-weight: 800; color: var(--gold);">₹299.00</span>
-        </div>
-
-        <button type="submit" class="place-order-btn" data-i18n="btn_place_order">
-          ✨ Place Order & Confirm Delivery
-        </button>
-
-        <div class="payment-notice" data-i18n="payment_notice">
-          🔒 100% Verified Studio Order • Free & Safe Shipping
-        </div>
-      </form>
-    </div>
-
-  </main>
-
-  <!-- ========================================================
-       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
-       ======================================================== -->
-  <section id="reviews-section" class="reviews-section">
-    <div class="section-header-badge">
-      <h2 data-i18n="reviews_heading">CUSTOMER EXPERIENCES</h2>
-      <p data-i18n="reviews_subheading">See how our coloring book is inspiring mindfulness and calm across India</p>
-    </div>
-
-    <!-- Rating Summary & Write Review Button -->
-    <div class="rating-summary-card">
-      <div class="rating-big">
-        <div class="rating-score">4.9</div>
-        <div>
-          <div class="rating-stars">★★★★★</div>
-          <div class="rating-count" data-i18n="rating_count">Based on 140+ Verified Reviews</div>
-        </div>
-      </div>
-      
-      <button class="write-review-btn" onclick="toggleReviewForm()">
-        ✍️ <span data-i18n="btn_write_review">Write a Review</span>
-      </button>
-    </div>
-
-    <!-- Review Form (Hidden by default, opens on click) -->
-    <div id="reviewFormWrapper" class="review-form-wrapper">
-      <h3 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem;" data-i18n="form_rev_title">Share Your Experience</h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n="form_rev_sub">Let others know how coloring these mandalas felt for you.</p>
-      
-      <form onsubmit="handleReviewSubmit(event)">
-        <div class="form-group">
-          <label data-i18n="lbl_rev_rating">Your Rating *</label>
-          <div class="star-select-box" id="starSelect">
-            <span class="star selected" onclick="setStarRating(1)">★</span>
-            <span class="star selected" onclick="setStarRating(2)">★</span>
-            <span class="star selected" onclick="setStarRating(3)">★</span>
-            <span class="star selected" onclick="setStarRating(4)">★</span>
-            <span class="star selected" onclick="setStarRating(5)">★</span>
-          </div>
-          <input type="hidden" id="reviewRatingVal" value="5">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="lbl_name">Your Name *</label>
-            <input type="text" id="revName" class="form-control" placeholder="e.g. Sneha Patel" required maxlength="50">
-          </div>
-          <div class="form-group">
-            <label data-i18n="lbl_city">City / State *</label>
-            <input type="text" id="revCity" class="form-control" placeholder="e.g. Ahmedabad, Gujarat" required maxlength="50">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label data-i18n="lbl_comment">Your Review *</label>
-          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required maxlength="400"></textarea>
-        </div>
-
-        <button type="submit" class="auth-btn" style="width: 100%;" data-i18n="btn_submit_rev">Submit Review</button>
-      </form>
-    </div>
-
-    <!-- Reviews Grid -->
-    <div class="reviews-grid" id="reviewsGrid">
-      
-      <!-- Review 1 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Pooja Trivedi</div>
-            <div class="reviewer-loc">Vadodara, Gujarat</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "The 160 GSM paper quality is extraordinary! I used dual-tip brush pens and there was absolutely zero bleed-through to the back. Coloring the lotus patterns after work has become my daily therapy routine."
-        </p>
-      </div>
-
-      <!-- Review 2 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Rahul Sharma</div>
-            <div class="reviewer-loc">Mumbai, Maharashtra</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "The lay-flat spiral wiro binding is so thoughtful! It makes coloring near the inner margins so effortless. The intricacy of the sacred geometry patterns is top-notch. Truly worth every rupee."
-        </p>
-      </div>
-
-      <!-- Review 3 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Dr. Ananya Iyer</div>
-            <div class="reviewer-loc">Bengaluru, Karnataka</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "As someone working in healthcare with long stressful shifts, this mandala book is pure mindfulness in a book. Beautiful unboxing experience and fast delivery through India Post Speed Post."
-        </p>
-      </div>
-
-      <!-- Review 4 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Dharaben Dave</div>
-            <div class="reviewer-loc">Godhra, Gujarat</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "ખૂબ જ સુંદર ક્વોલિટીની બુક છે! કાગળ ઘણો જાડો છે જેથી વોટર કલર પેન્સિલ પણ વાપરી શકાય છે. મારી દીકરી અને હું બંને સાથે બેસીને મંડલા કલરિંગ કરીએ છીએ. ખૂબ જ ગમી!"
-        </p>
-      </div>
-
-      <!-- Review 5 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Kavita Verma</div>
-            <div class="reviewer-loc">Jaipur, Rajasthan</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "Bought 2 copies—one for myself and one as a gift for a friend. The packaging was completely waterproof and safe. The single-sided printing is great because I can frame my finished art!"
-        </p>
-      </div>
-
-      <!-- Review 6 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Siddharth Nair</div>
-            <div class="reviewer-loc">Pune, Maharashtra</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "Top quality art production. The hand-drawn details in each mandala show true craftsmanship. Fast response on WhatsApp for order confirmation."
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SECTION: ABOUT (MANDALA PHILOSOPHY & ARTWORK)
-       ======================================================== -->
-  <section id="about-section" class="mandala-philosophy-section">
-    
-    <div class="section-header-badge">
-      <h2 data-i18n="about_heading">ABOUT</h2>
-      <p data-i18n="about_subheading">Discover the sacred art form that restores inner peace and clarity</p>
-    </div>
-
-    <div class="philosophy-grid">
-      
-      <!-- Left: Book Page Simulation Card -->
-      <div class="book-page-card">
-        <div class="page-art-half">
-          <img src="about-mandala.jpg" alt="Handcrafted Sacred Mandala Artwork" onerror="this.src='1.jpg'">
-        </div>
-
-        <div class="page-blue-half">
-          <h2 data-i18n="book_mandala_title">Mandala</h2>
-          <p class="lead-text" data-i18n="book_mandala_p1">
-            A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.
-          </p>
-          <p data-i18n="book_mandala_p2">
-            Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.
-          </p>
-          <p style="margin-bottom: 0;" data-i18n="book_mandala_p3">
-            They all have circular designs with repeating shapes and patterns that radiate from the center.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right: Healing Message & Quotes -->
-      <div class="philosophy-text">
-        <h2 id="philoHeading">The Healing Power of <span>Sacred Geometry</span></h2>
-        <p class="philosophy-desc" data-i18n="philo_desc">
-          When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.
-        </p>
-
-        <!-- Carl Jung Quote -->
-        <div class="artist-quote-box">
-          <blockquote data-i18n="quote_jung">
-            "The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."
-          </blockquote>
-          <cite data-i18n="cite_jung">— Carl Gustav Jung (Pioneer of Mandala Art Therapy)</cite>
-        </div>
-
-        <!-- Pablo Picasso Quote -->
-        <div class="artist-quote-box" style="border-left-color: var(--pink);">
-          <blockquote data-i18n="quote_picasso">
-            "Art washes away from the soul the dust of everyday life."
-          </blockquote>
-          <cite data-i18n="cite_picasso">— Pablo Picasso</cite>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SECTION: VIDEO SHOWCASE
-       ======================================================== -->
-  <section class="video-showcase-section">
-    <h2 data-i18n="video_heading">Watch The Art In Creation</h2>
-    <p class="video-sub" data-i18n="video_sub">Experience the meditative process of fine-line drafting & vibrant color blending</p>
-    
-    <div class="video-card-frame">
-      <video width="100%" height="auto" controls autoplay muted loop playsinline poster="front-cover.png">
-        <source src="mandala-art.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <!-- Features Grid -->
-  <section class="features-section">
-    <h2 data-i18n="feat_heading">Artisan Quality Guaranteed</h2>
-    <p class="features-subtitle" data-i18n="feat_sub">Designed specifically for adult colorists, artists, and mindfulness enthusiasts</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="icon">🌺</div>
-        <h3 id="featMandalasCount" data-i18n="feat_1_t">30–40 Handcrafted Mandalas</h3>
-        <p data-i18n="feat_1_d">Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">📄</div>
-        <h3 data-i18n="feat_2_t">160 GSM Cartridge Sheets</h3>
-        <p data-i18n="feat_2_d">Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🌀</div>
-        <h3 data-i18n="feat_3_t">Lay-Flat Wiro Binding</h3>
-        <p data-i18n="feat_3_d">Opens completely flat for maximum comfort while coloring near the margins.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">✂️</div>
-        <h3 data-i18n="feat_4_t">Single-Sided Print</h3>
-        <p data-i18n="feat_4_d">Every design is on its own page—tear out, frame, or gift your finished mandala art.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instagram Community Strip -->
-  <section class="insta-strip">
-    <div class="insta-strip-box">
-      <h3 data-i18n="insta_title">Join The Alankra Art Community</h3>
-      <p data-i18n="insta_desc">Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.</p>
-      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2.2rem;" data-i18n="insta_btn">
-        Follow on Instagram (@alankra.art_official)
-      </a>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       LUXURY 3-COLUMN STUDIO FOOTER
-       ======================================================== -->
-  <footer>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
-      
-      <!-- Col 1: About Us / Studio Bio -->
-      <div>
-        <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" style="max-width: 160px; margin-bottom: 1.2rem; display: block; mix-blend-mode: var(--logo-blend);">
-        <p style="line-height: 1.7; font-size: 0.9rem;">
-          Dedicated to bringing peace and mindfulness through handcrafted sacred geometry, botanical mandala art, and premium artist-grade colouring books.
-        </p>
-      </div>
-
-      <!-- Col 2: Quick Navigation Links -->
-      <div>
-        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Explore</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
-          <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Books</a></li>
-          <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">⭐ Customer Reviews</a></li>
-          <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
-          <li><a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Studio Support & Direct Contact -->
-      <div>
-        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Studio Helpdesk</h4>
-        <p style="margin-bottom: 0.6rem;">📱 WhatsApp: <a href="https://wa.me/918320300049" style="color: var(--gold); text-decoration: none; font-weight: 600;">+91 8320300049</a></p>
-        <p style="margin-bottom: 0.6rem;">✉️ Email: <a href="mailto:alankra.art@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">alankra.art@gmail.com</a></p>
-        <p style="font-size: 0.85rem; color: #059669; font-weight: 600; margin-top: 0.8rem;">📦 Free & Safe Delivery Across India</p>
-      </div>
-
-    </div>
-
-    <!-- Copyright Bottom Strip -->
-    <div style="border-top: 1px solid var(--border-color); padding-top: 1.8rem; text-align: center; font-size: 0.85rem;">
-      <p data-i18n="footer_copy">© 2026 Alankra Art Studio. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- USER AUTHENTICATION MODAL -->
-  <div id="authModal" class="modal-backdrop">
-    <div class="modal-card">
-      <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
-
-      <!-- 1. SIGN IN VIEW -->
-      <div id="loginView" class="auth-view active">
-        <h2 data-i18n="auth_login_title">Welcome Back</h2>
-        <p class="auth-sub" data-i18n="auth_login_sub">Sign in to track orders and save your delivery addresses.</p>
-        
-        <form onsubmit="handleLogin(event)">
-          <div class="form-group">
-            <label data-i18n="auth_lbl_email">Email Address</label>
-            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
-          </div>
-          <div class="form-group">
-            <label data-i18n="auth_lbl_pass">Password</label>
-            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required maxlength="50">
-            <a class="forgot-link" onclick="openAuthModal('forgot')" data-i18n="auth_forgot_link">Forgot Password?</a>
-          </div>
-          <button type="submit" class="auth-btn" data-i18n="auth_btn_signin">Sign In</button>
-        </form>
-
-        <div class="auth-switch">
-          <span data-i18n="auth_no_acc">Don't have an account?</span> <a onclick="openAuthModal('signup')" data-i18n="auth_create_link">Create New Account</a>
-        </div>
-      </div>
-
-      <!-- 2. CREATE ACCOUNT VIEW -->
-      <div id="signupView" class="auth-view">
-        <h2 data-i18n="auth_signup_title">Create Account</h2>
-        <p class="auth-sub" data-i18n="auth_signup_sub">Join Alankra Art Studio for exclusive art drops & offers.</p>
-        
-        <form onsubmit="handleSignup(event)">
-          <div class="form-group">
-            <label data-i18n="lbl_name">Full Name</label>
-            <input type="text" id="signupName" class="form-control" placeholder="Your Name" required maxlength="60">
-          </div>
-          <div class="form-group">
-            <label data-i18n="auth_lbl_email">Email Address</label>
-            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
-          </div>
-          <div class="form-group">
-            <label data-i18n="auth_lbl_newpass">Create Password</label>
-            <input type="password" id="signupPassword" class="form-control" placeholder="Minimum 6 characters" minlength="6" maxlength="50" required>
-          </div>
-          <button type="submit" class="auth-btn" data-i18n="auth_btn_create">Create My Account</button>
-        </form>
-
-        <div class="auth-switch">
-          <span data-i18n="auth_has_acc">Already have an account?</span> <a onclick="openAuthModal('login')" data-i18n="nav_signin">Sign In</a>
-        </div>
-      </div>
-
-      <!-- 3. FORGOT PASSWORD VIEW -->
-      <div id="forgotView" class="auth-view">
-        <h2 data-i18n="auth_reset_title">Reset Password</h2>
-        <p class="auth-sub" data-i18n="auth_reset_sub">Enter your registered email to receive a password reset link.</p>
-        
-        <form onsubmit="handleForgotPassword(event)">
-          <div class="form-group">
-            <label data-i18n="auth_lbl_reg_email">Registered Email</label>
-            <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
-          </div>
-          <button type="submit" class="auth-btn" data-i18n="auth_btn_send_reset">Send Reset Link</button>
-        </form>
-
-        <div class="auth-switch">
-          <span data-i18n="auth_rem_pass">Remember your password?</span> <a onclick="openAuthModal('login')" data-i18n="auth_back_login">Back to Sign In</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- JAVASCRIPT: DYNAMIC MULTI-BOOK CATALOG, TRANSLATIONS & CHECKOUT -->
-  <script>
-    function sanitizeSafeText(str) {
-      if (!str) return '';
-      return String(str).replace(/[<>"`]/g, '').trim();
-    }
-
-    // MULTI-BOOK CATALOG DATABASE
-    const bookCatalog = {
-      mandala_v1: {
-        id: "mandala_v1",
-        name: "Mandala Colouring Book (Vol 1: Sacred Geometry)",
-        frontCover: "front-cover.png",
-        backCover: "back-cover.png",
-        fallbackFront: "front-cover.jpg",
-        fallbackBack: "back-cover.jpg",
-        price: 299,
-        mrp: 499,
-        badge_en: "✨ Mindfulness & Stress Relief Edition",
-        badge_gu: "✨ માનસિક શાંતિ અને તણાવ મુક્તિ એડિશન",
-        badge_hi: "✨ माइंडफुलनेस और तनाव मुक्ति संस्करण",
-        title_en: "Mandala Colouring Book <span>For Grown-Ups</span>",
-        title_gu: "પુખ્ત વયના લોકો માટે <span>મંડલા કલરિંગ બુક (Vol 1)</span>",
-        title_hi: "वयस्कों के लिए <span>मंडला कलरिंग बुक (Vol 1)</span>",
-        desc_en: "Experience meditative peace with 30 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.",
-        desc_gu: "૩૦ સુંદર અને જટિલ પવિત્ર ભૂમિતિ તેમજ વનસ્પતિ મંડલા આર્ટ સાથે ધ્યાનપૂર્ણ શાંતિનો અનુભવ કરો. ૧૬૦ GSM ના જાડા આર્ટિસ્ટ કાગળ અને લે-ફ્લેટ વાયરો બાઇન્ડિંગ.",
-        desc_hi: "३० जटिल हस्तनिर्मित पवित्र ज्यामिति और बॉटनिकल मंडला के साथ ध्यानपूर्ण शांति का अनुभव करें। १६० GSM के मोटे आर्टिस्ट पेपर और ले-फ्लैट वायर बाइंडिंग।",
-        captionFront_en: "Front Cover • Half Line-Art & Half Colored Mandala",
-        captionFront_gu: "આગળનું કવર • અડધું લાઇન-આર્ટ અને અડધું રંગીન મંડલા",
-        captionFront_hi: "सामने का कवर • आधा लाइन-आर्ट और आधा रंगीन मंडला",
-        captionBack_en: "Back Cover • Full Vibrant Art & Specifications Box",
-        captionBack_gu: "પાછળનું કવર • સંપૂર્ણ રંગીન કલા અને પ્રોડક્ટ વિગતો",
-        captionBack_hi: "पीछे का कवर • पूर्ण रंगीन कला और उत्पाद विवरण"
-      },
-      mandala_v2: {
-        id: "mandala_v2",
-        name: "Mandala Colouring Book (Vol 2: Dreamcatcher & Floral)",
-        frontCover: "front-cover-vol2.jpg",
-        backCover: "back-cover-vol2.jpg",
-        fallbackFront: "1.jpg",
-        fallbackBack: "2.jpg",
-        price: 299,
-        mrp: 499,
-        badge_en: "🪶 Dreamcatcher & Floral Harmony Edition",
-        badge_gu: "🪶 ડ્રીમકેચર અને ફ્લોરલ હાર્મની એડિશન",
-        badge_hi: "🪶 ड्रीमकेचर और फ्लोरल हार्मनी संस्करण",
-        title_en: "Mandala Colouring Book <span>Vol 2 (40 Designs)</span>",
-        title_gu: "ડ્રીમકેચર મંડલા કલરિંગ બુક <span>Vol 2 (૪૦ ડિઝાઇન્સ)</span>",
-        title_hi: "ड्रीमकेचर मंडला कलरिंग बुक <span>Vol 2 (४० डिज़ाइन)</span>",
-        desc_en: "Immerse yourself in 40 unique handcrafted dreamcatchers, boho feathers, and soothing floral mandalas. Printed single-sided on premium 160 GSM cartridge sheets for pure mindfulness.",
-        desc_gu: "૪૦ અનોખા ડ્રીમકેચર અને ફ્લોરલ મંડલા ડિઝાઇન્સ સાથે શાંતિનો અનુભવ કરો. વોટર કલર અને બ્રશ પેન માટે ૧૬૦ GSM જાડા પ્રીમિયમ પેપર પર સિંગલ-સાઇડ પ્રિન્ટેડ.",
-        desc_hi: "४० अनूठे ड्रीमकेचर और फ्लोरल मंडला डिज़ाइनों के साथ तनावमुक्त हों। ब्रश पेन और पेंसिल के लिए १६० GSM मोटे प्रीमियम पेपर पर सिंगल-साइड प्रिंटेड।",
-        captionFront_en: "Front Cover • Handcrafted Dreamcatcher & 40 Designs Badge",
-        captionFront_gu: "આગળનું કવર • ડ્રીમકેચર મંડલા અને ૪૦ યુનિક ડિઝાઇન્સ",
-        captionFront_hi: "सामने का कवर • ड्रीमकेचर मंडला और ४० डिज़ाइन"
-        captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
-        captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
-        captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
-      }
-    };
-
-    let currentSelectedBook = "mandala_v1";
-
-    const translations = {
-      en: {
-        nav_reviews: "⭐ Reviews",
-        nav_about: "📖 About",
-        nav_signin: "Sign In",
-        discount_pill: "40% OFF Launch Deal",
-        tab_front: "📖 Front Cover View",
-        tab_back: "🔄 Back Cover View",
-        btn_logout: "Log Out",
-        checkout_title: "🛍️ Direct Studio Checkout",
-        checkout_subtitle: "Enter your delivery address below for swift dispatch across India.",
-        lbl_name: "Full Name *",
-        lbl_phone: "WhatsApp / Phone Number *",
-        lbl_qty: "Quantity",
-        opt_qty_1: "1 Book (₹299)",
-        opt_qty_2: "2 Books (₹549 - Save ₹50)",
-        opt_qty_3: "3 Books (₹799 - Save ₹100)",
-        lbl_address: "Complete Delivery Address (House/Flat No, Street, Landmark) *",
-        lbl_city: "City / Town *",
-        lbl_pincode: "Pincode *",
-        lbl_payment: "Payment Preference",
-        opt_upi: "Instant UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "Cash on Delivery (COD)",
-        lbl_total: "Total Payable:",
-        btn_place_order: "✨ Place Order & Confirm Delivery",
-        payment_notice: "🔒 100% Verified Studio Order • Free & Safe Shipping",
-        reviews_heading: "CUSTOMER EXPERIENCES",
-        reviews_subheading: "See how our coloring book is inspiring mindfulness and calm across India",
-        rating_count: "Based on 140+ Verified Reviews",
-        btn_write_review: "Write a Review",
-        form_rev_title: "Share Your Experience",
-        form_rev_sub: "Let others know how coloring these mandalas felt for you.",
-        lbl_rev_rating: "Your Rating *",
-        lbl_comment: "Your Review *",
-        btn_submit_rev: "Submit Review",
-        about_heading: "ABOUT",
-        about_subheading: "Discover the sacred art form that restores inner peace and clarity",
-        book_mandala_title: "Mandala",
-        book_mandala_p1: "A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.",
-        book_mandala_p2: "Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.",
-        book_mandala_p3: "They all have circular designs with repeating shapes and patterns that radiate from the center.",
-        philo_heading_html: "The Healing Power of <span>Sacred Geometry</span>",
-        philo_desc: "When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.",
-        quote_jung: '"The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."',
-        cite_jung: "— Carl Gustav Jung (Pioneer of Mandala Art Therapy)",
-        quote_picasso: '"Art washes away from the soul the dust of everyday life."',
-        cite_picasso: "— Pablo Picasso",
-        video_heading: "Watch The Art In Creation",
-        video_sub: "Experience the meditative process of fine-line drafting & vibrant color blending",
-        feat_heading: "Artisan Quality Guaranteed",
-        feat_sub: "Designed specifically for adult colorists, artists, and mindfulness enthusiasts",
-        feat_1_t: "30–40 Handcrafted Mandalas",
-        feat_1_d: "Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.",
-        feat_2_t: "160 GSM Cartridge Sheets",
-        feat_2_d: "Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.",
-        feat_3_t: "Lay-Flat Wiro Binding",
-        feat_3_d: "Opens completely flat for maximum comfort while coloring near the margins.",
-        feat_4_t: "Single-Sided Print",
-        feat_4_d: "Every design is on its own page—tear out, frame, or gift your finished mandala art.",
-        insta_title: "Join The Alankra Art Community",
-        insta_desc: "Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.",
-        insta_btn: "Follow on Instagram (@alankra.art_official)",
-        footer_copy: "© 2026 Alankra Art Studio. All rights reserved.",
-        auth_login_title: "Welcome Back",
-        auth_login_sub: "Sign in to track orders and save your delivery addresses.",
-        auth_lbl_email: "Email Address",
-        auth_lbl_pass: "Password",
-        auth_forgot_link: "Forgot Password?",
-        auth_btn_signin: "Sign In",
-        auth_no_acc: "Don't have an account?",
-        auth_create_link: "Create New Account",
-        auth_signup_title: "Create Account",
-        auth_signup_sub: "Join Alankra Art Studio for exclusive art drops & offers.",
-        auth_lbl_newpass: "Create Password",
-        auth_btn_create: "Create My Account",
-        auth_has_acc: "Already have an account?",
-        auth_reset_title: "Reset Password",
-        auth_reset_sub: "Enter your registered email to receive a password reset link.",
-        auth_lbl_reg_email: "Registered Email",
-        auth_btn_send_reset: "Send Reset Link",
-        auth_rem_pass: "Remember your password?",
-        auth_back_login: "Back to Sign In"
-      },
-      gu: {
-        nav_reviews: "⭐ રિવ્યુ",
-        nav_about: "📖 અમારા વિશે",
-        nav_signin: "સાઇન ઇન",
-        discount_pill: "૪૦% છૂટ - સ્પેશિયલ ઑફર",
-        tab_front: "📖 આગળનું કવર",
-        tab_back: "🔄 પાછળનું કવર",
-        btn_logout: "લૉગ આઉટ",
-        checkout_title: "🛍️ સ્ટુડિયો ડાયરેક્ટ ઓર્ડર",
-        checkout_subtitle: "સમગ્ર ભારતમાં ઝડપી ડિલિવરી માટે તમારું સરનામું નીચે દાખલ કરો.",
-        lbl_name: "પૂરું નામ *",
-        lbl_phone: "વ્હોટ્સએપ / મોબાઈલ નંબર *",
-        lbl_qty: "જથ્થો (Quantity)",
-        opt_qty_1: "૧ પુસ્તક (₹૨૯૯)",
-        opt_qty_2: "૨ પુસ્તકો (₹૫૪૯ - ₹૫૦ બચત)",
-        opt_qty_3: "૩ પુસ્તકો (₹૭૯૯ - ₹૧૦૦ બચત)",
-        lbl_address: "સંપૂર્ણ ડિલિવરી સરનામું (ઘર/ફ્લેટ નં., સોસાયટી, લેન્ડમાર્ક) *",
-        lbl_city: "શહેર / ગામ *",
-        lbl_pincode: "પીનકોડ *",
-        lbl_payment: "ચુકવણી પદ્ધતિ",
-        opt_upi: "ઇન્સ્ટન્ટ UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "કેશ ઓન ડિલિવરી (COD)",
-        lbl_total: "કુલ ચૂકવવાપાત્ર રકમ:",
-        btn_place_order: "✨ ઓર્ડર કરો અને ડિલિવરી કન્ફર્મ કરો",
-        payment_notice: "🔒 ૧૦૦% વેરિફાઇડ સ્ટુડિયો ઓર્ડર • ફ્રી અને સુરક્ષિત શિપિંગ",
-        reviews_heading: "ગ્રાહકોના પ્રતિભાવો (REVIEWS)",
-        reviews_subheading: "જાણો કે કેવી રીતે આ બુક લોકોને માનસિક શાંતિ આપે છે",
-        rating_count: "૧૪૦+ ગ્રાહકો દ્વારા ૪.૯ રેટિંગ",
-        btn_write_review: "રિવ્યુ આપો",
-        form_rev_title: "તમારો અનુભવ જણાવો",
-        form_rev_sub: "તમને કલરિંગ કરવાનો અનુભવ કેવો લાગ્યો તે લખો.",
-        lbl_rev_rating: "રેટિંગ પસંદ કરો *",
-        lbl_comment: "તમારો રિવ્યુ *",
-        btn_submit_rev: "રિવ્યુ સબમિટ કરો",
-        about_heading: "અમારા વિશે (ABOUT)",
-        about_subheading: "માનસિક શાંતિ અને સ્પષ્ટતા આપતી પવિત્ર મંડલા કલા વિશે જાણો",
-        book_mandala_title: "મંડલા (Mandala)",
-        book_mandala_p1: "મંડલા એ પ્રતીકોની ભૌમિતિક રચના છે. મંડલા સામાન્ય રીતે બહારથી અંદરના કેન્દ્ર તરફ, વિવિધ સ્તરોમાંથી પસાર થતી આધ્યાત્મિક યાત્રાનું પ્રતિનિધિત્વ કરે છે.",
-        book_mandala_p2: "મંડલા માત્ર રંગ પૂરવા માટેના ભૌમિતિક આકારો કરતાં ઘણું વધારે છે. મંડલા સદીઓથી પવિત્ર પ્રતીક તરીકે સેવા આપે છે અને તે સંપૂર્ણતા, સુમેળ અને બ્રહ્માંડની અનંત પ્રકૃતિનું પ્રતિનિધિત્વ કરે છે.",
-        book_mandala_p3: "તેમાં કેન્દ્રમાંથી બહાર તરફ ફેલાતી પુનરાવર્તિત આકારો અને ભાતો સાથેની ગોળાકાર ડિઝાઇન્સ હોય છે.",
-        philo_heading_html: "પવિત્ર ભૂમિતિની <span>ઉપચાર શક્તિ</span>",
-        philo_desc: "જ્યારે તમે મંડલામાં રંગ પૂરો છો, ત્યારે તમારું મન સક્રિય સ્થિરતાની ધ્યાનાવસ્થામાં પ્રવેશે છે. આ સપ્રમાણ પેટર્ન તમારા ધ્યાનને અંદર તરફ દોરે છે, પુનરાવર્તિત વિચારોને શાંત કરે છે, તણાવ ઘટાડે છે અને તમારી સર્જનાત્મકતાને જાગૃત કરે છે.",
-        quote_jung: '"મંડલા એ કેન્દ્ર છે. તે તમામ માર્ગોનો ઘાતાંક છે. તે કેન્દ્ર તરફ, આંતરિક સંવાદિતા અને આત્મ-અનુભૂતિ તરફનો માર્ગ છે."',
-        cite_jung: "— કાર્લ ગુસ્તાવ જંગ (મંડલા આર્ટ થેરાપીના પ્રણેતા)",
-        quote_picasso: '"કલા રોજિંદા જીવનની ધૂળને આત્મામાંથી ધોઈ નાખે છે."',
-        cite_picasso: "— પાબ્લો પિકાસો",
-        video_heading: "કલા નિર્માણ વિડીયો જુઓ",
-        video_sub: "સુંદર લાઇન આર્ટ અને રંગોના સંગમની ધ્યાનપૂર્ણ પ્રક્રિયાનો અનુભવ કરો",
-        feat_heading: "ઉચ્ચ ગુણવત્તાની ખાતરી",
-        feat_sub: "ખાસ કરીને કલાપ્રેમીઓ, આર્ટિસ્ટ્સ અને માનસિક શાંતિ શોધનારાઓ માટે નિર્મિત",
-        feat_1_t: "૩૦–૪૦ હાથથી દોરેલા મંડલા",
-        feat_1_d: "દૈનિક તણાવ દૂર કરવા માટે રચાયેલ જટિલ બોટનિકલ અને પવિત્ર ભૂમિતિ ડ્રોઇંગ્સ.",
-        feat_2_t: "૧૬૦ GSM જાડા કાર્ટ્રિજ પેપર",
-        feat_2_d: "બ્રશ પેન, સ્કેચ પેન અને કલર પેન્સિલ માટે યોગ્ય, જેથી રંગ પાછળ ન ઊતરે.",
-        feat_3_t: "વાયરો બાઇન્ડિંગ (Lay-Flat)",
-        feat_3_d: "કલર કરતી વખતે સરળતા રહે તે માટે સંપૂર્ણ ૧૮૦ ડિગ્રી ફ્લેટ ખુલે છે.",
-        feat_4_t: "સિંગલ-સાઇડેડ પ્રિન્ટ",
-        feat_4_d: "દરેક ડિઝાઇન એક તરફ પ્રિન્ટ છે—તમે તેને ફ્રેમ કરી શકો છો અથવા ભેટ આપી શકો છો.",
-        insta_title: "અલંકરા આર્ટ કોમ્યુનિટીમાં જોડાઓ",
-        insta_desc: "કલરિંગ ટિપ્સ અને નવા આર્ટવર્ક જોવા માટે ઇન્સ્ટાગ્રામ પર ફોલો કરો.",
-        insta_btn: "ઇન્સ્ટાગ્રામ પર ફોલો કરો (@alankra.art_official)",
-        footer_copy: "© 2026 અલંકરા આર્ટ સ્ટુડિયો. સર્વાધિકાર સુરક્ષિત.",
-        auth_login_title: "સ્વાગત છે",
-        auth_login_sub: "ઓર્ડર ટ્રેક કરવા માટે સાઇન ઇન કરો.",
-        auth_lbl_email: "ઈમેલ એડ્રેસ",
-        auth_lbl_pass: "પાસવર્ડ",
-        auth_forgot_link: "પાસવર્ડ ભૂલી ગયા?",
-        auth_btn_signin: "સાઇન ઇન",
-        auth_no_acc: "ખાતું નથી?",
-        auth_create_link: "નવું ખાતું બનાવો",
-        auth_signup_title: "નવું ખાતું બનાવો",
-        auth_signup_sub: "અલંકરા આર્ટ સાથે જોડાઓ.",
-        auth_lbl_newpass: "નવો પાસવર્ડ બનાવો",
-        auth_btn_create: "ખાતું બનાવો",
-        auth_has_acc: "પહેલેથી ખાતું છે?",
-        auth_reset_title: "પાસવર્ડ રીસેટ કરો",
-        auth_reset_sub: "પાસવર્ડ લિંક મેળવવા તમારો ઈમેલ દાખલ કરો.",
-        auth_lbl_reg_email: "નોંધાયેલ ઈમેલ",
-        auth_btn_send_reset: "રીસેટ લિંક મોકલો",
-        auth_rem_pass: "પાસવર્ડ યાદ આવ્યો?",
-        auth_back_login: "સાઇન ઇન પર પાછા જાઓ"
-      },
-      hi: {
-        nav_reviews: "⭐ समीक्षाएं",
-        nav_about: "📖 हमारे बारे में",
-        nav_signin: "साइन इन",
-        discount_pill: "४०% छूट - लॉन्च ऑफर",
-        tab_front: "📖 सामने का कवर",
-        tab_back: "🔄 पीछे का कवर",
-        btn_logout: "लॉग आउट",
-        checkout_title: "🛍️ स्टूडियो डायरेक्ट चेकआउट",
-        checkout_subtitle: "पूरे भारत में त्वरित डिलीवरी के लिए अपना पता नीचे दर्ज करें।",
-        lbl_name: "पूरा नाम *",
-        lbl_phone: "व्हाट्सएप / मोबाइल नंबर *",
-        lbl_qty: "मात्रा (Quantity)",
-        opt_qty_1: "१ पुस्तक (₹२९૯)",
-        opt_qty_2: "२ पुस्तकें (₹५४९ - ₹५० बचत)",
-        opt_qty_3: "३ पुस्तकें (₹७९૯ - ₹१०० बचत)",
-        lbl_address: "पूरा डिलीवरी पता (मकान/फ्लैट नं., गली, लैंडमार्क) *",
-        lbl_city: "शहर / कस्बा *",
-        lbl_pincode: "पिनकोड *",
-        lbl_payment: "भुगतान विकल्प",
-        opt_upi: "इंस्टेंट UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "कैश ऑन डिलीवरी (COD)",
-        lbl_total: "कुल देय राशि:",
-        btn_place_order: "✨ ऑर्डर करें और डिलीवरी कन्फर्म करें",
-        payment_notice: "🔒 १००% सत्यापित स्टूडियो ऑर्डर • मुफ्त और सुरक्षित शिपिंग",
-        reviews_heading: "ग्राहकों के अनुभव (REVIEWS)",
-        reviews_subheading: "देखें कि कैसे यह मंडला बुक लोगों को तनावमुक्त और शांत कर रही है",
-        rating_count: "१४०+ सत्यापित समीक्षाओं पर आधारित",
-        btn_write_review: "समीक्षा लिखें",
-        form_rev_title: "अपना अनुभव साझा करें",
-        form_rev_sub: "बताएं कि इस बुक में रंग भरने का आपका अनुभव कैसा रहा।",
-        lbl_rev_rating: "रेटिंग चुनें *",
-        lbl_comment: "आपकी समीक्षा *",
-        btn_submit_rev: "समीक्षा सबमिट करें",
-        about_heading: "हमारे बारे में (ABOUT)",
-        about_subheading: "उस पवित्र कला के बारे में जानें जो मन को शांति और स्पष्टता देती है",
-        book_mandala_title: "मंडला (Mandala)",
-        book_mandala_p1: "मंडला प्रतीकों का एक ज्यामितीय विन्यास है। मंडला आम तौर पर बाहर से आंतरिक कोर तक, परतों के माध्यम से आध्यात्मिक यात्रा का प्रतिनिधित्व करता है।",
-        book_mandala_p2: "मंडला केवल रंग भरने वाले ज्यामितीय पैटर्न से कहीं अधिक हैं। मंडला सदियों से एक पवित्र प्रतीक रहे हैं और संपूर्णता, सद्भाव और ब्रह्मांड की अनंत प्रकृति का प्रतिनिधित्व करते हैं।",
-        book_mandala_p3: "इन सभी में केंद्र से निकलने वाले दोहराए जाने वाले आकारों और पैटर्नों के साथ गोलाकार डिज़ाइन होते हैं।",
-        philo_heading_html: "पवित्र ज्यामिति की <span>उपचार शक्ति</span>",
-        philo_desc: "जब आप मंडला में रंग भरते हैं, तो आपका दिमाग सक्रिय शांति की ध्यान अवस्था में प्रवेश करता है। सममित पैटर्न आपके ध्यान को अंदर की ओर केंद्रित करते हैं, तनाव को कम करते हैं और आपकी रचनात्मकता को जगाते हैं।",
-        quote_jung: '"मंडला केंद्र है। यह सभी रास्तों का प्रतिपादक है। यह केंद्र की ओर, आंतरिक सद्भाव और आत्मीयता का मार्ग है।"',
-        cite_jung: "— कार्ल गुस्ताव जुंग (मंडला कला चिकित्सा के प्रणेता)",
-        quote_picasso: '"कला आत्मा से दैनिक जीवन की धूल को धो देती है।"',
-        cite_picasso: "— पाब्लो पिकासो",
-        video_heading: "कला निर्माण वीडियो देखें",
-        video_sub: "बारीक रेखांकन और रंगों के सुंदर संयोजन की ध्यानपूर्ण प्रक्रिया का अनुभव करें",
-        feat_heading: "उत्कृष्ट कारीगरी और गुणवत्ता",
-        feat_sub: "विशेष रूप से कलाकारों और मानसिक शांति चाहने वालों के लिए तैयार",
-        feat_1_t: "३०–४० हस्तनिर्मित मंडला",
-        feat_1_d: "दैनिक तनाव को दूर करने के लिए तैयार किए गए जटिल बॉटनिकल और ज्यामितीय चित्र।",
-        feat_2_t: "१६० GSM मोटा कार्ट्रिज पेपर",
-        feat_2_d: "ब्रश पेन, स्केच पेन और रंगीन पेंसिलों के लिए बिल्कुल सही, रंग पीछे नहीं छपता।",
-        feat_3_t: "ले-फ्लैट वायर बाइंडिंग",
-        feat_3_d: "रंग भरते समय अत्यधिक सुविधा के लिए पूरी तरह से १८० डिग्री सपाट खुलता है।",
-        feat_4_t: "सिंगल-साइडेड प्रिंट",
-        feat_4_d: "प्रत्येक डिज़ाइन एक अलग पृष्ठ पर है—ताकि आप अपनी कला को फ्रेम या उपहार में दे सकें।",
-        insta_title: "अलंकरा आर्ट समुदाय से जुड़ें",
-        insta_desc: "कलरिंग टिप्स और नए आर्टवर्क देखने के लिए इंस्टाग्राम पर फॉलो करें।",
-        insta_btn: "इंस्टाग्राम पर फॉलो करें (@alankra.art_official)",
-        footer_copy: "© 2026 अलंकरा आर्ट स्टूडियो। सर्वाधिकार सुरक्षित।",
-        auth_login_title: "वापसी पर स्वागत है",
-        auth_login_sub: "ऑर्डर ट्रैक करने के लिए साइन इन करें।",
-        auth_lbl_email: "ईमेल पता",
-        auth_lbl_pass: "पासवर्ड",
-        auth_forgot_link: "पासवर्ड भूल गए?",
-        auth_btn_signin: "साइन इन",
-        auth_no_acc: "खाता नहीं है?",
-        auth_create_link: "नया खाता बनाएं",
-        auth_signup_title: "नया खाता बनाएं",
-        auth_signup_sub: "विशेष कला और ऑफर्स के लिए अलंकरा से जुड़ें।",
-        auth_lbl_newpass: "नया पासवर्ड बनाएं",
-        auth_btn_create: "खाता बनाएं",
-        auth_has_acc: "पहले से खाता है?",
-        auth_reset_title: "पासवर्ड रीसेट करें",
-        auth_reset_sub: "पासवर्ड रीसेट लिंक पाने के लिए अपना ईमेल दर्ज करें।",
-        auth_lbl_reg_email: "पंजीकृत ईमेल",
-        auth_btn_send_reset: "रीसेट लिंक भेजें",
-        auth_rem_pass: "पासवर्ड याद आ गया?",
-        auth_back_login: "साइन इन पर वापस जाएं"
-      }
-    };
-
-    // DYNAMIC SWITCHER: Vol 1 vs Vol 2
-    function switchBook(bookKey, btn) {
-      currentSelectedBook = bookKey;
-      const book = bookCatalog[bookKey];
-      const lang = localStorage.getItem('alankra_lang') || 'en';
-
-      document.querySelectorAll('.book-select-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      // Update Cover Images with Error Fallbacks
-      const frontImg = document.getElementById('frontCoverImg');
-      const backImg = document.getElementById('backCoverImg');
-
-      frontImg.src = book.frontCover;
-      frontImg.onerror = () => { frontImg.src = book.fallbackFront; };
-
-      backImg.src = book.backCover;
-      backImg.onerror = () => { backImg.src = book.fallbackBack; };
-
-      // Update Localized Strings for Active Book
-      document.getElementById('heroBadge').textContent = book['badge_' + lang] || book.badge_en;
-      document.getElementById('heroTitle').innerHTML = book['title_' + lang] || book.title_en;
-      document.getElementById('heroDesc').textContent = book['desc_' + lang] || book.desc_en;
-      document.getElementById('frontCoverCaption').textContent = book['captionFront_' + lang] || book.captionFront_en;
-      document.getElementById('backCoverCaption').textContent = book['captionBack_' + lang] || book.captionBack_en;
-
-      // Reset to Front Cover tab view
-      const frontTabBtn = document.querySelectorAll('.tab-btn')[0];
-      switchCover('front', frontTabBtn);
-
-      updateTotalBill();
-    }
-
-    // REVIEW FORM & STARS
-    function toggleReviewForm() {
-      const wrapper = document.getElementById('reviewFormWrapper');
-      wrapper.classList.toggle('active');
-    }
-
-    function setStarRating(rating) {
-      document.getElementById('reviewRatingVal').value = rating;
-      const stars = document.querySelectorAll('#starSelect .star');
-      stars.forEach((star, index) => {
-        if (index < rating) {
-          star.classList.add('selected');
-        } else {
-          star.classList.remove('selected');
-        }
-      });
-    }
-
-    function handleReviewSubmit(e) {
-      e.preventDefault();
-      const name = sanitizeSafeText(document.getElementById('revName').value);
-      const city = sanitizeSafeText(document.getElementById('revCity').value);
-      const comment = sanitizeSafeText(document.getElementById('revComment').value);
-      const rating = parseInt(document.getElementById('reviewRatingVal').value) || 5;
-      
-      const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-
-      const newCard = document.createElement('div');
-      newCard.className = 'review-card';
-      newCard.innerHTML = `
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">${name}</div>
-            <div class="reviewer-loc">${city}</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">${starString}</div>
-        <p class="review-comment">"${comment}"</p>
-      `;
-
-      document.getElementById('reviewsGrid').prepend(newCard);
-      document.getElementById('reviewFormWrapper').classList.remove('active');
-      alert('✨ Thank you for sharing your experience, ' + name + '!');
-    }
-
-    // THEME SWITCHER
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('alankra_theme', newTheme);
-      updateThemeButton(newTheme);
-    }
-
-    function updateThemeButton(theme) {
-      const icon = document.getElementById('themeIcon');
-      const label = document.getElementById('themeLabel');
-      if (theme === 'dark') {
-        icon.textContent = '☀️';
-        label.textContent = 'Light';
-      } else {
-        icon.textContent = '🌙';
-        label.textContent = 'Dark';
-      }
-    }
-
-    // MULTI-LANGUAGE SWITCHER
-    function setLanguage(lang) {
-      localStorage.setItem('alankra_lang', lang);
-      const dict = translations[lang] || translations.en;
-
-      document.querySelectorAll('[data-i18n]').forEach(elem => {
-        const key = elem.getAttribute('data-i18n');
-        if (dict[key]) {
-          elem.textContent = dict[key];
-        }
-      });
-
-      if (dict.philo_heading_html) document.getElementById('philoHeading').innerHTML = dict.philo_heading_html;
-
-      // Re-apply language to current active book
-      const activeBtn = currentSelectedBook === 'mandala_v1' ? document.getElementById('btnBookVol1') : document.getElementById('btnBookVol2');
-      switchBook(currentSelectedBook, activeBtn);
-    }
-
-    // COVER IMAGE TABS
-    function switchCover(view, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.cover-view').forEach(v => v.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      if (view === 'front') {
-        document.getElementById('frontCoverView').classList.add('active');
-      } else {
-        document.getElementById('backCoverView').classList.add('active');
-      }
-    }
-
-    // AUTH MODAL LOGIC
-    function openAuthModal(view) {
-      document.getElementById('authModal').classList.add('show');
-      document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
-      if (view === 'login') document.getElementById('loginView').classList.add('active');
-      if (view === 'signup') document.getElementById('signupView').classList.add('active');
-      if (view === 'forgot') document.getElementById('forgotView').classList.add('active');
-    }
-
-    function closeAuthModal() {
-      document.getElementById('authModal').classList.remove('show');
-    }
-
-    function handleSignup(e) {
-      e.preventDefault();
-      const name = sanitizeSafeText(document.getElementById('signupName').value);
-      const email = sanitizeSafeText(document.getElementById('signupEmail').value);
-      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
-      updateUserUI(name);
-      closeAuthModal();
-      alert('✨ Account created! Welcome, ' + name);
-    }
-
-    function handleLogin(e) {
-      e.preventDefault();
-      const email = sanitizeSafeText(document.getElementById('loginEmail').value);
-      const name = email.split('@')[0];
-      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
-      updateUserUI(name);
-      closeAuthModal();
-      alert('✨ Welcome back, ' + name + '!');
-    }
-
-    function handleForgotPassword(e) {
-      e.preventDefault();
-      const email = sanitizeSafeText(document.getElementById('forgotEmail').value);
-      alert('📩 Password reset instructions sent to ' + email);
-      openAuthModal('login');
-    }
-
-    function updateUserUI(name) {
-      document.getElementById('userGreeting').textContent = '👤 Logged in as: ' + name;
-      document.getElementById('userProfileBadge').classList.add('show');
-      document.getElementById('navAuthTrigger').innerHTML = '👤 <span>' + name + '</span>';
-      
-      const nameInput = document.getElementById('custName');
-      if (!nameInput.value) nameInput.value = name;
-    }
-
-    function logoutUser() {
-      localStorage.removeItem('alankra_user');
-      document.getElementById('userProfileBadge').classList.remove('show');
-      document.getElementById('navAuthTrigger').innerHTML = '👤 <span data-i18n="nav_signin">Sign In</span>';
-      alert('Logged out successfully.');
-    }
-
-    function updateTotalBill() {
-      const qty = parseInt(document.getElementById('bookQty').value);
-      let total = 299;
-      if (qty === 2) total = 549;
-      if (qty === 3) total = 799;
-      document.getElementById('totalBillAmount').textContent = '₹' + total + '.00';
-    }
-
-    // DIRECT WHATSAPP ORDER PROCESSING
-    function processOrder(e) {
-      e.preventDefault();
-      const name = sanitizeSafeText(document.getElementById('custName').value);
-      const phone = sanitizeSafeText(document.getElementById('custPhone').value);
-      const qty = document.getElementById('bookQty').value;
-      const address = sanitizeSafeText(document.getElementById('custAddress').value);
-      const city = sanitizeSafeText(document.getElementById('custCity').value);
-      const pincode = sanitizeSafeText(document.getElementById('custPincode').value);
-      const payment = document.getElementById('paymentPref').value;
-      const total = document.getElementById('totalBillAmount').textContent;
-      const selectedBook = bookCatalog[currentSelectedBook];
-
-      let orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
-        `*Customer Name:* ${encodeURIComponent(name)}%0A` +
-        `*Phone:* ${encodeURIComponent(phone)}%0A` +
-        `*Selected Book:* ${encodeURIComponent(selectedBook.name)}%0A` +
-        `*Quantity:* ${encodeURIComponent(qty)} Book(s)%0A` +
-        `*Total Amount:* ${encodeURIComponent(total)}%0A` +
-        `*Payment Mode:* ${encodeURIComponent(payment)}%0A%0A` +
-        `*Delivery Address:*%0A${encodeURIComponent(address)}%0A` +
-        `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A`;
-
-      if (payment.includes('UPI')) {
-        orderMessage += `*PAYMENT:*%0A` +
-          `_Please share your payment QR code so I can complete the payment and send the screenshot._%0A%0A`;
-      }
-
-      orderMessage += `Please confirm my order and share dispatch details! 📦✨`;
-
-      window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
-    }
-
-    // INITIALIZATION ON DOM READY
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('alankra_theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeButton(savedTheme);
-
-      const savedLang = localStorage.getItem('alankra_lang') || 'en';
-      document.getElementById('languageSelect').value = savedLang;
-      setLanguage(savedLang);
-
-      const savedUser = localStorage.getItem('alankra_user');
-      if (savedUser) {
-        try {
-          const user = JSON.parse(savedUser);
-          updateUserUI(user.name);
-        } catch (err) {}
-      }
-    });
-  </script>
+  <!-- Ambient Alive Animated Background Lotus Mandalas -->
+  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-top" onerror="this.src='bg-lotus-mandala.jpg'">
+  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-mid" onerror="this.src='bg-lotus-mandala.jpg'">
+  <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-bottom" onerror="this.src='bg-lotus-mandala.jpg'">
+
+  <!-- Sticky Navigation Header -->
+  <header>
+    <a href="#" class="brand-logo-container">
+      <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio Official Logo" class="brand-logo-img">
+    </a>
+
+    <div class="nav-actions">
+      <!-- Direct Navigation Shortcuts -->
+      <a href="#reviews-section" class="nav-link-btn" data-i18n="nav_reviews">⭐ Reviews</a>
+      <a href="#about-section" class="nav-link-btn" data-i18n="nav_about">📖 About</a>
+
+      <!-- ☀️ Light / 🌙 Dark Mode Switcher -->
+      <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
+      </button>
+
+      <!-- 🌐 Language Selector -->
+      <select id="languageSelect" class="lang-switcher" onchange="setLanguage(this.value)">
+        <option value="en">🌐 English</option>
+        <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
+        <option value="hi">🌐 हिन्दी (Hindi)</option>
+      </select>
+
+      <!-- Sign In Trigger -->
+      <button class="nav-auth-btn" id="navAuthTrigger" onclick="openAuthModal('login')">
+        👤 <span data-i18n="nav_signin">Sign In</span>
+      </button>
+
+      <!-- Instagram Link -->
+      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        @alankra.art_official
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Hero & Direct Order Section -->
+  <main class="hero-container">
+    
+    <!-- Left Column: Product Info & Real Front/Back Cover Photos -->
+    <div class="hero-text">
+      <div class="hero-badge" data-i18n="hero_badge">✨ Mindfulness & Stress Relief Edition</div>
+      <h1 id="heroTitle">Mandala Colouring Book <span>For Grown-Ups</span></h1>
+      <p data-i18n="hero_desc">
+        Experience meditative peace with 30 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.
+      </p>
+
+      <div class="price-strip">
+        <span class="price">₹299.00</span>
+        <span class="mrp">₹499.00</span>
+        <span class="discount-pill" data-i18n="discount_pill">40% OFF Launch Deal</span>
+      </div>
+
+      <!-- Real Product Cover Page Image Showcase -->
+      <div class="showcase-wrapper">
+        <div class="showcase-tabs">
+          <button class="tab-btn active" onclick="switchCover('front', this)" data-i18n="tab_front">📖 Front Cover View</button>
+          <button class="tab-btn" onclick="switchCover('back', this)" data-i18n="tab_back">🔄 Back Cover View</button>
+        </div>
+
+        <div class="cover-display">
+          <!-- FRONT COVER -->
+          <div id="frontCoverView" class="cover-view active">
+            <div class="product-img-box">
+              <img src="front-cover.png" alt="Alankra Mandala Colouring Book Front Cover">
+            </div>
+            <div class="cover-caption" data-i18n="caption_front">Front Cover • Half Line-Art & Half Colored Mandala</div>
+          </div>
+
+          <!-- BACK COVER -->
+          <div id="backCoverView" class="cover-view">
+            <div class="product-img-box">
+              <img src="back-cover.png" alt="Alankra Mandala Colouring Book Back Cover">
+            </div>
+            <div class="cover-caption" data-i18n="caption_back">Back Cover • Full Vibrant Art & Specifications Box</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Direct Delivery Address & Order Checkout -->
+    <div class="checkout-form-card">
+      
+      <div id="userProfileBadge" class="user-profile-badge">
+        <span id="userGreeting">👤 Welcome, Guest</span>
+        <button class="logout-btn" onclick="logoutUser()" data-i18n="btn_logout">Log Out</button>
+      </div>
+
+      <h3 data-i18n="checkout_title">🛍️ Direct Studio Checkout</h3>
+      <p class="subtitle" data-i18n="checkout_subtitle">Enter your delivery address below for swift dispatch across India.</p>
+
+      <form id="orderForm" onsubmit="processOrder(event)">
+        
+        <div class="form-group">
+          <label data-i18n="lbl_name">Full Name *</label>
+          <input type="text" id="custName" class="form-control" placeholder="e.g. Nidhi Tomar" required maxlength="60">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="lbl_phone">WhatsApp / Phone Number *</label>
+            <input type="tel" id="custPhone" class="form-control" placeholder="10-digit Mobile No." required pattern="[0-9]{10}" maxlength="10">
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_qty">Quantity</label>
+            <select id="bookQty" class="form-control" onchange="updateTotalBill()">
+              <option value="1" data-i18n="opt_qty_1">1 Book (₹299)</option>
+              <option value="2" data-i18n="opt_qty_2">2 Books (₹549 - Save ₹50)</option>
+              <option value="3" data-i18n="opt_qty_3">3 Books (₹799 - Save ₹100)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="lbl_address">Complete Delivery Address (House/Flat No, Street, Landmark) *</label>
+          <textarea id="custAddress" class="form-control" placeholder="Enter complete door address for courier delivery" required maxlength="300"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="lbl_city">City / Town *</label>
+            <input type="text" id="custCity" class="form-control" placeholder="e.g. Godhra / Vadodara" required maxlength="50">
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_pincode">Pincode *</label>
+            <input type="text" id="custPincode" class="form-control" placeholder="6-digit Pincode" required pattern="[0-9]{6}" maxlength="6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="lbl_payment">Payment Preference</label>
+          <select id="paymentPref" class="form-control">
+            <option value="UPI (GPay/PhonePe/Paytm)" data-i18n="opt_upi">Instant UPI (GPay / PhonePe / Paytm)</option>
+            <option value="Cash on Delivery" data-i18n="opt_cod">Cash on Delivery (COD)</option>
+          </select>
+        </div>
+
+        <!-- Total Bill Summary -->
+        <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); padding: 0.9rem; border-radius: 8px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 600; color: var(--text-muted);" data-i18n="lbl_total">Total Payable:</span>
+          <span id="totalBillAmount" style="font-size: 1.3rem; font-weight: 800; color: var(--gold);">₹299.00</span>
+        </div>
+
+        <button type="submit" class="place-order-btn" data-i18n="btn_place_order">
+          ✨ Place Order & Confirm Delivery
+        </button>
+
+        <div class="payment-notice" data-i18n="payment_notice">
+          🔒 100% Verified Studio Order • Free & Safe Shipping
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- ========================================================
+       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
+       ======================================================== -->
+  <section id="reviews-section" class="reviews-section">
+    <div class="section-header-badge">
+      <h2 data-i18n="reviews_heading">CUSTOMER EXPERIENCES</h2>
+      <p data-i18n="reviews_subheading">See how our coloring book is inspiring mindfulness and calm across India</p>
+    </div>
+
+    <!-- Rating Summary & Write Review Button -->
+    <div class="rating-summary-card">
+      <div class="rating-big">
+        <div class="rating-score">4.9</div>
+        <div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count" data-i18n="rating_count">Based on 140+ Verified Reviews</div>
+        </div>
+      </div>
+      
+      <button class="write-review-btn" onclick="toggleReviewForm()">
+        ✍️ <span data-i18n="btn_write_review">Write a Review</span>
+      </button>
+    </div>
+
+    <!-- Review Form (Hidden by default, opens on click) -->
+    <div id="reviewFormWrapper" class="review-form-wrapper">
+      <h3 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem;" data-i18n="form_rev_title">Share Your Experience</h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n="form_rev_sub">Let others know how coloring these mandalas felt for you.</p>
+      
+      <form onsubmit="handleReviewSubmit(event)">
+        <div class="form-group">
+          <label data-i18n="lbl_rev_rating">Your Rating *</label>
+          <div class="star-select-box" id="starSelect">
+            <span class="star selected" onclick="setStarRating(1)">★</span>
+            <span class="star selected" onclick="setStarRating(2)">★</span>
+            <span class="star selected" onclick="setStarRating(3)">★</span>
+            <span class="star selected" onclick="setStarRating(4)">★</span>
+            <span class="star selected" onclick="setStarRating(5)">★</span>
+          </div>
+          <input type="hidden" id="reviewRatingVal" value="5">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="lbl_name">Your Name *</label>
+            <input type="text" id="revName" class="form-control" placeholder="e.g. Sneha Patel" required maxlength="50">
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_city">City / State *</label>
+            <input type="text" id="revCity" class="form-control" placeholder="e.g. Ahmedabad, Gujarat" required maxlength="50">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="lbl_comment">Your Review *</label>
+          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required maxlength="400"></textarea>
+        </div>
+
+        <button type="submit" class="auth-btn" style="width: 100%;" data-i18n="btn_submit_rev">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="reviews-grid" id="reviewsGrid">
+      
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Pooja Trivedi</div>
+            <div class="reviewer-loc">Vadodara, Gujarat</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "The 160 GSM paper quality is extraordinary! I used dual-tip brush pens and there was absolutely zero bleed-through to the back. Coloring the lotus patterns after work has become my daily therapy routine."
+        </p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Rahul Sharma</div>
+            <div class="reviewer-loc">Mumbai, Maharashtra</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "The lay-flat spiral wiro binding is so thoughtful! It makes coloring near the inner margins so effortless. The intricacy of the sacred geometry patterns is top-notch. Truly worth every rupee."
+        </p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Dr. Ananya Iyer</div>
+            <div class="reviewer-loc">Bengaluru, Karnataka</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "As someone working in healthcare with long stressful shifts, this mandala book is pure mindfulness in a book. Beautiful unboxing experience and fast delivery through India Post Speed Post."
+        </p>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Dharaben Dave</div>
+            <div class="reviewer-loc">Godhra, Gujarat</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "ખૂબ જ સુંદર ક્વોલિટીની બુક છે! કાગળ ઘણો જાડો છે જેથી વોટર કલર પેન્સિલ પણ વાપરી શકાય છે. મારી દીકરી અને હું બંને સાથે બેસીને મંડલા કલરિંગ કરીએ છીએ. ખૂબ જ ગમી!"
+        </p>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Kavita Verma</div>
+            <div class="reviewer-loc">Jaipur, Rajasthan</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "Bought 2 copies—one for myself and one as a gift for a friend. The packaging was completely waterproof and safe. The single-sided printing is great because I can frame my finished art!"
+        </p>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">Siddharth Nair</div>
+            <div class="reviewer-loc">Pune, Maharashtra</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-comment">
+          "Top quality art production. The hand-drawn details in each mandala show true craftsmanship. Fast response on WhatsApp for order confirmation."
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION: ABOUT (MANDALA PHILOSOPHY & REAL ARTWORK)
+       ======================================================== -->
+  <section id="about-section" class="mandala-philosophy-section">
+    
+    <!-- Section Title: ABOUT -->
+    <div class="section-header-badge">
+      <h2 data-i18n="about_heading">ABOUT</h2>
+      <p data-i18n="about_subheading">Discover the sacred art form that restores inner peace and clarity</p>
+    </div>
+
+    <div class="philosophy-grid">
+      
+      <!-- Left: Book Page Simulation Card with Real Handcrafted Mandala Image -->
+      <div class="book-page-card">
+        
+        <!-- Real Handcrafted Colored Half-Mandala Artwork -->
+        <div class="page-art-half">
+          <img src="about-mandala.jpg" alt="Handcrafted Sacred Mandala Artwork">
+        </div>
+
+        <!-- Blue Half Message Box -->
+        <div class="page-blue-half">
+          <h2 data-i18n="book_mandala_title">Mandala</h2>
+          <p class="lead-text" data-i18n="book_mandala_p1">
+            A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.
+          </p>
+          <p data-i18n="book_mandala_p2">
+            Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.
+          </p>
+          <p style="margin-bottom: 0;" data-i18n="book_mandala_p3">
+            They all have circular designs with repeating shapes and patterns that radiate from the center.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right: Powerful Healing Message & Famous Artist Quotes -->
+      <div class="philosophy-text">
+        <h2 id="philoHeading">The Healing Power of <span>Sacred Geometry</span></h2>
+        <p class="philosophy-desc" data-i18n="philo_desc">
+          When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.
+        </p>
+
+        <!-- Famous Artist Quote 1 (Carl Jung) -->
+        <div class="artist-quote-box">
+          <blockquote data-i18n="quote_jung">
+            "The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."
+          </blockquote>
+          <cite data-i18n="cite_jung">— Carl Gustav Jung (Pioneer of Mandala Art Therapy)</cite>
+        </div>
+
+        <!-- Famous Artist Quote 2 (Pablo Picasso) -->
+        <div class="artist-quote-box" style="border-left-color: var(--pink);">
+          <blockquote data-i18n="quote_picasso">
+            "Art washes away from the soul the dust of everyday life."
+          </blockquote>
+          <cite data-i18n="cite_picasso">— Pablo Picasso</cite>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION: VIDEO SHOWCASE (mandala-art.mp4)
+       ======================================================== -->
+  <section class="video-showcase-section">
+    <h2 data-i18n="video_heading">Watch The Art In Creation</h2>
+    <p class="video-sub" data-i18n="video_sub">Experience the meditative process of fine-line drafting & vibrant color blending</p>
+    
+    <div class="video-card-frame">
+      <video width="100%" height="auto" controls autoplay muted loop playsinline poster="front-cover.png">
+        <source src="mandala-art.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section">
+    <h2 data-i18n="feat_heading">Artisan Quality Guaranteed</h2>
+    <p class="features-subtitle" data-i18n="feat_sub">Designed specifically for adult colorists, artists, and mindfulness enthusiasts</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🌺</div>
+        <h3 data-i18n="feat_1_t">30 Handcrafted Mandalas</h3>
+        <p data-i18n="feat_1_d">Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📄</div>
+        <h3 data-i18n="feat_2_t">160 GSM Cartridge Sheets</h3>
+        <p data-i18n="feat_2_d">Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌀</div>
+        <h3 data-i18n="feat_3_t">Lay-Flat Wiro Binding</h3>
+        <p data-i18n="feat_3_d">Opens completely flat for maximum comfort while coloring near the margins.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">✂️</div>
+        <h3 data-i18n="feat_4_t">Single-Sided Print</h3>
+        <p data-i18n="feat_4_d">Every design is on its own page—tear out, frame, or gift your finished mandala art.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Community Strip -->
+  <section class="insta-strip">
+    <div class="insta-strip-box">
+      <h3 data-i18n="insta_title">Join The Alankra Art Community</h3>
+      <p data-i18n="insta_desc">Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.</p>
+      <a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" class="insta-nav-btn" style="font-size: 1rem; padding: 0.8rem 2.2rem;" data-i18n="insta_btn">
+        Follow on Instagram (@alankra.art_official)
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       LUXURY 3-COLUMN STUDIO FOOTER
+       ======================================================== -->
+  <footer>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
+      
+      <!-- Col 1: About Us / Studio Bio -->
+      <div>
+        <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" style="max-width: 160px; margin-bottom: 1.2rem; display: block; mix-blend-mode: var(--logo-blend);">
+        <p style="line-height: 1.7; font-size: 0.9rem;">
+          Dedicated to bringing peace and mindfulness through handcrafted sacred geometry, botanical mandala art, and premium artist-grade colouring books.
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Navigation Links -->
+      <div>
+        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Explore</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
+          <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Book</a></li>
+          <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">⭐ Customer Reviews</a></li>
+          <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
+          <li><a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Studio Support & Direct Contact -->
+      <div>
+        <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Studio Helpdesk</h4>
+        <p style="margin-bottom: 0.6rem;">📱 WhatsApp: <a href="https://wa.me/918320300049" style="color: var(--gold); text-decoration: none; font-weight: 600;">+91 8320300049</a></p>
+        <p style="margin-bottom: 0.6rem;">✉️ Email: <a href="mailto:alankra.art@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">alankra.art@gmail.com</a></p>
+        <p style="font-size: 0.85rem; color: #059669; font-weight: 600; margin-top: 0.8rem;">📦 Free & Safe Delivery Across India</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bottom Strip -->
+    <div style="border-top: 1px solid var(--border-color); padding-top: 1.8rem; text-align: center; font-size: 0.85rem;">
+      <p data-i18n="footer_copy">© 2026 Alankra Art Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- USER AUTHENTICATION MODAL -->
+  <div id="authModal" class="modal-backdrop">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
+
+      <!-- 1. SIGN IN VIEW -->
+      <div id="loginView" class="auth-view active">
+        <h2 data-i18n="auth_login_title">Welcome Back</h2>
+        <p class="auth-sub" data-i18n="auth_login_sub">Sign in to track orders and save your delivery addresses.</p>
+        
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label data-i18n="auth_lbl_email">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
+          </div>
+          <div class="form-group">
+            <label data-i18n="auth_lbl_pass">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required maxlength="50">
+            <a class="forgot-link" onclick="openAuthModal('forgot')" data-i18n="auth_forgot_link">Forgot Password?</a>
+          </div>
+          <button type="submit" class="auth-btn" data-i18n="auth_btn_signin">Sign In</button>
+        </form>
+
+        <div class="auth-switch">
+          <span data-i18n="auth_no_acc">Don't have an account?</span> <a onclick="openAuthModal('signup')" data-i18n="auth_create_link">Create New Account</a>
+        </div>
+      </div>
+
+      <!-- 2. CREATE ACCOUNT VIEW -->
+      <div id="signupView" class="auth-view">
+        <h2 data-i18n="auth_signup_title">Create Account</h2>
+        <p class="auth-sub" data-i18n="auth_signup_sub">Join Alankra Art Studio for exclusive art drops & offers.</p>
+        
+        <form onsubmit="handleSignup(event)">
+          <div class="form-group">
+            <label data-i18n="lbl_name">Full Name</label>
+            <input type="text" id="signupName" class="form-control" placeholder="Your Name" required maxlength="60">
+          </div>
+          <div class="form-group">
+            <label data-i18n="auth_lbl_email">Email Address</label>
+            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
+          </div>
+          <div class="form-group">
+            <label data-i18n="auth_lbl_newpass">Create Password</label>
+            <input type="password" id="signupPassword" class="form-control" placeholder="Minimum 6 characters" minlength="6" maxlength="50" required>
+          </div>
+          <button type="submit" class="auth-btn" data-i18n="auth_btn_create">Create My Account</button>
+        </form>
+
+        <div class="auth-switch">
+          <span data-i18n="auth_has_acc">Already have an account?</span> <a onclick="openAuthModal('login')" data-i18n="nav_signin">Sign In</a>
+        </div>
+      </div>
+
+      <!-- 3. FORGOT PASSWORD VIEW -->
+      <div id="forgotView" class="auth-view">
+        <h2 data-i18n="auth_reset_title">Reset Password</h2>
+        <p class="auth-sub" data-i18n="auth_reset_sub">Enter your registered email to receive a password reset link.</p>
+        
+        <form onsubmit="handleForgotPassword(event)">
+          <div class="form-group">
+            <label data-i18n="auth_lbl_reg_email">Registered Email</label>
+            <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required maxlength="80">
+          </div>
+          <button type="submit" class="auth-btn" data-i18n="auth_btn_send_reset">Send Reset Link</button>
+        </form>
+
+        <div class="auth-switch">
+          <span data-i18n="auth_rem_pass">Remember your password?</span> <a onclick="openAuthModal('login')" data-i18n="auth_back_login">Back to Sign In</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR TRANSLATIONS, SECURITY FILTERS, REVIEWS & ORDERS -->
+  <script>
+    // Security Sanitizer: Strips malicious tags and script links
+    function sanitizeSafeText(str) {
+      if (!str) return '';
+      return String(str).replace(/[<>"`]/g, '').trim();
+    }
+
+    const translations = {
+      en: {
+        nav_reviews: "⭐ Reviews",
+        nav_about: "📖 About",
+        nav_signin: "Sign In",
+        hero_badge: "✨ Mindfulness & Stress Relief Edition",
+        hero_title_html: "Mandala Colouring Book <span>For Grown-Ups</span>",
+        hero_desc: "Experience meditative peace with 30 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.",
+        discount_pill: "40% OFF Launch Deal",
+        tab_front: "📖 Front Cover View",
+        tab_back: "🔄 Back Cover View",
+        caption_front: "Front Cover • Half Line-Art & Half Colored Mandala",
+        caption_back: "Back Cover • Full Vibrant Art & Specifications Box",
+        btn_logout: "Log Out",
+        checkout_title: "🛍️ Direct Studio Checkout",
+        checkout_subtitle: "Enter your delivery address below for swift dispatch across India.",
+        lbl_name: "Full Name *",
+        lbl_phone: "WhatsApp / Phone Number *",
+        lbl_qty: "Quantity",
+        opt_qty_1: "1 Book (₹299)",
+        opt_qty_2: "2 Books (₹549 - Save ₹50)",
+        opt_qty_3: "3 Books (₹799 - Save ₹100)",
+        lbl_address: "Complete Delivery Address (House/Flat No, Street, Landmark) *",
+        lbl_city: "City / Town *",
+        lbl_pincode: "Pincode *",
+        lbl_payment: "Payment Preference",
+        opt_upi: "Instant UPI (GPay / PhonePe / Paytm)",
+        opt_cod: "Cash on Delivery (COD)",
+        lbl_total: "Total Payable:",
+        btn_place_order: "✨ Place Order & Confirm Delivery",
+        payment_notice: "🔒 100% Verified Studio Order • Free & Safe Shipping",
+        reviews_heading: "CUSTOMER EXPERIENCES",
+        reviews_subheading: "See how our coloring book is inspiring mindfulness and calm across India",
+        rating_count: "Based on 140+ Verified Reviews",
+        btn_write_review: "Write a Review",
+        form_rev_title: "Share Your Experience",
+        form_rev_sub: "Let others know how coloring these mandalas felt for you.",
+        lbl_rev_rating: "Your Rating *",
+        lbl_comment: "Your Review *",
+        btn_submit_rev: "Submit Review",
+        about_heading: "ABOUT",
+        about_subheading: "Discover the sacred art form that restores inner peace and clarity",
+        book_mandala_title: "Mandala",
+        book_mandala_p1: "A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.",
+        book_mandala_p2: "Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.",
+        book_mandala_p3: "They all have circular designs with repeating shapes and patterns that radiate from the center.",
+        philo_heading_html: "The Healing Power of <span>Sacred Geometry</span>",
+        philo_desc: "When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.",
+        quote_jung: '"The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."',
+        cite_jung: "— Carl Gustav Jung (Pioneer of Mandala Art Therapy)",
+        quote_picasso: '"Art washes away from the soul the dust of everyday life."',
+        cite_picasso: "— Pablo Picasso",
+        video_heading: "Watch The Art In Creation",
+        video_sub: "Experience the meditative process of fine-line drafting & vibrant color blending",
+        feat_heading: "Artisan Quality Guaranteed",
+        feat_sub: "Designed specifically for adult colorists, artists, and mindfulness enthusiasts",
+        feat_1_t: "30 Handcrafted Mandalas",
+        feat_1_d: "Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.",
+        feat_2_t: "160 GSM Cartridge Sheets",
+        feat_2_d: "Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.",
+        feat_3_t: "Lay-Flat Wiro Binding",
+        feat_3_d: "Opens completely flat for maximum comfort while coloring near the margins.",
+        feat_4_t: "Single-Sided Print",
+        feat_4_d: "Every design is on its own page—tear out, frame, or gift your finished mandala art.",
+        insta_title: "Join The Alankra Art Community",
+        insta_desc: "Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.",
+        insta_btn: "Follow on Instagram (@alankra.art_official)",
+        footer_copy: "© 2026 Alankra Art Studio. All rights reserved.",
+        auth_login_title: "Welcome Back",
+        auth_login_sub: "Sign in to track orders and save your delivery addresses.",
+        auth_lbl_email: "Email Address",
+        auth_lbl_pass: "Password",
+        auth_forgot_link: "Forgot Password?",
+        auth_btn_signin: "Sign In",
+        auth_no_acc: "Don't have an account?",
+        auth_create_link: "Create New Account",
+        auth_signup_title: "Create Account",
+        auth_signup_sub: "Join Alankra Art Studio for exclusive art drops & offers.",
+        auth_lbl_newpass: "Create Password",
+        auth_btn_create: "Create My Account",
+        auth_has_acc: "Already have an account?",
+        auth_reset_title: "Reset Password",
+        auth_reset_sub: "Enter your registered email to receive a password reset link.",
+        auth_lbl_reg_email: "Registered Email",
+        auth_btn_send_reset: "Send Reset Link",
+        auth_rem_pass: "Remember your password?",
+        auth_back_login: "Back to Sign In"
+      },
+      gu: {
+        nav_reviews: "⭐ રિવ્યુ",
+        nav_about: "📖 અમારા વિશે",
+        nav_signin: "સાઇન ઇન",
+        hero_badge: "✨ માનસિક શાંતિ અને તણાવ મુક્તિ એડિશન",
+        hero_title_html: "પુખ્ત વયના લોકો માટે <span>મંડલા કલરિંગ બુક</span>",
+        hero_desc: "૩૦ સુંદર અને જટિલ પવિત્ર ભૂમિતિ તેમજ વનસ્પતિ મંડલા આર્ટ સાથે ધ્યાનપૂર્ણ શાંતિનો અનુભવ કરો. ૧૬૦ GSM ના જાડા આર્ટિસ્ટ કાગળ અને લે-ફ્લેટ વાયરો બાઇન્ડિંગ સાથે પ્રિન્ટ કરેલ.",
+        discount_pill: "૪૦% છૂટ - સ્પેશિયલ ઑફર",
+        tab_front: "📖 આગળનું કવર",
+        tab_back: "🔄 પાછળનું કવર",
+        caption_front: "આગળનું કવર • અડધું લાઇન-આર્ટ અને અડધું રંગીન મંડલા",
+        caption_back: "પાછળનું કવર • સંપૂર્ણ રંગીન કલા અને પ્રોડક્ટ વિગતો",
+        btn_logout: "લૉગ આઉટ",
+        checkout_title: "🛍️ સ્ટુડિયો ડાયરેક્ટ ઓર્ડર",
+        checkout_subtitle: "સમગ્ર ભારતમાં ઝડપી ડિલિવરી માટે તમારું સરનામું નીચે દાખલ કરો.",
+        lbl_name: "પૂરું નામ *",
+        lbl_phone: "વ્હોટ્સએપ / મોબાઈલ નંબર *",
+        lbl_qty: "જથ્થો (Quantity)",
+        opt_qty_1: "૧ પુસ્તક (₹૨૯૯)",
+        opt_qty_2: "૨ પુસ્તકો (₹૫૪૯ - ₹૫૦ બચત)",
+        opt_qty_3: "૩ પુસ્તકો (₹૭૯૯ - ₹૧૦૦ બચત)",
+        lbl_address: "સંપૂર્ણ ડિલિવરી સરનામું (ઘર/ફ્લેટ નં., સોસાયટી, લેન્ડમાર્ક) *",
+        lbl_city: "શહેર / ગામ *",
+        lbl_pincode: "પીનકોડ *",
+        lbl_payment: "ચુકવણી પદ્ધતિ",
+        opt_upi: "ઇન્સ્ટન્ટ UPI (GPay / PhonePe / Paytm)",
+        opt_cod: "કેશ ઓન ડિલિવરી (COD)",
+        lbl_total: "કુલ ચૂકવવાપાત્ર રકમ:",
+        btn_place_order: "✨ ઓર્ડર કરો અને ડિલિવરી કન્ફર્મ કરો",
+        payment_notice: "🔒 ૧૦૦% વેરિફાઇડ સ્ટુડિયો ઓર્ડર • ફ્રી અને સુરક્ષિત શિપિંગ",
+        reviews_heading: "ગ્રાહકોના પ્રતિભાવો (REVIEWS)",
+        reviews_subheading: "જાણો કે કેવી રીતે આ બુક લોકોને માનસિક શાંતિ આપે છે",
+        rating_count: "૧૪૦+ ગ્રાહકો દ્વારા ૪.૯ રેટિંગ",
+        btn_write_review: "રિવ્યુ આપો",
+        form_rev_title: "તમારો અનુભવ જણાવો",
+        form_rev_sub: "તમને કલરિંગ કરવાનો અનુભવ કેવો લાગ્યો તે લખો.",
+        lbl_rev_rating: "રેટિંગ પસંદ કરો *",
+        lbl_comment: "તમારો રિવ્યુ *",
+        btn_submit_rev: "રિવ્યુ સબમિટ કરો",
+        about_heading: "અમારા વિશે (ABOUT)",
+        about_subheading: "માનસિક શાંતિ અને સ્પષ્ટતા આપતી પવિત્ર મંડલા કલા વિશે જાણો",
+        book_mandala_title: "મંડલા (Mandala)",
+        book_mandala_p1: "મંડલા એ પ્રતીકોની ભૌમિતિક રચના છે. મંડલા સામાન્ય રીતે બહારથી અંદરના કેન્દ્ર તરફ, વિવિધ સ્તરોમાંથી પસાર થતી આધ્યાત્મિક યાત્રાનું પ્રતિનિધિત્વ કરે છે.",
+        book_mandala_p2: "મંડલા માત્ર રંગ પૂરવા માટેના ભૌમિતિક આકારો કરતાં ઘણું વધારે છે. મંડલા સદીઓથી પવિત્ર પ્રતીક તરીકે સેવા આપે છે અને તે સંપૂર્ણતા, સુમેળ અને બ્રહ્માંડની અનંત પ્રકૃતિનું પ્રતિનિધિત્વ કરે છે.",
+        book_mandala_p3: "તેમાં કેન્દ્રમાંથી બહાર તરફ ફેલાતી પુનરાવર્તિત આકારો અને ભાતો સાથેની ગોળાકાર ડિઝાઇન્સ હોય છે.",
+        philo_heading_html: "પવિત્ર ભૂમિતિની <span>ઉપચાર શક્તિ</span>",
+        philo_desc: "જ્યારે તમે મંડલામાં રંગ પૂરો છો, ત્યારે તમારું મન સક્રિય સ્થિરતાની ધ્યાનાવસ્થામાં પ્રવેશે છે. આ સપ્રમાણ પેટર્ન તમારા ધ્યાનને અંદર તરફ દોરે છે, પુનરાવર્તિત વિચારોને શાંત કરે છે, તણાવ ઘટાડે છે અને તમારી સર્જનાત્મકતાને જાગૃત કરે છે.",
+        quote_jung: '"મંડલા એ કેન્દ્ર છે. તે તમામ માર્ગોનો ઘાતાંક છે. તે કેન્દ્ર તરફ, આંતરિક સંવાદિતા અને આત્મ-અનુભૂતિ તરફનો માર્ગ છે."',
+        cite_jung: "— કાર્લ ગુસ્તાવ જંગ (મંડલા આર્ટ થેરાપીના પ્રણેતા)",
+        quote_picasso: '"કલા રોજિંદા જીવનની ધૂળને આત્મામાંથી ધોઈ નાખે છે."',
+        cite_picasso: "— પાબ્લો પિકાસો",
+        video_heading: "કલા નિર્માણ વિડીયો જુઓ",
+        video_sub: "સુંદર લાઇન આર્ટ અને રંગોના સંગમની ધ્યાનપૂર્ણ પ્રક્રિયાનો અનુભવ કરો",
+        feat_heading: "ઉચ્ચ ગુણવત્તાની ખાતરી",
+        feat_sub: "ખાસ કરીને કલાપ્રેમીઓ, આર્ટિસ્ટ્સ અને માનસિક શાંતિ શોધનારાઓ માટે નિર્મિત",
+        feat_1_t: "૩૦ હાથથી દોરેલા મંડલા",
+        feat_1_d: "દૈનિક તણાવ દૂર કરવા માટે રચાયેલ જટિલ બોટનિકલ અને પવિત્ર ભૂમિતિ ડ્રોઇંગ્સ.",
+        feat_2_t: "૧૬૦ GSM જાડા કાર્ટ્રિજ પેપર",
+        feat_2_d: "બ્રશ પેન, સ્કેચ પેન અને કલર પેન્સિલ માટે યોગ્ય, જેથી રંગ પાછળ ન ઊતરે.",
+        feat_3_t: "વાયરો બાઇન્ડિંગ (Lay-Flat)",
+        feat_3_d: "કલર કરતી વખતે સરળતા રહે તે માટે સંપૂર્ણ ૧૮૦ ડિગ્રી ફ્લેટ ખુલે છે.",
+        feat_4_t: "સિંગલ-સાઇડેડ પ્રિન્ટ",
+        feat_4_d: "દરેક ડિઝાઇન એક તરફ પ્રિન્ટ છે—તમે તેને ફ્રેમ કરી શકો છો અથવા ભેટ આપી શકો છો.",
+        insta_title: "અલંકરા આર્ટ કોમ્યુનિટીમાં જોડાઓ",
+        insta_desc: "કલરિંગ ટિપ્સ અને નવા આર્ટવર્ક જોવા માટે ઇન્સ્ટાગ્રામ પર ફોલો કરો.",
+        insta_btn: "ઇન્સ્ટાગ્રામ પર ફોલો કરો (@alankra.art_official)",
+        footer_copy: "© 2026 અલંકરા આર્ટ સ્ટુડિયો. સર્વાધિકાર સુરક્ષિત.",
+        auth_login_title: "સ્વાગત છે",
+        auth_login_sub: "ઓર્ડર ટ્રેક કરવા માટે સાઇન ઇન કરો.",
+        auth_lbl_email: "ઈમેલ એડ્રેસ",
+        auth_lbl_pass: "પાસવર્ડ",
+        auth_forgot_link: "પાસવર્ડ ભૂલી ગયા?",
+        auth_btn_signin: "સાઇન ઇન",
+        auth_no_acc: "ખાતું નથી?",
+        auth_create_link: "નવું ખાતું બનાવો",
+        auth_signup_title: "નવું ખાતું બનાવો",
+        auth_signup_sub: "અલંકરા આર્ટ સાથે જોડાઓ.",
+        auth_lbl_newpass: "નવો પાસવર્ડ બનાવો",
+        auth_btn_create: "ખાતું બનાવો",
+        auth_has_acc: "પહેલેથી ખાતું છે?",
+        auth_reset_title: "પાસવર્ડ રીસેટ કરો",
+        auth_reset_sub: "પાસવર્ડ લિંક મેળવવા તમારો ઈમેલ દાખલ કરો.",
+        auth_lbl_reg_email: "નોંધાયેલ ઈમેલ",
+        auth_btn_send_reset: "રીસેટ લિંક મોકલો",
+        auth_rem_pass: "પાસવર્ડ યાદ આવ્યો?",
+        auth_back_login: "સાઇન ઇન પર પાછા જાઓ"
+      },
+      hi: {
+        nav_reviews: "⭐ समीक्षाएं",
+        nav_about: "📖 हमारे बारे में",
+        nav_signin: "साइन इन",
+        hero_badge: "✨ माइंडफुलनेस और तनाव मुक्ति संस्करण",
+        hero_title_html: "वयस्कों के लिए <span>मंडला कलरिंग बुक</span>",
+        hero_desc: "३० जटिल हस्तनिर्मित पवित्र ज्यामिति और बॉटनिकल मंडला के साथ ध्यानपूर्ण शांति का अनुभव करें। १६० GSM के मोटे आर्टिस्ट पेपर और ले-फ्लैट वायर बाइंडिंग पर मुद्रित।",
+        discount_pill: "४०% छूट - लॉन्च ऑफर",
+        tab_front: "📖 सामने का कवर",
+        tab_back: "🔄 पीछे का कवर",
+        caption_front: "सामने का कवर • आधा लाइन-आर्ट और आधा रंगीन मंडला",
+        caption_back: "पीछे का कवर • पूर्ण रंगीन कला और उत्पाद विवरण",
+        btn_logout: "लॉग आउट",
+        checkout_title: "🛍️ स्टूडियो डायरेक्ट चेकआउट",
+        checkout_subtitle: "पूरे भारत में त्वरित डिलीवरी के लिए अपना पता नीचे दर्ज करें।",
+        lbl_name: "पूरा नाम *",
+        lbl_phone: "व्हाट्सएप / मोबाइल नंबर *",
+        lbl_qty: "मात्रा (Quantity)",
+        opt_qty_1: "१ पुस्तक (₹२९૯)",
+        opt_qty_2: "२ पुस्तकें (₹५४९ - ₹५० बचत)",
+        opt_qty_3: "३ पुस्तकें (₹७९૯ - ₹१०० बचत)",
+        lbl_address: "पूरा डिलीवरी पता (मकान/फ्लैट नं., गली, लैंडमार्क) *",
+        lbl_city: "शहर / कस्बा *",
+        lbl_pincode: "पिनकोड *",
+        lbl_payment: "भुगतान विकल्प",
+        opt_upi: "इंस्टेंट UPI (GPay / PhonePe / Paytm)",
+        opt_cod: "कैश ऑन डिलीवरी (COD)",
+        lbl_total: "कुल देय राशि:",
+        btn_place_order: "✨ ऑर्डर करें और डिलीवरी कन्फर्म करें",
+        payment_notice: "🔒 १००% सत्यापित स्टूडियो ऑर्डर • मुफ्त और सुरक्षित शिपिंग",
+        reviews_heading: "ग्राहकों के अनुभव (REVIEWS)",
+        reviews_subheading: "देखें कि कैसे यह मंडला बुक लोगों को तनावमुक्त और शांत कर रही है",
+        rating_count: "१४०+ सत्यापित समीक्षाओं पर आधारित",
+        btn_write_review: "समीक्षा लिखें",
+        form_rev_title: "अपना अनुभव साझा करें",
+        form_rev_sub: "बताएं कि इस बुक में रंग भरने का आपका अनुभव कैसा रहा।",
+        lbl_rev_rating: "रेटिंग चुनें *",
+        lbl_comment: "आपकी समीक्षा *",
+        btn_submit_rev: "समीक्षा सबमिट करें",
+        about_heading: "हमारे बारे में (ABOUT)",
+        about_subheading: "उस पवित्र कला के बारे में जानें जो मन को शांति और स्पष्टता देती है",
+        book_mandala_title: "मंडला (Mandala)",
+        book_mandala_p1: "मंडला प्रतीकों का एक ज्यामितीय विन्यास है। मंडला आम तौर पर बाहर से आंतरिक कोर तक, परतों के माध्यम से आध्यात्मिक यात्रा का प्रतिनिधित्व करता है।",
+        book_mandala_p2: "मंडला केवल रंग भरने वाले ज्यामितीय पैटर्न से कहीं अधिक हैं। मंडला सदियों से एक पवित्र प्रतीक रहे हैं और संपूर्णता, सद्भाव और ब्रह्मांड की अनंत प्रकृति का प्रतिनिधित्व करते हैं।",
+        book_mandala_p3: "इन सभी में केंद्र से निकलने वाले दोहराए जाने वाले आकारों और पैटर्नों के साथ गोलाकार डिज़ाइन होते हैं।",
+        philo_heading_html: "पवित्र ज्यामिति की <span>उपचार शक्ति</span>",
+        philo_desc: "जब आप मंडला में रंग भरते हैं, तो आपका दिमाग सक्रिय शांति की ध्यान अवस्था में प्रवेश करता है। सममित पैटर्न आपके ध्यान को अंदर की ओर केंद्रित करते हैं, तनाव को कम करते हैं और आपकी रचनात्मकता को जगाते हैं।",
+        quote_jung: '"मंडला केंद्र है। यह सभी रास्तों का प्रतिपादक है। यह केंद्र की ओर, आंतरिक सद्भाव और आत्मीयता का मार्ग है।"',
+        cite_jung: "— कार्ल गुस्ताव जुंग (मंडला कला चिकित्सा के प्रणेता)",
+        quote_picasso: '"कला आत्मा से दैनिक जीवन की धूल को धो देती है।"',
+        cite_picasso: "— पाब्लो पिकासो",
+        video_heading: "कला निर्माण वीडियो देखें",
+        video_sub: "बारीक रेखांकन और रंगों के सुंदर संयोजन की ध्यानपूर्ण प्रक्रिया का अनुभव करें",
+        feat_heading: "उत्कृष्ट कारीगरी और गुणवत्ता",
+        feat_sub: "विशेष रूप से कलाकारों और मानसिक शांति चाहने वालों के लिए तैयार",
+        feat_1_t: "३० हस्तनिर्मित मंडला",
+        feat_1_d: "दैनिक तनाव को दूर करने के लिए तैयार किए गए जटिल बॉटनिकल और ज्यामितीय चित्र।",
+        feat_2_t: "१६० GSM मोटा कार्ट्रिज पेपर",
+        feat_2_d: "ब्रश पेन, स्केच पेन और रंगीन पेंसिलों के लिए बिल्कुल सही, रंग पीछे नहीं छपता।",
+        feat_3_t: "ले-फ्लैट वायर बाइंडिंग",
+        feat_3_d: "रंग भरते समय अत्यधिक सुविधा के लिए पूरी तरह से १८० डिग्री सपाट खुलता है।",
+        feat_4_t: "सिंगल-साइडेड प्रिंट",
+        feat_4_d: "प्रत्येक डिज़ाइन एक अलग पृष्ठ पर है—ताकि आप अपनी कला को फ्रेम या उपहार में दे सकें।",
+        insta_title: "अलंकरा आर्ट समुदाय से जुड़ें",
+        insta_desc: "कलरिंग टिप्स और नए आर्टवर्क देखने के लिए इंस्टाग्राम पर फॉलो करें।",
+        insta_btn: "इंस्टाग्राम पर फॉलो करें (@alankra.art_official)",
+        footer_copy: "© 2026 अलंकरा आर्ट स्टूडियो। सर्वाधिकार सुरक्षित।",
+        auth_login_title: "वापसी पर स्वागत है",
+        auth_login_sub: "ऑर्डर ट्रैक करने के लिए साइन इन करें।",
+        auth_lbl_email: "ईमेल पता",
+        auth_lbl_pass: "पासवर्ड",
+        auth_forgot_link: "पासवर्ड भूल गए?",
+        auth_btn_signin: "साइन इन",
+        auth_no_acc: "खाता नहीं है?",
+        auth_create_link: "नया खाता बनाएं",
+        auth_signup_title: "नया खाता बनाएं",
+        auth_signup_sub: "विशेष कला और ऑफर्स के लिए अलंकरा से जुड़ें।",
+        auth_lbl_newpass: "नया पासवर्ड बनाएं",
+        auth_btn_create: "खाता बनाएं",
+        auth_has_acc: "पहले से खाता है?",
+        auth_reset_title: "पासवर्ड रीसेट करें",
+        auth_reset_sub: "पासवर्ड रीसेट लिंक पाने के लिए अपना ईमेल दर्ज करें।",
+        auth_lbl_reg_email: "पंजीकृत ईमेल",
+        auth_btn_send_reset: "रीसेट लिंक भेजें",
+        auth_rem_pass: "पासवर्ड याद आ गया?",
+        auth_back_login: "साइन इन पर वापस जाएं"
+      }
+    };
+
+    // Review Form Toggle & Star Selection
+    function toggleReviewForm() {
+      const wrapper = document.getElementById('reviewFormWrapper');
+      wrapper.classList.toggle('active');
+    }
+
+    function setStarRating(rating) {
+      document.getElementById('reviewRatingVal').value = rating;
+      const stars = document.querySelectorAll('#starSelect .star');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      const name = sanitizeSafeText(document.getElementById('revName').value);
+      const city = sanitizeSafeText(document.getElementById('revCity').value);
+      const comment = sanitizeSafeText(document.getElementById('revComment').value);
+      const rating = parseInt(document.getElementById('reviewRatingVal').value) || 5;
+      
+      const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+
+      // Create new review card dynamically
+      const newCard = document.createElement('div');
+      newCard.className = 'review-card';
+      newCard.innerHTML = `
+        <div class="review-header">
+          <div>
+            <div class="reviewer-name">${name}</div>
+            <div class="reviewer-loc">${city}</div>
+          </div>
+          <div class="verified-badge">✓ Verified Buyer</div>
+        </div>
+        <div class="review-stars">${starString}</div>
+        <p class="review-comment">"${comment}"</p>
+      `;
+
+      document.getElementById('reviewsGrid').prepend(newCard);
+      document.getElementById('reviewFormWrapper').classList.remove('active');
+      alert('✨ Thank you for sharing your experience, ' + name + '!');
+    }
+
+    // Theme Switcher Logic
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('alankra_theme', newTheme);
+      updateThemeButton(newTheme);
+    }
+
+    function updateThemeButton(theme) {
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+      if (theme === 'dark') {
+        icon.textContent = '☀️';
+        label.textContent = 'Light';
+      } else {
+        icon.textContent = '🌙';
+        label.textContent = 'Dark';
+      }
+    }
+
+    // Language Change Handler
+    function setLanguage(lang) {
+      localStorage.setItem('alankra_lang', lang);
+      const dict = translations[lang] || translations.en;
+
+      document.querySelectorAll('[data-i18n]').forEach(elem => {
+        const key = elem.getAttribute('data-i18n');
+        if (dict[key]) {
+          elem.textContent = dict[key];
+        }
+      });
+
+      if (dict.hero_title_html) document.getElementById('heroTitle').innerHTML = dict.hero_title_html;
+      if (dict.philo_heading_html) document.getElementById('philoHeading').innerHTML = dict.philo_heading_html;
+    }
+
+    // Cover Image Tabs Switcher
+    function switchCover(view, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.cover-view').forEach(v => v.classList.remove('active'));
+      btn.classList.add('active');
+      if (view === 'front') {
+        document.getElementById('frontCoverView').classList.add('active');
+      } else {
+        document.getElementById('backCoverView').classList.add('active');
+      }
+    }
+
+    // Auth Modal Handlers
+    function openAuthModal(view) {
+      document.getElementById('authModal').classList.add('show');
+      document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
+      if (view === 'login') document.getElementById('loginView').classList.add('active');
+      if (view === 'signup') document.getElementById('signupView').classList.add('active');
+      if (view === 'forgot') document.getElementById('forgotView').classList.add('active');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.remove('show');
+    }
+
+    function handleSignup(e) {
+      e.preventDefault();
+      const name = sanitizeSafeText(document.getElementById('signupName').value);
+      const email = sanitizeSafeText(document.getElementById('signupEmail').value);
+      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
+      updateUserUI(name);
+      closeAuthModal();
+      alert('✨ Account created! Welcome, ' + name);
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = sanitizeSafeText(document.getElementById('loginEmail').value);
+      const name = email.split('@')[0];
+      localStorage.setItem('alankra_user', JSON.stringify({ name, email }));
+      updateUserUI(name);
+      closeAuthModal();
+      alert('✨ Welcome back, ' + name + '!');
+    }
+
+    function handleForgotPassword(e) {
+      e.preventDefault();
+      const email = sanitizeSafeText(document.getElementById('forgotEmail').value);
+      alert('📩 Password reset instructions sent to ' + email);
+      openAuthModal('login');
+    }
+
+    function updateUserUI(name) {
+      document.getElementById('userGreeting').textContent = '👤 Logged in as: ' + name;
+      document.getElementById('userProfileBadge').classList.add('show');
+      document.getElementById('navAuthTrigger').innerHTML = '👤 <span>' + name + '</span>';
+      
+      const nameInput = document.getElementById('custName');
+      if (!nameInput.value) nameInput.value = name;
+    }
+
+    function logoutUser() {
+      localStorage.removeItem('alankra_user');
+      document.getElementById('userProfileBadge').classList.remove('show');
+      document.getElementById('navAuthTrigger').innerHTML = '👤 <span data-i18n="nav_signin">Sign In</span>';
+      alert('Logged out successfully.');
+    }
+
+    // Page Load Setup
+    window.addEventListener('DOMContentLoaded', () => {
+      // Setup Theme
+      const savedTheme = localStorage.getItem('alankra_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeButton(savedTheme);
+
+      // Setup Language
+      const savedLang = localStorage.getItem('alankra_lang') || 'en';
+      document.getElementById('languageSelect').value = savedLang;
+      setLanguage(savedLang);
+
+      // Setup User Session
+      const savedUser = localStorage.getItem('alankra_user');
+      if (savedUser) {
+        try {
+          const user = JSON.parse(savedUser);
+          updateUserUI(user.name);
+        } catch (err) {}
+      }
+    });
+
+    function updateTotalBill() {
+      const qty = parseInt(document.getElementById('bookQty').value);
+      let total = 299;
+      if (qty === 2) total = 549;
+      if (qty === 3) total = 799;
+      document.getElementById('totalBillAmount').textContent = '₹' + total + '.00';
+    }
+
+    function processOrder(e) {
+      e.preventDefault();
+      const name = sanitizeSafeText(document.getElementById('custName').value);
+      const phone = sanitizeSafeText(document.getElementById('custPhone').value);
+      const qty = document.getElementById('bookQty').value;
+      const address = sanitizeSafeText(document.getElementById('custAddress').value);
+      const city = sanitizeSafeText(document.getElementById('custCity').value);
+      const pincode = sanitizeSafeText(document.getElementById('custPincode').value);
+      const payment = document.getElementById('paymentPref').value;
+      const total = document.getElementById('totalBillAmount').textContent;
+
+      // Base Order Details
+      let orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
+        `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+        `*Phone:* ${encodeURIComponent(phone)}%0A` +
+        `*Product:* Mandala Colouring Book%0A` +
+        `*Quantity:* ${encodeURIComponent(qty)} Book(s)%0A` +
+        `*Total Amount:* ${encodeURIComponent(total)}%0A` +
+        `*Payment Mode:* ${encodeURIComponent(payment)}%0A%0A` +
+        `*Delivery Address:*%0A${encodeURIComponent(address)}%0A` +
+        `*City:* ${encodeURIComponent(city)} - ${encodeURIComponent(pincode)}%0A%0A`;
+
+      // If online payment is selected, request QR code
+      if (payment.includes('UPI')) {
+        orderMessage += `*PAYMENT:*%0A` +
+          `_Please share your payment QR code so I can complete the payment and send the screenshot._%0A%0A`;
+      }
+
+      orderMessage += `Please confirm my order and share dispatch details! 📦✨`;
+
+      window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
+    }
+  </script>
 </body>
 </html>
