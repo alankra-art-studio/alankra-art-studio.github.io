@@ -4,22 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- ========================================================
-       WEBSITE SECURITY HEADERS & DEFENSE SHIELD
-       ======================================================== -->
+  <!-- Security Headers & Defense Shield -->
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.qrserver.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>ALANKRA ART STUDIO | Mandala Colouring Books</title>
+  <title>ALANKRA ART STUDIO | Official Book Collections</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Softer Light Grey Theme (Default) */
     :root {
       --bg-main: #F1F5F9;
       --bg-card: #FFFFFF;
@@ -42,7 +39,6 @@
       --mandala-opacity: 0.07;
     }
 
-    /* Dark Mode Theme */
     [data-theme="dark"] {
       --bg-main: #060e18;
       --bg-card: #0c1c30;
@@ -77,7 +73,6 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Ambient Alive Background Lotus Mandalas */
     .alive-bg-mandala {
       position: absolute;
       width: 650px;
@@ -123,7 +118,6 @@
       100% { opacity: calc(var(--mandala-opacity) * 0.7); transform: scale(0.96); }
     }
 
-    /* Sticky Navigation */
     header {
       display: flex;
       justify-content: space-between;
@@ -251,6 +245,44 @@
       box-shadow: 0 6px 20px rgba(220, 39, 67, 0.45);
     }
 
+    /* MAIN CATEGORY SWITCHER BAR */
+    .category-nav-bar {
+      background: var(--bg-card);
+      border-bottom: 2px solid var(--border-gold);
+      padding: 0.9rem 8%;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      background: var(--input-bg);
+      border: 2px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .cat-btn:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .cat-btn.active {
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: #060E18;
+      border-color: var(--gold-bright);
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+
     /* Main Hero & Order Layout */
     .hero-container {
       position: relative;
@@ -266,7 +298,6 @@
       .hero-container { grid-template-columns: 1fr; padding-top: 2rem; }
     }
 
-    /* Book Catalog Selector Tabs */
     .book-selection-tabs {
       display: flex;
       gap: 0.8rem;
@@ -276,13 +307,13 @@
 
     .book-select-btn {
       flex: 1;
-      min-width: 200px;
+      min-width: 170px;
       background: var(--bg-card);
       border: 1.5px solid var(--border-gold);
       color: var(--text-main);
-      padding: 0.75rem 1rem;
+      padding: 0.7rem 1rem;
       border-radius: 10px;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -318,7 +349,7 @@
 
     .hero-text h1 {
       font-family: 'Cinzel', serif;
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       line-height: 1.2;
       margin-bottom: 1rem;
       font-weight: 700;
@@ -363,7 +394,6 @@
       font-weight: 700;
     }
 
-    /* Product Cover Showcase */
     .showcase-wrapper {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -442,7 +472,6 @@
       font-weight: 600;
     }
 
-    /* Checkout & Address Form */
     .checkout-form-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -565,7 +594,6 @@
       font-weight: 600;
     }
 
-    /* Reviews Section */
     .reviews-section {
       position: relative;
       z-index: 1;
@@ -711,7 +739,6 @@
       line-height: 1.6;
     }
 
-    /* About Section */
     .mandala-philosophy-section {
       position: relative;
       z-index: 1;
@@ -856,7 +883,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Video Showcase */
     .video-showcase-section {
       padding: 4.5rem 8%;
       background: var(--bg-card);
@@ -892,7 +918,6 @@
       object-fit: cover;
     }
 
-    /* Features Grid */
     .features-section {
       position: relative;
       z-index: 1;
@@ -946,7 +971,6 @@
       font-size: 0.92rem;
     }
 
-    /* Instagram Community Strip */
     .insta-strip {
       padding: 4rem 8%;
       background: var(--bg-card);
@@ -975,7 +999,6 @@
       font-size: 0.95rem;
     }
 
-    /* 3-Column Luxury Footer */
     footer {
       padding: 4rem 8% 2.5rem 8%;
       background: var(--bg-card);
@@ -989,7 +1012,6 @@
       font-weight: 600;
     }
 
-    /* Auth Modal */
     .modal-backdrop {
       display: none;
       position: fixed;
@@ -1097,7 +1119,7 @@
 </head>
 <body>
 
-  <!-- Ambient Alive Animated Background Lotus Mandalas -->
+  <!-- Ambient Background Mandalas -->
   <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-top" onerror="this.src='bg-lotus-mandala.jpg'">
   <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-mid" onerror="this.src='bg-lotus-mandala.jpg'">
   <img src="bg-lotus-mandala.png" alt="Lotus Mandala Ambient Pattern" class="alive-bg-mandala alive-bg-bottom" onerror="this.src='bg-lotus-mandala.jpg'">
@@ -1112,12 +1134,12 @@
       <a href="#reviews-section" class="nav-link-btn" data-i18n="nav_reviews">⭐ Reviews</a>
       <a href="#about-section" class="nav-link-btn" data-i18n="nav_about">📖 About</a>
 
-      <!-- ☀️ Light / 🌙 Dark Mode Switcher -->
+      <!-- Light / Dark Mode -->
       <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
         <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
       </button>
 
-      <!-- 🌐 Language Selector -->
+      <!-- Language Selector -->
       <select id="languageSelect" class="lang-switcher" onchange="setLanguage(this.value)">
         <option value="en">🌐 English</option>
         <option value="gu">🌐 ગુજરાતી (Gujarati)</option>
@@ -1139,21 +1161,24 @@
     </div>
   </header>
 
+  <!-- TOP AUDIENCE SWITCHER BAR -->
+  <div class="category-nav-bar">
+    <button class="cat-btn active" id="catBtnAdults" onclick="switchMainDepartment('adults', this)">
+      👩‍🎨 Adults & Artists (Mandalas)
+    </button>
+    <button class="cat-btn" id="catBtnKids" onclick="switchMainDepartment('kids', this)">
+      🎨 Kids & Early Learners
+    </button>
+  </div>
+
   <!-- Main Hero & Direct Order Section -->
   <main class="hero-container">
     
     <!-- Left Column: Product Selector, Info & Cover Photos -->
     <div class="hero-text">
       
-      <!-- Book Selector Switcher Tabs -->
-      <div class="book-selection-tabs">
-        <button class="book-select-btn active" id="btnBookVol1" onclick="switchBook('mandala_v1', this)">
-          📖 Vol 1: Sacred Geometry (40 Designs)
-        </button>
-        <button class="book-select-btn" id="btnBookVol2" onclick="switchBook('mandala_v2', this)">
-          🌺 Vol 2: Dreamcatcher & Floral (40 Designs)
-        </button>
-      </div>
+      <!-- Sub-Selector Tabs (Dynamically populated) -->
+      <div class="book-selection-tabs" id="bookSubTabs"></div>
 
       <div class="hero-badge" id="heroBadge">✨ Mindfulness & Stress Relief Edition</div>
       <h1 id="heroTitle">Mandala Colouring Book <span>Vol 1 (40 Designs)</span></h1>
@@ -1178,17 +1203,17 @@
           <!-- FRONT COVER -->
           <div id="frontCoverView" class="cover-view active">
             <div class="product-img-box">
-              <img id="frontCoverImg" src="front-cover.jpg" alt="Alankra Mandala Colouring Book Front Cover" onerror="this.src='1.jpg'">
+              <img id="frontCoverImg" src="front-cover.jpg" alt="Book Front Cover" onerror="this.src='1.jpg'">
             </div>
-            <div class="cover-caption" id="frontCoverCaption" data-i18n="caption_front">Front Cover • Half Line-Art & Half Colored Mandala (40 Designs)</div>
+            <div class="cover-caption" id="frontCoverCaption" data-i18n="caption_front">Front Cover • Half Line-Art & Half Colored Mandala</div>
           </div>
 
           <!-- BACK COVER -->
           <div id="backCoverView" class="cover-view">
             <div class="product-img-box">
-              <img id="backCoverImg" src="back-cover.jpg" alt="Alankra Mandala Colouring Book Back Cover" onerror="this.src='2.jpg'">
+              <img id="backCoverImg" src="back-cover.jpg" alt="Book Back Cover" onerror="this.src='2.jpg'">
             </div>
-            <div class="cover-caption" id="backCoverCaption" data-i18n="caption_back">Back Cover • 40 Pages Specification Box & Instagram QR</div>
+            <div class="cover-caption" id="backCoverCaption" data-i18n="caption_back">Back Cover • Full Specifications Box & Features</div>
           </div>
         </div>
       </div>
@@ -1220,9 +1245,9 @@
           <div class="form-group">
             <label data-i18n="lbl_qty">Quantity</label>
             <select id="bookQty" class="form-control" onchange="updateTotalBill()">
-              <option value="1" data-i18n="opt_qty_1">1 Book (₹299)</option>
-              <option value="2" data-i18n="opt_qty_2">2 Books (₹549 - Save ₹50)</option>
-              <option value="3" data-i18n="opt_qty_3">3 Books (₹799 - Save ₹100)</option>
+              <option value="1" data-i18n="opt_qty_1">1 Book</option>
+              <option value="2" data-i18n="opt_qty_2">2 Books (Save ₹50)</option>
+              <option value="3" data-i18n="opt_qty_3">3 Books (Save ₹100)</option>
             </select>
           </div>
         </div>
@@ -1269,16 +1294,13 @@
 
   </main>
 
-  <!-- ========================================================
-       SECTION: VERIFIED CUSTOMER REVIEWS & FEEDBACK
-       ======================================================== -->
+  <!-- Reviews Section -->
   <section id="reviews-section" class="reviews-section">
     <div class="section-header-badge">
       <h2 data-i18n="reviews_heading">CUSTOMER EXPERIENCES</h2>
-      <p data-i18n="reviews_subheading">See how our coloring book is inspiring mindfulness and calm across India</p>
+      <p data-i18n="reviews_subheading">See how our books are inspiring mindfulness and creativity across India</p>
     </div>
 
-    <!-- Rating Summary & Write Review Button -->
     <div class="rating-summary-card">
       <div class="rating-big">
         <div class="rating-score">4.9</div>
@@ -1293,10 +1315,9 @@
       </button>
     </div>
 
-    <!-- Review Form (Hidden by default, opens on click) -->
     <div id="reviewFormWrapper" class="review-form-wrapper">
       <h3 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem;" data-i18n="form_rev_title">Share Your Experience</h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n="form_rev_sub">Let others know how coloring these mandalas felt for you.</p>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n="form_rev_sub">Let others know how coloring these pages felt for you.</p>
       
       <form onsubmit="handleReviewSubmit(event)">
         <div class="form-group">
@@ -1324,17 +1345,14 @@
 
         <div class="form-group">
           <label data-i18n="lbl_comment">Your Review *</label>
-          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, mandala designs, and your coloring experience..." required maxlength="400"></textarea>
+          <textarea id="revComment" class="form-control" placeholder="Describe the paper quality, art designs, and your coloring experience..." required maxlength="400"></textarea>
         </div>
 
         <button type="submit" class="auth-btn" style="width: 100%;" data-i18n="btn_submit_rev">Submit Review</button>
       </form>
     </div>
 
-    <!-- Reviews Grid -->
     <div class="reviews-grid" id="reviewsGrid">
-      
-      <!-- Review 1 -->
       <div class="review-card">
         <div class="review-header">
           <div>
@@ -1349,7 +1367,6 @@
         </p>
       </div>
 
-      <!-- Review 2 -->
       <div class="review-card">
         <div class="review-header">
           <div>
@@ -1364,7 +1381,6 @@
         </p>
       </div>
 
-      <!-- Review 3 -->
       <div class="review-card">
         <div class="review-header">
           <div>
@@ -1375,71 +1391,20 @@
         </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-comment">
-          "As someone working in healthcare with long stressful shifts, this mandala book is pure mindfulness in a book. Beautiful unboxing experience and fast delivery through India Post Speed Post."
+          "As someone working in healthcare with long stressful shifts, this book is pure mindfulness. Beautiful unboxing experience and fast delivery through India Post Speed Post."
         </p>
       </div>
-
-      <!-- Review 4 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Dharaben Dave</div>
-            <div class="reviewer-loc">Godhra, Gujarat</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "ખૂબ જ સુંદર ક્વોલિટીની બુક છે! કાગળ ઘણો જાડો છે જેથી વોટર કલર પેન્સિલ પણ વાપરી શકાય છે. મારી દીકરી અને હું બંને સાથે બેસીને મંડલા કલરિંગ કરીએ છીએ. ખૂબ જ ગમી!"
-        </p>
-      </div>
-
-      <!-- Review 5 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Kavita Verma</div>
-            <div class="reviewer-loc">Jaipur, Rajasthan</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "Bought 2 copies—one for myself and one as a gift for a friend. The packaging was completely waterproof and safe. The single-sided printing is great because I can frame my finished art!"
-        </p>
-      </div>
-
-      <!-- Review 6 -->
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Siddharth Nair</div>
-            <div class="reviewer-loc">Pune, Maharashtra</div>
-          </div>
-          <div class="verified-badge">✓ Verified Buyer</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-comment">
-          "Top quality art production. The hand-drawn details in each mandala show true craftsmanship. Fast response on WhatsApp for order confirmation."
-        </p>
-      </div>
-
     </div>
   </section>
 
-  <!-- ========================================================
-       SECTION: ABOUT (MANDALA PHILOSOPHY & ARTWORK)
-       ======================================================== -->
+  <!-- About Section -->
   <section id="about-section" class="mandala-philosophy-section">
-    
     <div class="section-header-badge">
       <h2 data-i18n="about_heading">ABOUT</h2>
       <p data-i18n="about_subheading">Discover the sacred art form that restores inner peace and clarity</p>
     </div>
 
     <div class="philosophy-grid">
-      
-      <!-- Left: Book Page Simulation Card -->
       <div class="book-page-card">
         <div class="page-art-half">
           <img src="about-mandala.jpg" alt="Handcrafted Sacred Mandala Artwork" onerror="this.src='1.jpg'">
@@ -1459,14 +1424,12 @@
         </div>
       </div>
 
-      <!-- Right: Healing Message & Quotes -->
       <div class="philosophy-text">
         <h2 id="philoHeading">The Healing Power of <span>Sacred Geometry</span></h2>
         <p class="philosophy-desc" data-i18n="philo_desc">
           When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.
         </p>
 
-        <!-- Carl Jung Quote -->
         <div class="artist-quote-box">
           <blockquote data-i18n="quote_jung">
             "The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."
@@ -1474,7 +1437,6 @@
           <cite data-i18n="cite_jung">— Carl Gustav Jung (Pioneer of Mandala Art Therapy)</cite>
         </div>
 
-        <!-- Pablo Picasso Quote -->
         <div class="artist-quote-box" style="border-left-color: var(--pink);">
           <blockquote data-i18n="quote_picasso">
             "Art washes away from the soul the dust of everyday life."
@@ -1482,13 +1444,10 @@
           <cite data-i18n="cite_picasso">— Pablo Picasso</cite>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ========================================================
-       SECTION: VIDEO SHOWCASE
-       ======================================================== -->
+  <!-- Video Showcase -->
   <section class="video-showcase-section">
     <h2 data-i18n="video_heading">Watch The Art In Creation</h2>
     <p class="video-sub" data-i18n="video_sub">Experience the meditative process of fine-line drafting & vibrant color blending</p>
@@ -1504,7 +1463,7 @@
   <!-- Features Grid -->
   <section class="features-section">
     <h2 data-i18n="feat_heading">Artisan Quality Guaranteed</h2>
-    <p class="features-subtitle" data-i18n="feat_sub">Designed specifically for adult colorists, artists, and mindfulness enthusiasts</p>
+    <p class="features-subtitle" data-i18n="feat_sub">Designed specifically for colorists, artists, and young learners</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="icon">🌺</div>
@@ -1524,12 +1483,12 @@
       <div class="feature-card">
         <div class="icon">✂️</div>
         <h3 data-i18n="feat_4_t">Single-Sided Print</h3>
-        <p data-i18n="feat_4_d">Every design is on its own page—tear out, frame, or gift your finished mandala art.</p>
+        <p data-i18n="feat_4_d">Every design is on its own page—tear out, frame, or gift your finished artwork.</p>
       </div>
     </div>
   </section>
 
-  <!-- Instagram Community Strip -->
+  <!-- Instagram Strip -->
   <section class="insta-strip">
     <div class="insta-strip-box">
       <h3 data-i18n="insta_title">Join The Alankra Art Community</h3>
@@ -1540,13 +1499,9 @@
     </div>
   </section>
 
-  <!-- ========================================================
-       LUXURY 3-COLUMN STUDIO FOOTER
-       ======================================================== -->
+  <!-- Footer -->
   <footer>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; margin-bottom: 3rem; text-align: left;">
-      
-      <!-- Col 1: About Us / Studio Bio -->
       <div>
         <img src="2waois2waois2wao_2.png" alt="Alankra Art Studio" style="max-width: 160px; margin-bottom: 1.2rem; display: block; mix-blend-mode: var(--logo-blend);">
         <p style="line-height: 1.7; font-size: 0.9rem;">
@@ -1554,43 +1509,37 @@
         </p>
       </div>
 
-      <!-- Col 2: Quick Navigation Links -->
       <div>
         <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Explore</h4>
         <ul style="list-style: none; padding: 0; margin: 0; line-height: 2.2;">
-          <li><a href="#" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">📖 Mandala Colouring Books</a></li>
-          <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">⭐ Customer Reviews</a></li>
-          <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✨ About Sacred Geometry</a></li>
-          <li><a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">🎨 Art Reels & Community</a></li>
+          <li><a href="#" style="color: var(--text-muted); text-decoration: none;">📖 Mandala Colouring Books</a></li>
+          <li><a href="#reviews-section" style="color: var(--text-muted); text-decoration: none;">⭐ Customer Reviews</a></li>
+          <li><a href="#about-section" style="color: var(--text-muted); text-decoration: none;">✨ About Sacred Geometry</a></li>
+          <li><a href="https://instagram.com/alankra.art_official" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">🎨 Art Reels & Community</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Studio Support & Direct Contact -->
       <div>
         <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 1.2rem; font-weight: 700;">Studio Helpdesk</h4>
         <p style="margin-bottom: 0.6rem;">📱 WhatsApp: <a href="https://wa.me/918320300049" style="color: var(--gold); text-decoration: none; font-weight: 600;">+91 8320300049</a></p>
         <p style="margin-bottom: 0.6rem;">✉️ Email: <a href="mailto:alankra.art@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">alankra.art@gmail.com</a></p>
         <p style="font-size: 0.85rem; color: #059669; font-weight: 600; margin-top: 0.8rem;">📦 Free & Safe Delivery Across India</p>
       </div>
-
     </div>
 
-    <!-- Copyright Bottom Strip -->
     <div style="border-top: 1px solid var(--border-color); padding-top: 1.8rem; text-align: center; font-size: 0.85rem;">
       <p data-i18n="footer_copy">© 2026 Alankra Art Studio. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- USER AUTHENTICATION MODAL -->
+  <!-- Auth Modal -->
   <div id="authModal" class="modal-backdrop">
     <div class="modal-card">
       <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
 
-      <!-- 1. SIGN IN VIEW -->
       <div id="loginView" class="auth-view active">
         <h2 data-i18n="auth_login_title">Welcome Back</h2>
         <p class="auth-sub" data-i18n="auth_login_sub">Sign in to track orders and save your delivery addresses.</p>
-        
         <form onsubmit="handleLogin(event)">
           <div class="form-group">
             <label data-i18n="auth_lbl_email">Email Address</label>
@@ -1603,17 +1552,14 @@
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_signin">Sign In</button>
         </form>
-
         <div class="auth-switch">
           <span data-i18n="auth_no_acc">Don't have an account?</span> <a onclick="openAuthModal('signup')" data-i18n="auth_create_link">Create New Account</a>
         </div>
       </div>
 
-      <!-- 2. CREATE ACCOUNT VIEW -->
       <div id="signupView" class="auth-view">
         <h2 data-i18n="auth_signup_title">Create Account</h2>
         <p class="auth-sub" data-i18n="auth_signup_sub">Join Alankra Art Studio for exclusive art drops & offers.</p>
-        
         <form onsubmit="handleSignup(event)">
           <div class="form-group">
             <label data-i18n="lbl_name">Full Name</label>
@@ -1629,17 +1575,14 @@
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_create">Create My Account</button>
         </form>
-
         <div class="auth-switch">
           <span data-i18n="auth_has_acc">Already have an account?</span> <a onclick="openAuthModal('login')" data-i18n="nav_signin">Sign In</a>
         </div>
       </div>
 
-      <!-- 3. FORGOT PASSWORD VIEW -->
       <div id="forgotView" class="auth-view">
         <h2 data-i18n="auth_reset_title">Reset Password</h2>
         <p class="auth-sub" data-i18n="auth_reset_sub">Enter your registered email to receive a password reset link.</p>
-        
         <form onsubmit="handleForgotPassword(event)">
           <div class="form-group">
             <label data-i18n="auth_lbl_reg_email">Registered Email</label>
@@ -1647,337 +1590,197 @@
           </div>
           <button type="submit" class="auth-btn" data-i18n="auth_btn_send_reset">Send Reset Link</button>
         </form>
-
         <div class="auth-switch">
           <span data-i18n="auth_rem_pass">Remember your password?</span> <a onclick="openAuthModal('login')" data-i18n="auth_back_login">Back to Sign In</a>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- JAVASCRIPT: DYNAMIC MULTI-BOOK CATALOG, TRANSLATIONS & CHECKOUT -->
+  <!-- JAVASCRIPT: AUDIENCE CATEGORY & CATALOG DATABASE -->
   <script>
     function sanitizeSafeText(str) {
       if (!str) return '';
       return String(str).replace(/[<>"`]/g, '').trim();
     }
 
-    // MULTI-BOOK CATALOG DATABASE
-    const bookCatalog = {
-      mandala_v1: {
-        id: "mandala_v1",
-        name: "Mandala Colouring Book (Vol 1: Sacred Geometry - 40 Designs)",
-        frontCover: "front-cover.jpg",
-        backCover: "back-cover.jpg",
-        fallbackFront: "1.jpg",
-        fallbackBack: "2.jpg",
-        price: 299,
-        mrp: 499,
-        badge_en: "✨ Mindfulness & Stress Relief Edition",
-        badge_gu: "✨ માનસિક શાંતિ અને તણાવ મુક્તિ એડિશન",
-        badge_hi: "✨ माइंडफुलनेस और तनाव मुक्ति संस्करण",
-        title_en: "Mandala Colouring Book <span>Vol 1 (40 Designs)</span>",
-        title_gu: "પુખ્ત વયના લોકો માટે <span>મંડલા કલરિંગ બુક Vol 1 (૪૦ ડિઝાઇન્સ)</span>",
-        title_hi: "वयस्कों के लिए <span>मंडला कलरिंग बुक Vol 1 (४० डिज़ाइन)</span>",
-        desc_en: "Experience meditative peace with 40 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.",
-        desc_gu: "૪૦ સુંદર અને જટિલ પવિત્ર ભૂમિતિ તેમજ વનસ્પતિ મંડલા આર્ટ સાથે ધ્યાનપૂર્ણ શાંતિનો અનુભવ કરો. ૧૬૦ GSM ના જાડા આર્ટિસ્ટ કાગળ અને લે-ફ્લેટ વાયરો બાઇન્ડિંગ.",
-        desc_hi: "४० जटिल हस्तनिर्मित पवित्र ज्यामिति और बॉटनिकल मंडला के साथ ध्यानपूर्ण शांति का अनुभव करें। १६० GSM के मोटे आर्टिस्ट पेपर और ले-फ्लैट वायर बाइंडिंग।",
-        captionFront_en: "Front Cover • Half Line-Art & Half Colored Mandala (40 Designs)",
-        captionFront_gu: "આગળનું કવર • અડધું લાઇન-આર્ટ અને અડધું રંગીન મંડલા (૪૦ ડિઝાઇન્સ)",
-        captionFront_hi: "सामने का कवर • आधा लाइन-आर्ट और आधा रंगीन मंडला (४० डिज़ाइन)",
-        captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
-        captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
-        captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
+    // MAIN CATALOG DATABASE (Adults & Kids)
+    const storeDepartments = {
+      adults: {
+        defaultBook: "mandala_v1",
+        books: {
+          mandala_v1: {
+            id: "mandala_v1",
+            tabLabel: "📖 Vol 1: Sacred Geometry (40 Designs)",
+            name: "Mandala Colouring Book (Vol 1: Sacred Geometry - 40 Designs)",
+            frontCover: "front-cover.jpg",
+            backCover: "back-cover.jpg",
+            fallbackFront: "1.jpg",
+            fallbackBack: "2.jpg",
+            price: 299,
+            mrp: 499,
+            badge_en: "✨ Mindfulness & Stress Relief Edition",
+            badge_gu: "✨ માનસિક શાંતિ અને તણાવ મુક્તિ એડિશન",
+            badge_hi: "✨ माइंडफुलनेस और तनाव मुक्ति संस्करण",
+            title_en: "Mandala Colouring Book <span>Vol 1 (40 Designs)</span>",
+            title_gu: "પુખ્ત વયના લોકો માટે <span>મંડલા કલરિંગ બુક Vol 1 (૪૦ ડિઝાઇન્સ)</span>",
+            title_hi: "वयस्कों के लिए <span>मंडला कलरिंग बुक Vol 1 (४० डिज़ाइन)</span>",
+            desc_en: "Experience meditative peace with 40 intricately handcrafted sacred geometry & botanical mandalas. Printed single-sided on heavyweight 160 GSM artist cartridge paper with lay-flat wiro binding.",
+            desc_gu: "૪૦ સુંદર અને જટિલ પવિત્ર ભૂમિતિ તેમજ વનસ્પતિ મંડલા આર્ટ સાથે ધ્યાનપૂર્ણ શાંતિનો અનુભવ કરો. ૧૬૦ GSM ના જાડા આર્ટિસ્ટ કાગળ અને લે-ફ્લેટ વાયરો બાઇન્ડિંગ.",
+            desc_hi: "૪૦ जटिल हस्तनिर्मित पवित्र ज्यामिति और बॉटनिकल मंडला के साथ ध्यानपूर्ण शांति का अनुभव करें। १६० GSM के मोटे आर्टिस्ट पेपर और ले-फ्लैट वायर बाइंडिंग।",
+            captionFront_en: "Front Cover • Half Line-Art & Half Colored Mandala (40 Designs)",
+            captionFront_gu: "આગળનું કવર • અડધું લાઇન-આર્ટ અને અડધું રંગીન મંડલા (૪૦ ડિઝાઇન્સ)",
+            captionFront_hi: "सामने का कवर • आधा लाइन-आर्ट और आधा रंगीन मंडला (४० डिज़ाइन)",
+            captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
+            captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
+          },
+          mandala_v2: {
+            id: "mandala_v2",
+            tabLabel: "🌺 Vol 2: Dreamcatcher & Floral (40 Designs)",
+            name: "Mandala Colouring Book (Vol 2: Dreamcatcher & Floral - 40 Designs)",
+            frontCover: "front-cover-vol2.jpg",
+            backCover: "back-cover-vol2.jpg",
+            fallbackFront: "1.jpg",
+            fallbackBack: "2.jpg",
+            price: 299,
+            mrp: 499,
+            badge_en: "🪶 Dreamcatcher & Floral Harmony Edition",
+            badge_gu: "🪶 ડ્રીમકેચર અને ફ્લોરલ હાર્મની એડિશન",
+            badge_hi: "🪶 ड्रीमकेचर और फ्लोरल हार्मनी संस्करण",
+            title_en: "Mandala Colouring Book <span>Vol 2 (40 Designs)</span>",
+            title_gu: "ડ્રીમકેચર મંડલા કલરિંગ બુક <span>Vol 2 (૪૦ ડિઝાઇન્સ)</span>",
+            title_hi: "ड्रीमकेचर मंडला कलरिंग बुक <span>Vol 2 (४० डिज़ाइन)</span>",
+            desc_en: "Immerse yourself in 40 unique handcrafted dreamcatchers, boho feathers, and soothing floral mandalas. Printed single-sided on premium 160 GSM cartridge sheets for pure mindfulness.",
+            desc_gu: "૪૦ અનોખા ડ્રીમકેચર અને ફ્લોરલ મંડલા ડિઝાઇન્સ સાથે શાંતિનો અનુભવ કરો. વોટર કલર અને બ્રશ પેન માટે ૧૬૦ GSM જાડા પ્રીમિયમ પેપર પર સિંગલ-સાઇડ પ્રિન્ટેડ.",
+            desc_hi: "४० अनूठे ड्रीमकेचर और फ्लोरल मंडला डिज़ाइनों के साथ तनावमुक्त हों। ब्रश पेन और पेंसिल के लिए १६० GSM मोटे प्रीमियम पेपर पर सिंगल-साइड प्रिंटेड।",
+            captionFront_en: "Front Cover • Handcrafted Dreamcatcher & 40 Designs Badge",
+            captionFront_gu: "આગળનું કવર • ડ્રીમકેચર મંડલા અને ૪૦ યુનિક ડિઝાઇન્સ",
+            captionFront_hi: "सामने का कवर • ड्रीमकेचर मंडला और ४० डिज़ाइन",
+            captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
+            captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
+            captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
+          }
+        }
       },
-      mandala_v2: {
-        id: "mandala_v2",
-        name: "Mandala Colouring Book (Vol 2: Dreamcatcher & Floral - 40 Designs)",
-        frontCover: "front-cover-vol2.jpg",
-        backCover: "back-cover-vol2.jpg",
-        fallbackFront: "1.jpg",
-        fallbackBack: "2.jpg",
-        price: 299,
-        mrp: 499,
-        badge_en: "🪶 Dreamcatcher & Floral Harmony Edition",
-        badge_gu: "🪶 ડ્રીમકેચર અને ફ્લોરલ હાર્મની એડિશન",
-        badge_hi: "🪶 ड्रीमकेचर और फ्लोरल हार्मनी संस्करण",
-        title_en: "Mandala Colouring Book <span>Vol 2 (40 Designs)</span>",
-        title_gu: "ડ્રીમકેચર મંડલા કલરિંગ બુક <span>Vol 2 (૪૦ ડિઝાઇન્સ)</span>",
-        title_hi: "ड्रीमकेचर मंडला कलरिंग बुक <span>Vol 2 (४० डिज़ाइन)</span>",
-        desc_en: "Immerse yourself in 40 unique handcrafted dreamcatchers, boho feathers, and soothing floral mandalas. Printed single-sided on premium 160 GSM cartridge sheets for pure mindfulness.",
-        desc_gu: "૪૦ અનોખા ડ્રીમકેચર અને ફ્લોરલ મંડલા ડિઝાઇન્સ સાથે શાંતિનો અનુભવ કરો. વોટર કલર અને બ્રશ પેન માટે ૧૬૦ GSM જાડા પ્રીમિયમ પેપર પર સિંગલ-સાઇડ પ્રિન્ટેડ.",
-        desc_hi: "४० अनूठे ड्रीमकेचर और फ्लोरल मंडला डिज़ाइनों के साथ तनावमुक्त हों। ब्रश पेन और पेंसिल के लिए १६० GSM मोटे प्रीमियम पेपर पर सिंगल-साइड प्रिंटेड।",
-        captionFront_en: "Front Cover • Handcrafted Dreamcatcher & 40 Designs Badge",
-        captionFront_gu: "આગળનું કવર • ડ્રીમકેચર મંડલા અને ૪૦ યુનિક ડિઝાઇન્સ",
-        captionFront_hi: "सामने का cover • ड्रीमकेचर मंडला और ४० डिज़ाइन",
-        captionBack_en: "Back Cover • 40 Pages Specification Box & Instagram QR",
-        captionBack_gu: "પાછળનું કવર • ૪૦ પેજ સ્પેસિફિકેશન બોક્સ",
-        captionBack_hi: "पीछे का कवर • ४० पृष्ठ विवरण बॉक्स"
+      kids: {
+        defaultBook: "kids_part1",
+        books: {
+          kids_part1: {
+            id: "kids_part1",
+            tabLabel: "🦁 Cute Animals: Part 1",
+            name: "Kids Fun Colouring Book - Part 1: Cute Animals & Nature",
+            frontCover: "kids-part1-front.png",
+            backCover: "kids-part1-back.png",
+            fallbackFront: "front-cover.jpg",
+            fallbackBack: "back-cover.jpg",
+            price: 250,
+            mrp: 399,
+            badge_en: "🦁 Part 1: Cute Animals & Jungle Fun",
+            badge_gu: "🦁 ભાગ ૧: સુંદર પ્રાણીઓ અને કાર્ટૂન ફન",
+            badge_hi: "🦁 भाग १: प्यारे जानवर और कार्टून फन",
+            title_en: "Kids Colouring Book <span>Part 1 (Animals & Fun)</span>",
+            title_gu: "બાળકો માટે કલરિંગ બુક <span>ભાગ ૧ (સુંદર પ્રાણીઓ)</span>",
+            title_hi: "बच्चों की कलरिंग बुक <span>भाग १ (प्यारे जानवर)</span>",
+            desc_en: "Delight young artists with easy-to-color friendly lions, elephants, puppies, and playful jungle friends. Printed on thick 160 GSM bleed-proof paper for crayons, sketch pens, and pencils.",
+            desc_gu: "સિંહ, હાથી, સસલા અને સુંદર પ્રાણીઓના ચિત્રો સાથે બાળકો માટે સરળ અને મનોરંજક કલરિંગ બુક. ૧૬૦ GSM જાડા પેપર પર સિંગલ-સાઇડ પ્રિન્ટેડ.",
+            desc_hi: "शेर, हाथी, खरगोश और प्यारे जानवरों के चित्रों से सजी बच्चों के लिए आसान और मजेदार कलरिंग बुक। १६० GSM मोटे पेपर पर सिंगल-साइड प्रिंटेड।",
+            captionFront_en: "Front Cover • Part 1 Cute Animals & Fun Edition",
+            captionFront_gu: "આગળનું કવર • ભાગ ૧ સુંદર પ્રાણીઓ",
+            captionFront_hi: "सामने का कवर • भाग ૧ प्यारे जानवर",
+            captionBack_en: "Back Cover • 40 Illustrated Animal Sheets",
+            captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
+            captionBack_hi: "पीछे का कवर • ४૦ पृष्ठ विवरण बॉक्स"
+          },
+          kids_part2: {
+            id: "kids_part2",
+            tabLabel: "🐬 Cute Animals: Part 2",
+            name: "Kids Fun Colouring Book - Part 2: Cute Animals, Birds & Sea Life",
+            frontCover: "kids-part2-front.png",
+            backCover: "kids-part2-back.png",
+            fallbackFront: "front-cover.jpg",
+            fallbackBack: "back-cover.jpg",
+            price: 250,
+            mrp: 399,
+            badge_en: "🐬 Part 2: Birds, Sea Life & Pets",
+            badge_gu: "🐬 ભાગ ૨: પક્ષીઓ, જળચર જીવો અને પાલતુ પ્રાણીઓ",
+            badge_hi: "🐬 भाग २: पक्षी, समुद्री जीव और पालतू जानवर",
+            title_en: "Kids Colouring Book <span>Part 2 (Birds & Ocean)</span>",
+            title_gu: "બાળકો માટે કલરિંગ બુક <span>ભાગ ૨ (પક્ષીઓ અને જળચર)</span>",
+            title_hi: "बच्चों की कलरिंग बुक <span>भाग २ (पक्षी और समुद्र)</span>",
+            desc_en: "Continue the creative adventure with colorful birds, friendly dolphins, farm animals, and sweet cartoon creatures. Features bold outlines and large coloring sections.",
+            desc_gu: "સુંદર પક્ષીઓ, ડોલ્ફિન, માછલીઓ અને પાલતુ પ્રાણીઓના ચિત્રો સાથે બાળકોની સર્જનાત્મકતા વધારતી બુક.",
+            desc_hi: "रंग-बिरंगे पक्षी, डॉल्फिन, मछलियां और प्यारे कार्टून किरदारों के साथ बच्चों की रचनात्मकता बढ़ाने वाली बुक।",
+            captionFront_en: "Front Cover • Part 2 Birds, Sea Life & Cute Pets",
+            captionFront_gu: "આગળનું કવર • ભાગ ૨ પક્ષીઓ અને જળચર",
+            captionFront_hi: "सामने का कवर • भाग २ पक्षी और समुद्री जीव",
+            captionBack_en: "Back Cover • 40 Illustrated Sheets & Details",
+            captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
+            captionBack_hi: "पीछे का कवर • ४૦ पृष्ठ विवरण बॉक्स"
+          },
+          kids_fruits: {
+            id: "kids_fruits",
+            tabLabel: "🍎 Fruits & Dry Fruits Identifier",
+            name: "Little Botanical Explorer: Fruits & Dry Fruits Identifier and Colouring",
+            frontCover: "kids-fruits-front.jpg",
+            backCover: "kids-fruits-back.png",
+            fallbackFront: "front-cover.jpg",
+            fallbackBack: "back-cover.jpg",
+            price: 250,
+            mrp: 399,
+            badge_en: "🍎 Nature & Nutrition Explorer",
+            badge_gu: "🍎 ફળો અને ડ્રાયફ્રૂટ્સ ઓળખ અને કલરિંગ બુક",
+            badge_hi: "🍎 फल और ड्राई फ्रूट्स पहचान और कलरिंग बुक",
+            title_en: "Fruits & Dry Fruits <span>Identifier & Colouring</span>",
+            title_gu: "ફળો અને ડ્રાયફ્રૂટ્સ <span>ઓળખો અને રંગ પૂરો</span>",
+            title_hi: "फल और ड्राई फ्रूट्स <span>पहचानें और रंग भरें</span>",
+            desc_en: "Learn, identify, and color 40+ healthy fruits and dry fruits with large outlines, spelling guides, and fun nutrition facts. Perfect for early childhood learning.",
+            desc_gu: "૪૦+ ફળો અને ડ્રાયફ્રૂટ્સ ઓળખવા, નામ લખવા અને રંગ પૂરવા માટે સરળ અને સુંદર ચિત્રો.",
+            desc_hi: "४०+ फलों और मेवों को पहचानने, नाम लिखने और रंग भरने के लिए विशेष रूप से तैयार बुक।",
+            captionFront_en: "Front Cover • Fruits & Dry Fruits Identifier Edition",
+            captionFront_gu: "આગળનું કવર • ફળો અને ડ્રાયફ્રૂટ્સ એડિશન",
+            captionFront_hi: "सामने का कवर • फल और मेवे संस्करण",
+            captionBack_en: "Back Cover • 40 Illustrated Nutrition Sheets",
+            captionBack_gu: "પાછળનું કવર • ૪૦ ઇલસ્ટ્રેટેડ શીટ્સ",
+            captionBack_hi: "પીછે કા કવર • ४૦ पृष्ठ विवरण बॉक्स"
+          }
+        }
       }
     };
 
-    let currentSelectedBook = "mandala_v1";
-
-    const translations = {
-      en: {
-        nav_reviews: "⭐ Reviews",
-        nav_about: "📖 About",
-        nav_signin: "Sign In",
-        discount_pill: "40% OFF Launch Deal",
-        tab_front: "📖 Front Cover View",
-        tab_back: "🔄 Back Cover View",
-        btn_logout: "Log Out",
-        checkout_title: "🛍️ Direct Studio Checkout",
-        checkout_subtitle: "Enter your delivery address below for swift dispatch across India.",
-        lbl_name: "Full Name *",
-        lbl_phone: "WhatsApp / Phone Number *",
-        lbl_qty: "Quantity",
-        opt_qty_1: "1 Book (₹299)",
-        opt_qty_2: "2 Books (₹549 - Save ₹50)",
-        opt_qty_3: "3 Books (₹799 - Save ₹100)",
-        lbl_address: "Complete Delivery Address (House/Flat No, Street, Landmark) *",
-        lbl_city: "City / Town *",
-        lbl_pincode: "Pincode *",
-        lbl_payment: "Payment Preference",
-        opt_upi: "Instant UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "Cash on Delivery (COD)",
-        lbl_total: "Total Payable:",
-        btn_place_order: "✨ Place Order & Confirm Delivery",
-        payment_notice: "🔒 100% Verified Studio Order • Free & Safe Shipping",
-        reviews_heading: "CUSTOMER EXPERIENCES",
-        reviews_subheading: "See how our coloring book is inspiring mindfulness and calm across India",
-        rating_count: "Based on 140+ Verified Reviews",
-        btn_write_review: "Write a Review",
-        form_rev_title: "Share Your Experience",
-        form_rev_sub: "Let others know how coloring these mandalas felt for you.",
-        lbl_rev_rating: "Your Rating *",
-        lbl_comment: "Your Review *",
-        btn_submit_rev: "Submit Review",
-        about_heading: "ABOUT",
-        about_subheading: "Discover the sacred art form that restores inner peace and clarity",
-        book_mandala_title: "Mandala",
-        book_mandala_p1: "A Mandala is a geometric configuration of symbols. A mandala generally represents the spiritual journey, starting from outside to the inner core, through layers.",
-        book_mandala_p2: "Mandalas are far more than just geometric patterns or shapes to colour in. Mandalas have served as a sacred symbol for centuries and represent wholeness, harmony, and the infinite nature of the universe.",
-        book_mandala_p3: "They all have circular designs with repeating shapes and patterns that radiate from the center.",
-        philo_heading_html: "The Healing Power of <span>Sacred Geometry</span>",
-        philo_desc: "When you color a mandala, your mind enters a meditative state of active stillness. The symmetrical patterns guide your focus inward, quietening repetitive thoughts, lowering stress levels, and awakening your intuitive creativity.",
-        quote_jung: '"The mandala is the center. It is the exponent of all paths. It is the path to the center, to individuation and inner harmony."',
-        cite_jung: "— Carl Gustav Jung (Pioneer of Mandala Art Therapy)",
-        quote_picasso: '"Art washes away from the soul the dust of everyday life."',
-        cite_picasso: "— Pablo Picasso",
-        video_heading: "Watch The Art In Creation",
-        video_sub: "Experience the meditative process of fine-line drafting & vibrant color blending",
-        feat_heading: "Artisan Quality Guaranteed",
-        feat_sub: "Designed specifically for adult colorists, artists, and mindfulness enthusiasts",
-        feat_1_t: "40 Handcrafted Mandalas",
-        feat_1_d: "Intricate botanical and sacred geometry line drawings crafted to melt away daily stress.",
-        feat_2_t: "160 GSM Cartridge Sheets",
-        feat_2_d: "Ultra-thick, bleed-proof paper engineered for brush pens, sketch pens, and colored pencils.",
-        feat_3_t: "Lay-Flat Wiro Binding",
-        feat_3_d: "Opens completely flat for maximum comfort while coloring near the margins.",
-        feat_4_t: "Single-Sided Print",
-        feat_4_d: "Every design is on its own page—tear out, frame, or gift your finished mandala art.",
-        insta_title: "Join The Alankra Art Community",
-        insta_desc: "Discover coloring tips, step-by-step reels, and share your artwork with our growing artist circle.",
-        insta_btn: "Follow on Instagram (@alankra.art_official)",
-        footer_copy: "© 2026 Alankra Art Studio. All rights reserved.",
-        auth_login_title: "Welcome Back",
-        auth_login_sub: "Sign in to track orders and save your delivery addresses.",
-        auth_lbl_email: "Email Address",
-        auth_lbl_pass: "Password",
-        auth_forgot_link: "Forgot Password?",
-        auth_btn_signin: "Sign In",
-        auth_no_acc: "Don't have an account?",
-        auth_create_link: "Create New Account",
-        auth_signup_title: "Create Account",
-        auth_signup_sub: "Join Alankra Art Studio for exclusive art drops & offers.",
-        auth_lbl_newpass: "Create Password",
-        auth_btn_create: "Create My Account",
-        auth_has_acc: "Already have an account?",
-        auth_reset_title: "Reset Password",
-        auth_reset_sub: "Enter your registered email to receive a password reset link.",
-        auth_lbl_reg_email: "Registered Email",
-        auth_btn_send_reset: "Send Reset Link",
-        auth_rem_pass: "Remember your password?",
-        auth_back_login: "Back to Sign In"
-      },
-      gu: {
-        nav_reviews: "⭐ રિવ્યુ",
-        nav_about: "📖 અમારા વિશે",
-        nav_signin: "સાઇન ઇન",
-        discount_pill: "૪૦% છૂટ - સ્પેશિયલ ઑફર",
-        tab_front: "📖 આગળનું કવર",
-        tab_back: "🔄 પાછળનું કવર",
-        btn_logout: "લૉગ આઉટ",
-        checkout_title: "🛍️ સ્ટુડિયો ડાયરેક્ટ ઓર્ડર",
-        checkout_subtitle: "સમગ્ર ભારતમાં ઝડપી ડિલિવરી માટે તમારું સરનામું નીચે દાખલ કરો.",
-        lbl_name: "પૂરું નામ *",
-        lbl_phone: "વ્હોટ્સએપ / મોબાઈલ નંબર *",
-        lbl_qty: "જથ્થો (Quantity)",
-        opt_qty_1: "૧ પુસ્તક (₹૨૯૯)",
-        opt_qty_2: "૨ પુસ્તકો (₹૫૪૯ - ₹૫૦ બચત)",
-        opt_qty_3: "૩ પુસ્તકો (₹૭૯૯ - ₹૧૦૦ બચત)",
-        lbl_address: "સંપૂર્ણ ડિલિવરી સરનામું (ઘર/ફ્લેટ નં., સોસાયટી, લેન્ડમાર્ક) *",
-        lbl_city: "શહેર / ગામ *",
-        lbl_pincode: "પીનકોડ *",
-        lbl_payment: "ચુકવણી પદ્ધતિ",
-        opt_upi: "ઇન્સ્ટન્ટ UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "કેશ ઓન ડિલિવરી (COD)",
-        lbl_total: "કુલ ચૂકવવાપાત્ર રકમ:",
-        btn_place_order: "✨ ઓર્ડર કરો અને ડિલિવરી કન્ફર્મ કરો",
-        payment_notice: "🔒 ૧૦૦% વેરિફાઇડ સ્ટુડિયો ઓર્ડર • ફ્રી અને સુરક્ષિત શિપિંગ",
-        reviews_heading: "ગ્રાહકોના પ્રતિભાવો (REVIEWS)",
-        reviews_subheading: "જાણો કે કેવી રીતે આ બુક લોકોને માનસિક શાંતિ આપે છે",
-        rating_count: "૧૪૦+ ગ્રાહકો દ્વારા ૪.૯ રેટિંગ",
-        btn_write_review: "રિવ્યુ આપો",
-        form_rev_title: "તમારો અનુભવ જણાવો",
-        form_rev_sub: "તમને કલરિંગ કરવાનો અનુભવ કેવો લાગ્યો તે લખો.",
-        lbl_rev_rating: "રેટિંગ પસંદ કરો *",
-        lbl_comment: "તમારો રિવ્યુ *",
-        btn_submit_rev: "રિવ્યુ સબમિટ કરો",
-        about_heading: "અમારા વિશે (ABOUT)",
-        about_subheading: "માનસિક શાંતિ અને સ્પષ્ટતા આપતી પવિત્ર મંડલા કલા વિશે જાણો",
-        book_mandala_title: "મંડલા (Mandala)",
-        book_mandala_p1: "મંડલા એ પ્રતીકોની ભૌમિતિક રચના છે. મંડલા સામાન્ય રીતે બહારથી અંદરના કેન્દ્ર તરફ, વિવિધ સ્તરોમાંથી પસાર થતી આધ્યાત્મિક યાત્રાનું પ્રતિનિધિત્વ કરે છે.",
-        book_mandala_p2: "મંડલા માત્ર રંગ પૂરવા માટેના ભૌમિતિક આકારો કરતાં ઘણું વધારે છે. મંડલા સદીઓથી પવિત્ર પ્રતીક તરીકે સેવા આપે છે અને તે સંપૂર્ણતા, સુમેળ અને બ્રહ્માંડની અનંત પ્રકૃતિનું પ્રતિનિધિત્વ કરે છે.",
-        book_mandala_p3: "તેમાં કેન્દ્રમાંથી બહાર તરફ ફેલાતી પુનરાવર્તિત આકારો અને ભાતો સાથેની ગોળાકાર ડિઝાઇન્સ હોય છે.",
-        philo_heading_html: "પવિત્ર ભૂમિતિની <span>ઉપચાર શક્તિ</span>",
-        philo_desc: "જ્યારે તમે મંડલામાં રંગ પૂરો છો, ત્યારે તમારું મન સક્રિય સ્થિરતાની ધ્યાનાવસ્થામાં પ્રવેશે છે. આ સપ્રમાણ પેટર્ન તમારા ધ્યાનને અંદર તરફ દોરે છે, પુનરાવર્તિત વિચારોને શાંત કરે છે, તણાવ ઘટાડે છે અને તમારી સર્જનાત્મકતાને જાગૃત કરે છે.",
-        quote_jung: '"મંડલા એ કેન્દ્ર છે. તે તમામ માર્ગોનો ઘાતાંક છે. તે કેન્દ્ર તરફ, આંતરિક સંવાદિતા અને આત્મ-અનુભૂતિ તરફનો માર્ગ છે."',
-        cite_jung: "— કાર્લ ગુસ્તાવ જંગ (મંડલા આર્ટ થેરાપીના પ્રણેતા)",
-        quote_picasso: '"કલા રોજિંદા જીવનની ધૂળને આત્મામાંથી ધોઈ નાખે છે."',
-        cite_picasso: "— પાબ્લો પિકાસો",
-        video_heading: "કલા નિર્માણ વિડીયો જુઓ",
-        video_sub: "સુંદર લાઇન આર્ટ અને રંગોના સંગમની ધ્યાનપૂર્ણ પ્રક્રિયાનો અનુભવ કરો",
-        feat_heading: "ઉચ્ચ ગુણવત્તાની ખાતરી",
-        feat_sub: "ખાસ કરીને કલાપ્રેમીઓ, આર્ટિસ્ટ્સ અને માનસિક શાંતિ શોધનારાઓ માટે નિર્મિત",
-        feat_1_t: "૪૦ હાથથી દોરેલા મંડલા",
-        feat_1_d: "દૈનિક તણાવ દૂર કરવા માટે રચાયેલ જટિલ બોટનિકલ અને પવિત્ર ભૂમિતિ ડ્રોઇંગ્સ.",
-        feat_2_t: "૧૬૦ GSM જાડા કાર્ટ્રિજ પેપર",
-        feat_2_d: "બ્રશ પેન, સ્કેચ પેન અને કલર પેન્સિલ માટે યોગ્ય, જેથી રંગ પાછળ ન ઊતરે.",
-        feat_3_t: "વાયરો બાઇન્ડિંગ (Lay-Flat)",
-        feat_3_d: "કલર કરતી વખતે સરળતા રહે તે માટે સંપૂર્ણ ૧૮૦ ડિગ્રી ફ્લેટ ખુલે છે.",
-        feat_4_t: "સિંગલ-સાઇડેડ પ્રિન્ટ",
-        feat_4_d: "દરેક ડિઝાઇન એક તરફ પ્રિન્ટ છે—તમે તેને ફ્રેમ કરી શકો છો અથવા ભેટ આપી શકો છો.",
-        insta_title: "અલંકરા આર્ટ કોમ્યુનિટીમાં જોડાઓ",
-        insta_desc: "કલરિંગ ટિપ્સ અને નવા આર્ટવર્ક જોવા માટે ઇન્સ્ટાગ્રામ પર ફોલો કરો.",
-        insta_btn: "ઇન્સ્ટાગ્રામ પર ફોલો કરો (@alankra.art_official)",
-        footer_copy: "© 2026 અલંકરા આર્ટ સ્ટુડિયો. સર્વાધિકાર સુરક્ષિત.",
-        auth_login_title: "સ્વાગત છે",
-        auth_login_sub: "ઓર્ડર ટ્રેક કરવા માટે સાઇન ઇન કરો.",
-        auth_lbl_email: "ઈમેલ એડ્રેસ",
-        auth_lbl_pass: "પાસવર્ડ",
-        auth_forgot_link: "પાસવર્ડ ભૂલી ગયા?",
-        auth_btn_signin: "સાઇન ઇન",
-        auth_no_acc: "ખાતું નથી?",
-        auth_create_link: "નવું ખાતું બનાવો",
-        auth_signup_title: "નવું ખાતું બનાવો",
-        auth_signup_sub: "અલંકરા આર્ટ સાથે જોડાઓ.",
-        auth_lbl_newpass: "નવો પાસવર્ડ બનાવો",
-        auth_btn_create: "ખાતું બનાવો",
-        auth_has_acc: "પહેલેથી ખાતું છે?",
-        auth_reset_title: "પાસવર્ડ રીસેટ કરો",
-        auth_reset_sub: "પાસવર્ડ લિંક મેળવવા તમારો ઈમેલ દાખલ કરો.",
-        auth_lbl_reg_email: "નોંધાયેલ ઈમેલ",
-        auth_btn_send_reset: "રીસેટ લિંક મોકલો",
-        auth_rem_pass: "પાસવર્ડ યાદ આવ્યો?",
-        auth_back_login: "સાઇન ઇન પર પાછા જાઓ"
-      },
-      hi: {
-        nav_reviews: "⭐ समीक्षाएं",
-        nav_about: "📖 हमारे बारे में",
-        nav_signin: "साइन इन",
-        discount_pill: "४०% छूट - लॉन्च ऑफर",
-        tab_front: "📖 सामने का कवर",
-        tab_back: "🔄 पीछे का कवर",
-        btn_logout: "लॉग आउट",
-        checkout_title: "🛍️ स्टूडियो डायरेक्ट चेकआउट",
-        checkout_subtitle: "पूरे भारत में त्वरित डिलीवरी के लिए अपना पता नीचे दर्ज करें।",
-        lbl_name: "पूरा नाम *",
-        lbl_phone: "व्हाट्सएप / मोबाइल नंबर *",
-        lbl_qty: "मात्रा (Quantity)",
-        opt_qty_1: "१ पुस्तक (₹२९૯)",
-        opt_qty_2: "२ पुस्तकें (₹५४९ - ₹५० बचत)",
-        opt_qty_3: "३ पुस्तकें (₹७९૯ - ₹१०० बचत)",
-        lbl_address: "पूरा डिलीवरी पता (मकान/फ्लैट नं., गली, लैंडमार्क) *",
-        lbl_city: "शहर / कस्बा *",
-        lbl_pincode: "पिनकोड *",
-        lbl_payment: "भुगतान विकल्प",
-        opt_upi: "इंस्टेंट UPI (GPay / PhonePe / Paytm)",
-        opt_cod: "कैश ऑन डिलीवरी (COD)",
-        lbl_total: "कुल देय राशि:",
-        btn_place_order: "✨ ऑर्डर करें और डिलीवरी कन्फर्म करें",
-        payment_notice: "🔒 १००% सत्यापित स्टूडियो ऑर्डर • मुफ्त और सुरक्षित शिपिंग",
-        reviews_heading: "ग्राहकों के अनुभव (REVIEWS)",
-        reviews_subheading: "देखें कि कैसे यह मंडला बुक लोगों को तनावमुक्त और शांत कर रही है",
-        rating_count: "१४०+ सत्यापित समीक्षाओं पर आधारित",
-        btn_write_review: "समीक्षा लिखें",
-        form_rev_title: "अपना अनुभव साझा करें",
-        form_rev_sub: "बताएं कि इस बुक में रंग भरने का आपका अनुभव कैसा रहा।",
-        lbl_rev_rating: "रेटिंग चुनें *",
-        lbl_comment: "आपकी समीक्षा *",
-        btn_submit_rev: "समीक्षा सबमिट करें",
-        about_heading: "हमारे बारे में (ABOUT)",
-        about_subheading: "उस पवित्र कला के बारे में जानें जो मन को शांति और स्पष्टता देती है",
-        book_mandala_title: "मंडला (Mandala)",
-        book_mandala_p1: "मंडला प्रतीकों का एक ज्यामितीय विन्यास है। मंडला आम तौर पर बाहर से आंतरिक कोर तक, परतों के माध्यम से आध्यात्मिक यात्रा का प्रतिनिधित्व करता है।",
-        book_mandala_p2: "मंडला केवल रंग भरने वाले ज्यामितीय पैटर्न से कहीं अधिक हैं। मंडला सदियों से एक पवित्र प्रतीक रहे हैं और संपूर्णता, सद्भाव और ब्रह्मांड की अनंत प्रकृति का प्रतिनिधित्व करते हैं।",
-        book_mandala_p3: "इन सभी में केंद्र से निकलने वाले दोहराए जाने वाले आकारों और पैटर्नों के साथ गोलाकार डिज़ाइन होते हैं।",
-        philo_heading_html: "पवित्र ज्यामिति की <span>उपचार शक्ति</span>",
-        philo_desc: "जब आप मंडला में रंग भरते हैं, तो आपका दिमाग सक्रिय शांति की ध्यान अवस्था में प्रवेश करता है। सममित पैटर्न आपके ध्यान को अंदर की ओर केंद्रित करते हैं, तनाव को कम करते हैं और आपकी रचनात्मकता को जगाते हैं।",
-        quote_jung: '"मंडला केंद्र है। यह सभी रास्तों का प्रतिपादक है। यह केंद्र की ओर, आंतरिक सद्भाव और आत्मीयता का मार्ग है।"',
-        cite_jung: "— कार्ल गुस्ताव जुंग (मंडला कला चिकित्सा के प्रणेता)",
-        quote_picasso: '"कला आत्मा से दैनिक जीवन की धूल को धो देती है।"',
-        cite_picasso: "— पाब्लो पिकासो",
-        video_heading: "कला निर्माण वीडियो देखें",
-        video_sub: "बारीक रेखांकन और रंगों के सुंदर संयोजन की ध्यानपूर्ण प्रक्रिया का अनुभव करें",
-        feat_heading: "उत्कृष्ट कारीगरी और गुणवत्ता",
-        feat_sub: "विशेष रूप से कलाकारों और मानसिक शांति चाहने वालों के लिए तैयार",
-        feat_1_t: "४० हस्तनिर्मित मंडला",
-        feat_1_d: "दैनिक तनाव को दूर करने के लिए तैयार किए गए जटिल बॉटनिकल और ज्यामितीय चित्र।",
-        feat_2_t: "१६० GSM मोटा कार्ट्रिज पेपर",
-        feat_2_d: "ब्रश पेन, स्केच पेन और रंगीन पेंसिलों के लिए बिल्कुल सही, रंग पीछे नहीं छपता।",
-        feat_3_t: "ले-फ्लैट वायर बाइंडिंग",
-        feat_3_d: "रंग भरते समय अत्यधिक सुविधा के लिए पूरी तरह से १८० डिग्री सपाट खुलता है।",
-        feat_4_t: "सिंगल-साइडेड प्रिंट",
-        feat_4_d: "प्रत्येक डिज़ाइन एक अलग पृष्ठ पर है—ताकि आप अपनी कला को फ्रेम या उपहार में दे सकें।",
-        insta_title: "अलंकरा आर्ट समुदाय से जुड़ें",
-        insta_desc: "कलरिंग टिप्स और नए आर्टवर्क देखने के लिए इंस्टाग्राम पर फॉलो करें।",
-        insta_btn: "इंस्टाग्राम पर फॉलो करें (@alankra.art_official)",
-        footer_copy: "© 2026 अलंकरा आर्ट स्टूडियो। सर्वाधिकार सुरक्षित।",
-        auth_login_title: "वापसी पर स्वागत है",
-        auth_login_sub: "ऑर्डर ट्रैक करने के लिए साइन इन करें।",
-        auth_lbl_email: "ईमेल पता",
-        auth_lbl_pass: "पासवर्ड",
-        auth_forgot_link: "पासवर्ड भूल गए?",
-        auth_btn_signin: "साइन इन",
-        auth_no_acc: "खाता नहीं है?",
-        auth_create_link: "नया खाता बनाएं",
-        auth_signup_title: "नया खाता बनाएं",
-        auth_signup_sub: "विशेष कला और ऑफर्स के लिए अलंकरा से जुड़ें।",
-        auth_lbl_newpass: "नया पासवर्ड बनाएं",
-        auth_btn_create: "खाता बनाएं",
-        auth_has_acc: "पहले से खाता है?",
-        auth_reset_title: "पासवर्ड रीसेट करें",
-        auth_reset_sub: "पासवर्ड रीसेट लिंक पाने के लिए अपना ईमेल दर्ज करें।",
-        auth_lbl_reg_email: "पंजीकृत ईमेल",
-        auth_btn_send_reset: "रीसेट लिंक भेजें",
-        auth_rem_pass: "पासवर्ड याद आ गया?",
-        auth_back_login: "साइन इन पर वापस जाएं"
-      }
-    };
-
-    // DYNAMIC SWITCHER: Vol 1 vs Vol 2
-    function switchBook(bookKey, btn) {
-      currentSelectedBook = bookKey;
-      const book = bookCatalog[bookKey];
-      const lang = localStorage.getItem('alankra_lang') || 'en';
-
-      document.querySelectorAll('.book-select-btn').forEach(b => b.classList.remove('active'));
+    function switchMainDepartment(deptKey, btn) {
+      currentDepartment = deptKey;
+      
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
-      // Update Cover Images with Error Fallbacks
+      const deptData = storeDepartments[deptKey];
+      const subTabsContainer = document.getElementById('bookSubTabs');
+      subTabsContainer.innerHTML = '';
+
+      Object.keys(deptData.books).forEach((bKey, index) => {
+        const bObj = deptData.books[bKey];
+        const subBtn = document.createElement('button');
+        subBtn.className = 'book-select-btn' + (index === 0 ? ' active' : '');
+        subBtn.textContent = bObj.tabLabel;
+        subBtn.onclick = () => selectBook(bKey, subBtn);
+        subTabsContainer.appendChild(subBtn);
+      });
+
+      selectBook(deptData.defaultBook);
+    }
+
+    function selectBook(bookKey, btn) {
+      currentSelectedBook = bookKey;
+      const deptBooks = storeDepartments[currentDepartment].books;
+      const book = deptBooks[bookKey];
+      const lang = localStorage.getItem('alankra_lang') || 'en';
+
+      if (btn) {
+        document.querySelectorAll('.book-select-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
       const frontImg = document.getElementById('frontCoverImg');
       const backImg = document.getElementById('backCoverImg');
 
@@ -1987,21 +1790,21 @@
       backImg.src = book.backCover;
       backImg.onerror = () => { backImg.src = book.fallbackBack; };
 
-      // Update Localized Strings for Active Book
       document.getElementById('heroBadge').textContent = book['badge_' + lang] || book.badge_en;
       document.getElementById('heroTitle').innerHTML = book['title_' + lang] || book.title_en;
       document.getElementById('heroDesc').textContent = book['desc_' + lang] || book.desc_en;
       document.getElementById('frontCoverCaption').textContent = book['captionFront_' + lang] || book.captionFront_en;
       document.getElementById('backCoverCaption').textContent = book['captionBack_' + lang] || book.captionBack_en;
 
-      // Reset to Front Cover tab view
+      document.getElementById('heroPrice').textContent = '₹' + book.price + '.00';
+      document.getElementById('heroMrp').textContent = '₹' + book.mrp + '.00';
+
       const frontTabBtn = document.querySelectorAll('.tab-btn')[0];
       switchCover('front', frontTabBtn);
 
       updateTotalBill();
     }
 
-    // REVIEW FORM & STARS
     function toggleReviewForm() {
       const wrapper = document.getElementById('reviewFormWrapper');
       wrapper.classList.toggle('active');
@@ -2047,7 +1850,6 @@
       alert('✨ Thank you for sharing your experience, ' + name + '!');
     }
 
-    // THEME SWITCHER
     function toggleTheme() {
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -2068,7 +1870,6 @@
       }
     }
 
-    // MULTI-LANGUAGE SWITCHER
     function setLanguage(lang) {
       localStorage.setItem('alankra_lang', lang);
       const dict = translations[lang] || translations.en;
@@ -2082,12 +1883,9 @@
 
       if (dict.philo_heading_html) document.getElementById('philoHeading').innerHTML = dict.philo_heading_html;
 
-      // Re-apply language to current active book
-      const activeBtn = currentSelectedBook === 'mandala_v1' ? document.getElementById('btnBookVol1') : document.getElementById('btnBookVol2');
-      switchBook(currentSelectedBook, activeBtn);
+      selectBook(currentSelectedBook);
     }
 
-    // COVER IMAGE TABS
     function switchCover(view, btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.cover-view').forEach(v => v.classList.remove('active'));
@@ -2099,7 +1897,6 @@
       }
     }
 
-    // AUTH MODAL LOGIC
     function openAuthModal(view) {
       document.getElementById('authModal').classList.add('show');
       document.querySelectorAll('.auth-view').forEach(v => v.classList.remove('active'));
@@ -2157,13 +1954,16 @@
 
     function updateTotalBill() {
       const qty = parseInt(document.getElementById('bookQty').value);
-      let total = 299;
-      if (qty === 2) total = 549;
-      if (qty === 3) total = 799;
+      const activeBook = storeDepartments[currentDepartment].books[currentSelectedBook];
+      const basePrice = activeBook ? activeBook.price : 250;
+
+      let total = basePrice * qty;
+      if (qty === 2) total = total - 50;
+      if (qty === 3) total = total - 100;
+
       document.getElementById('totalBillAmount').textContent = '₹' + total + '.00';
     }
 
-    // DIRECT WHATSAPP ORDER PROCESSING
     function processOrder(e) {
       e.preventDefault();
       const name = sanitizeSafeText(document.getElementById('custName').value);
@@ -2174,12 +1974,14 @@
       const pincode = sanitizeSafeText(document.getElementById('custPincode').value);
       const payment = document.getElementById('paymentPref').value;
       const total = document.getElementById('totalBillAmount').textContent;
-      const selectedBook = bookCatalog[currentSelectedBook];
+      const activeBook = storeDepartments[currentDepartment].books[currentSelectedBook];
 
       let orderMessage = `*NEW ORDER - ALANKRA ART STUDIO*%0A%0A` +
+        `*Category:* ${currentDepartment === 'adults' ? 'Adults & Artists' : 'Kids & Early Learners'}%0A` +
         `*Customer Name:* ${encodeURIComponent(name)}%0A` +
         `*Phone:* ${encodeURIComponent(phone)}%0A` +
-        `*Selected Book:* ${encodeURIComponent(selectedBook.name)}%0A` +
+        `*Selected Book:* ${encodeURIComponent(activeBook.name)}%0A` +
+        `*Price Per Copy:* ₹${activeBook.price}%0A` +
         `*Quantity:* ${encodeURIComponent(qty)} Book(s)%0A` +
         `*Total Amount:* ${encodeURIComponent(total)}%0A` +
         `*Payment Mode:* ${encodeURIComponent(payment)}%0A%0A` +
@@ -2196,11 +1998,12 @@
       window.open(`https://wa.me/918320300049?text=${orderMessage}`, '_blank');
     }
 
-    // INITIALIZATION ON DOM READY
     window.addEventListener('DOMContentLoaded', () => {
       const savedTheme = localStorage.getItem('alankra_theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
       updateThemeButton(savedTheme);
+
+      switchMainDepartment('adults', document.getElementById('catBtnAdults'));
 
       const savedLang = localStorage.getItem('alankra_lang') || 'en';
       document.getElementById('languageSelect').value = savedLang;
